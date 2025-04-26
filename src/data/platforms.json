@@ -1,0 +1,482 @@
+[
+  {
+    "name": "Mastodon",
+    "url": "https://joinmastodon.org",
+    "description": "Rede social de microblog federada, similar ao Twitter, composta de instâncias independentes interconectadas (Fediverso). Permite postar mensagens curtas, seguir usuários de qualquer servidor e participar de timelines públicas ou privadas.",
+    "logo": "mastodon.svg",
+    "equivalent_to": ["Twitter"],
+    "categories": ["social"],
+    "features": [
+      "public_timelines",
+      "private_messaging",
+      "follower_model",
+      "text",
+      "photos",
+      "open_source",
+      "no_ads",
+      "no_tracking",
+      "fediverse_compatible",
+      "user_led_moderation"
+    ],
+    "links": {
+      "how_to_use": "https://manualdousuario.net/mastodon-como-usar/",
+      "how_to_host": "https://www.ionos.com/digitalguide/server/configuration/installing-your-own-mastodon-server/",
+      "official_website": "https://joinmastodon.org",
+      "live_demo": "https://mastodon.social/explore",
+      "brazil_top_instance": "https://mastodon.com.br"
+    },
+    "ranking": {
+      "popularity": 9,
+      "stability": 9,
+      "ease_of_use": 7,
+      "hosting_difficulty": 6,
+      "mobile_support": 8,
+      "developer_community": 9,
+      "moderation_tools": 8,
+      "api_availability": 8
+    },
+    "release_date": "2016-10-05",
+    "death_date": null,
+    "users": 10000000,
+    "instances": 4000
+  },
+  {
+    "name": "Pleroma",
+    "url": "https://pleroma.social",
+    "description": "Plataforma de microblog federada, compatível com ActivityPub, focada em ser leve e altamente customizável. Semelhante ao Mastodon em funcionalidade, porém requer menos recursos e permite instâncias pessoais pequenas. Possui um fork ativo (Akkoma) com recursos extras.",
+    "logo": "pleroma.svg",
+    "equivalent_to": ["Twitter", "Mastodon"],
+    "categories": ["social"],
+    "features": [
+      "public_timelines",
+      "private_messaging",
+      "follower_model",
+      "text",
+      "photos",
+      "open_source",
+      "no_ads",
+      "no_tracking",
+      "fediverse_compatible"
+    ],
+    "links": {
+      "how_to_use": "https://docs-develop.pleroma.social/",
+      "how_to_host": "https://akkoma.dev/AkkomaGang/akkoma/src/branch/develop/docs/installation",
+      "official_website": "https://pleroma.social",
+      "live_demo": "https://pleroma.site",
+      "brazil_top_instance": "https://social.lazytown.fun"
+    },
+    "ranking": {
+      "popularity": 6,
+      "stability": 7,
+      "ease_of_use": 6,
+      "hosting_difficulty": 5,
+      "mobile_support": 7,
+      "developer_community": 6,
+      "moderation_tools": 6,
+      "api_availability": 7
+    },
+    "release_date": "2017-12-01",
+    "death_date": null,
+    "users": 50000,
+    "instances": 100
+  },
+  {
+    "name": "Misskey",
+    "url": "https://misskey-hub.net",
+    "description": "Rede social de microblog federada com foco em personalização e reações. Originária do Japão, permite postagens com formatação, múltiplas reações emoji por post e interface altamente configurável com widgets. Possui forks como Calckey/Firefish que adicionam recursos.",
+    "logo": "misskey.svg",
+    "equivalent_to": ["Twitter", "Discord"],
+    "categories": ["social"],
+    "features": [
+      "public_timelines",
+      "private_messaging",
+      "follower_model",
+      "text",
+      "photos",
+      "video",
+      "open_source",
+      "no_ads",
+      "no_tracking",
+      "fediverse_compatible"
+    ],
+    "links": {
+      "how_to_use": "https://r.m3l.dev/misskey/",
+      "how_to_host": "https://misskey-hub.net/docs/install.html",
+      "official_website": "https://misskey-hub.net/",
+      "live_demo": "https://misskey.io",
+      "brazil_top_instance": "https://misskey.art"
+    },
+    "ranking": {
+      "popularity": 5,
+      "stability": 7,
+      "ease_of_use": 6,
+      "hosting_difficulty": 6,
+      "mobile_support": 7,
+      "developer_community": 7,
+      "moderation_tools": 6,
+      "api_availability": 7
+    },
+    "release_date": "2017-08-01",
+    "death_date": null,
+    "users": 30000,
+    "instances": 120
+  },
+  {
+    "name": "Diaspora*",
+    "url": "https://diasporafoundation.org",
+    "description": "Rede social descentralizada focada em privacidade. Organizada em pods independentes (servidores) conectados. Permite compartilhamento de posts com diferentes grupos de amigos (aspectos). Sem anúncios e sem exigência de nome real, enfatiza controle do usuário sobre dados.",
+    "logo": "diaspora.svg",
+    "equivalent_to": ["Facebook"],
+    "categories": ["social"],
+    "features": [
+      "public_timelines",
+      "private_messaging",
+      "friends_model",
+      "text",
+      "photos",
+      "open_source",
+      "no_ads",
+      "no_tracking",
+      "self_hostable"
+    ],
+    "links": {
+      "how_to_use": "https://diasporabr.com.br/",
+      "how_to_host": "https://wiki.diasporafoundation.org/Installation",
+      "official_website": "https://diasporafoundation.org",
+      "live_demo": "https://diaspora.com.br",
+      "brazil_top_instance": "https://diasporabr.com.br"
+    },
+    "ranking": {
+      "popularity": 4,
+      "stability": 7,
+      "ease_of_use": 6,
+      "hosting_difficulty": 5,
+      "mobile_support": 5,
+      "developer_community": 5,
+      "moderation_tools": 5,
+      "api_availability": 4
+    },
+    "release_date": "2010-09-15",
+    "death_date": null,
+    "users": 750000,
+    "instances": 100
+  },
+  {
+    "name": "Friendica",
+    "url": "https://friendi.ca",
+    "description": "Rede social descentralizada que integra diferentes redes. Oferece uma experiência estilo Facebook, incluindo feed de amigos, fóruns/grupos e integração com outras plataformas (StatusNet, Diaspora, etc.). Voltada a usuários avançados, altamente configurável e com foco em compatibilidade.",
+    "logo": "friendica.svg",
+    "equivalent_to": ["Facebook", "Forums"],
+    "categories": ["social"],
+    "features": [
+      "public_timelines",
+      "private_messaging",
+      "friends_model",
+      "forums",
+      "text",
+      "photos",
+      "open_source",
+      "fediverse_compatible",
+      "self_hostable"
+    ],
+    "links": {
+      "how_to_use": "https://forum.friendi.ca/help",
+      "how_to_host": "https://github.com/friendica/friendica/blob/develop/INSTALL.md",
+      "official_website": "https://friendi.ca",
+      "live_demo": "https://libranet.de",
+      "brazil_top_instance": "https://social.abertura.digital"
+    },
+    "ranking": {
+      "popularity": 3,
+      "stability": 7,
+      "ease_of_use": 4,
+      "hosting_difficulty": 5,
+      "mobile_support": 5,
+      "developer_community": 5,
+      "moderation_tools": 5,
+      "api_availability": 5
+    },
+    "release_date": "2010-12-01",
+    "death_date": null,
+    "users": 20000,
+    "instances": 80
+  },
+  {
+    "name": "PixelFed",
+    "url": "https://pixelfed.org",
+    "description": "Plataforma de compartilhamento de fotos federada, alternativa aberta ao Instagram. Usuários publicam fotos/vídeos curtos com legendas e interagem via curtir e comentar. Permite seguir perfis entre instâncias no fediverso (ActivityPub). Foco em fotografia e artes visuais, sem anúncios.",
+    "logo": "pixelfed.svg",
+    "equivalent_to": ["Instagram"],
+    "categories": ["social"],
+    "features": [
+      "public_timelines",
+      "photos",
+      "videos",
+      "open_source",
+      "no_ads",
+      "no_tracking",
+      "fediverse_compatible",
+      "self_hostable",
+      "custom_domains"
+    ],
+    "links": {
+      "how_to_use": "https://www.youtube.com/watch?v=PtXKI2EIp68",
+      "how_to_host": "https://docs.pixelfed.org/running-pixelfed/setup/",
+      "official_website": "https://pixelfed.org",
+      "live_demo": "https://pixelfed.social",
+      "brazil_top_instance": "https://pixelfed.br.com"
+    },
+    "ranking": {
+      "popularity": 5,
+      "stability": 8,
+      "ease_of_use": 8,
+      "hosting_difficulty": 6,
+      "mobile_support": 6,
+      "developer_community": 7,
+      "moderation_tools": 7,
+      "api_availability": 6
+    },
+    "release_date": "2018-10-01",
+    "death_date": null,
+    "users": 100000,
+    "instances": 200
+  },
+  {
+    "name": "PeerTube",
+    "url": "https://joinpeertube.org",
+    "description": "Plataforma de vídeo descentralizada e federada, alternativa ao YouTube. Permite que cada instância hospede vídeos e se interconecte com outras (ActivityPub), formando uma rede de compartilhamento. Utiliza P2P (WebTorrent) para distribuir o tráfego de vídeos entre os espectadores, aliviando o servidor. Sem anúncios e aberta.",
+    "logo": "peertube.svg",
+    "equivalent_to": ["YouTube"],
+    "categories": ["social"],
+    "features": [
+      "video",
+      "livestreaming",
+      "open_source",
+      "no_ads",
+      "no_tracking",
+      "fediverse_compatible",
+      "self_hostable",
+      "plugins",
+      "custom_domains"
+    ],
+    "links": {
+      "how_to_use": "https://pt.linuxmanuals.org/article/como-instalar-o-peertube/",
+      "how_to_host": "https://docs.joinpeertube.org/install-any-os",
+      "official_website": "https://joinpeertube.org",
+      "live_demo": "https://peertube.cpy.re/search",
+      "brazil_top_instance": "https://tube.gencat.cat"
+    },
+    "ranking": {
+      "popularity": 4,
+      "stability": 7,
+      "ease_of_use": 7,
+      "hosting_difficulty": 7,
+      "mobile_support": 5,
+      "developer_community": 7,
+      "moderation_tools": 6,
+      "api_availability": 6
+    },
+    "release_date": "2018-10-15",
+    "death_date": null,
+    "users": 50000,
+    "instances": 900
+  },
+  {
+    "name": "Lemmy",
+    "url": "https://join-lemmy.org",
+    "description": "Plataforma de fórum e agregador de links descentralizado, funcionando de forma similar ao Reddit. Organizado em comunidades temáticas (subs) que podem residir em instâncias distintas mas federam via ActivityPub. Permite postar links ou textos, votar (up/down) e comentar com threads. Ganhou destaque como alternativa ao Reddit com foco em controle comunitário.",
+    "logo": "lemmy.svg",
+    "equivalent_to": ["Reddit"],
+    "categories": ["social"],
+    "features": [
+      "forums",
+      "private_messaging",
+      "open_source",
+      "no_ads",
+      "no_tracking",
+      "fediverse_compatible",
+      "self_hostable",
+      "user_led_moderation"
+    ],
+    "links": {
+      "how_to_use": "https://dev.to/filipecaldas/lemmy-a-rede-social-debate-federada-54po",
+      "how_to_host": "https://join-lemmy.org/docs/en/administration/install_arm.html",
+      "official_website": "https://join-lemmy.org",
+      "live_demo": "https://lemmy.world",
+      "brazil_top_instance": "https://lemmy.eco.br"
+    },
+    "ranking": {
+      "popularity": 7,
+      "stability": 7,
+      "ease_of_use": 8,
+      "hosting_difficulty": 6,
+      "mobile_support": 6,
+      "developer_community": 8,
+      "moderation_tools": 8,
+      "api_availability": 7
+    },
+    "release_date": "2019-08-27",
+    "death_date": null,
+    "users": 20000,
+    "instances": 100
+  },
+  {
+    "name": "Matrix (Element)",
+    "url": "https://element.io",
+    "description": "Protocolo aberto de comunicação em tempo real (Matrix) com cliente de referência Element. Permite mensagens instantâneas, em grupo ou privadas, com voz, vídeo e transferência de arquivos, tudo de forma federada entre servidores. Suporta criptografia ponta-a-ponta opcional e integração (bridges) com diversas outras plataformas de chat.",
+    "logo": "element.svg",
+    "equivalent_to": ["Slack", "Discord"],
+    "categories": ["professional"],
+    "features": [
+      "private_messaging",
+      "end_to_end_encryption",
+      "group_chats",
+      "voice_video_calls",
+      "text",
+      "open_source",
+      "no_ads",
+      "no_tracking",
+      "matrix_compatible"
+    ],
+    "links": {
+      "how_to_use": "https://element.io/help",
+      "how_to_host": "https://matrix.org/docs/guides/installing-synapse",
+      "official_website": "https://matrix.org",
+      "live_demo": "https://app.element.io/#/welcome",
+      "brazil_top_instance": "https://matrix.br"
+    },
+    "ranking": {
+      "popularity": 8,
+      "stability": 8,
+      "ease_of_use": 7,
+      "hosting_difficulty": 6,
+      "mobile_support": 9,
+      "developer_community": 9,
+      "moderation_tools": 7,
+      "api_availability": 9
+    },
+    "release_date": "2014-09-01",
+    "death_date": null,
+    "users": 60000000,
+    "instances": 10000
+  },
+  {
+    "name": "Rocket.Chat",
+    "url": "https://rocket.chat",
+    "description": "Plataforma de comunicação em equipe similar ao Slack, open source e auto-hospedável. Oferece canais de chat, mensagens diretas, threads, videoconferência integrada e diversas integrações (bots, webhooks). Focada em uso corporativo, com forte ênfase em segurança e customização dos dados.",
+    "logo": "rocketchat.svg",
+    "equivalent_to": ["Slack", "Microsoft Teams"],
+    "categories": ["professional"],
+    "features": [
+      "private_messaging",
+      "group_chats",
+      "voice_video_calls",
+      "file_sharing",
+      "open_source",
+      "no_ads",
+      "self_hostable",
+      "plugins",
+      "api_availability"
+    ],
+    "links": {
+      "how_to_use": "https://docs.rocket.chat/getting-started",
+      "how_to_host": "https://docs.rocket.chat/instalacao/guia-de-instalacao-rapida",
+      "official_website": "https://rocket.chat",
+      "live_demo": "https://open.rocket.chat",
+      "brazil_top_instance": "https://chat.secretaria.gov.br"
+    },
+    "ranking": {
+      "popularity": 8,
+      "stability": 9,
+      "ease_of_use": 8,
+      "hosting_difficulty": 7,
+      "mobile_support": 8,
+      "developer_community": 8,
+      "moderation_tools": 8,
+      "api_availability": 8
+    },
+    "release_date": "2015-06-01",
+    "death_date": null,
+    "users": 12000000,
+    "instances": 150000
+  },
+  {
+    "name": "Mattermost",
+    "url": "https://mattermost.com",
+    "description": "Plataforma de mensagens de equipe semelhante ao Slack, com foco em auto-hospedagem e segurança. Suporta canais organizados, mensagens diretas, threads, integrações DevOps e extensibilidade via plugins. Disponível em edição open source e opções Enterprise com recursos adicionais.",
+    "logo": "mattermost.svg",
+    "equivalent_to": ["Slack"],
+    "categories": ["professional"],
+    "features": [
+      "private_messaging",
+      "group_chats",
+      "voice_video_calls",
+      "file_sharing",
+      "open_source",
+      "no_ads",
+      "self_hostable",
+      "plugins",
+      "api_availability"
+    ],
+    "links": {
+      "how_to_use": "https://docs.mattermost.com/pt_BR/",
+      "how_to_host": "https://docs.mattermost.com/install/install-docker.html",
+      "official_website": "https://mattermost.com",
+      "live_demo": "https://community.mattermost.com",
+      "brazil_top_instance": ""
+    },
+    "ranking": {
+      "popularity": 7,
+      "stability": 9,
+      "ease_of_use": 8,
+      "hosting_difficulty": 6,
+      "mobile_support": 8,
+      "developer_community": 7,
+      "moderation_tools": 8,
+      "api_availability": 9
+    },
+    "release_date": "2015-10-01",
+    "death_date": null,
+    "users": 10000000,
+    "instances": 50000
+  },
+  {
+    "name": "Zulip",
+    "url": "https://zulip.com",
+    "description": "Aplicativo de chat em equipe com mensagens organizadas por tópicos dentro de canais, combinando chat em tempo real com estrutura de fórum. Open source e integrado a diversas ferramentas, adequado para comunicação interna de times com alto volume de mensagens.",
+    "logo": "zulip.svg",
+    "equivalent_to": ["Slack", "Microsoft Teams"],
+    "categories": ["professional"],
+    "features": [
+      "private_messaging",
+      "group_chats",
+      "file_sharing",
+      "open_source",
+      "no_ads",
+      "self_hostable",
+      "plugins",
+      "api_availability"
+    ],
+    "links": {
+      "how_to_use": "https://zulip.com/help/",
+      "how_to_host": "https://zulip.readthedocs.io/en/latest/production/install.html",
+      "official_website": "https://zulip.com",
+      "live_demo": "https://chat.zulip.org",
+      "brazil_top_instance": ""
+    },
+    "ranking": {
+      "popularity": 6,
+      "stability": 8,
+      "ease_of_use": 7,
+      "hosting_difficulty": 6,
+      "mobile_support": 8,
+      "developer_community": 8,
+      "moderation_tools": 7,
+      "api_availability": 8
+    },
+    "release_date": "2015-09-21",
+    "death_date": null,
+    "users": 500000,
+    "instances": 1000
+  }
+]
