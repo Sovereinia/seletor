@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+@plugin "daisyui" {
+  themes:
+    light --default,
+    dark --prefersdark;
+}
+
+#main {
+  margin-left: 320px;
+}
