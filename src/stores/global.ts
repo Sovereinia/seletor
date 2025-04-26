@@ -1,4 +1,4 @@
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { defineStore } from 'pinia';
 
 export const useGlobalStore = defineStore(
@@ -6,6 +6,7 @@ export const useGlobalStore = defineStore(
   () => {
     const html = document.querySelector('html');
     const theme = ref('light');
+    const isDark = computed(() => theme.value === 'dark');
 
     const toggleTheme = () => {
       if (!html) return;
@@ -18,7 +19,7 @@ export const useGlobalStore = defineStore(
       html.setAttribute('data-theme', theme.value);
     };
 
-    return { theme, toggleTheme, loadTheme };
+    return { theme, isDark, toggleTheme, loadTheme };
   },
   {
     persist: {
