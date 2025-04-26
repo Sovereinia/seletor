@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <div class="flex flex-col">
-    <div class="divider">{{ title }}</div>
+    <div class="divider text-lg font-medium">{{ title }}</div>
     <slot />
   </div>
 </template>
