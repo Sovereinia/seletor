@@ -7,13 +7,19 @@ assignees: ''
 
 ---
 
-Obrigado por enviar uma solicitação de melhoria ou correção. 
+## 🛠 Solicitação de Melhoria ou Correção
 
-Por favor informe:
-- link onde ocorre:
-- comportamento atual:
+Obrigado por contribuir com a Sovereinia!
 
-- comportamento esperado:
+Por favor, preencha as informações abaixo para que possamos entender melhor o que precisa ser ajustado:
+
+- **Link ou local do problema:**  
+ 
+- **Comportamento atual:**  
+
+- **Comportamento esperado:**  
 
 
-Sovereinia, tornando a internet um lugar mais livre.
+---
+
+Sovereinia — por uma internet mais livre e consciente.
