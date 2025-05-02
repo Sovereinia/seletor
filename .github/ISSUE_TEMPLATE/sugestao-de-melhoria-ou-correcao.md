@@ -1,5 +1,5 @@
 ---
-name: Sugestão de melhoria ou correção
+name: Sugestao de melhoria ou correcao
 about: Template dedicado a melhorias nos websites da Sovereinia
 title: "[SUGESTÃO] ou [CORREÇÃO]"
 labels: ''
