@@ -1,105 +1,105 @@
 const filters = [
   {
     id: 'type',
-    title: 'Tipo',
+    name: 'Tipo',
     items: [
       {
         id: 'social_media',
-        label: 'Rede Social',
+        name: 'Rede Social',
       },
       {
         id: 'message',
-        label: 'Mensagem',
+        name: 'Mensagem',
       },
       {
         id: 'email',
-        label: 'E-mail',
+        name: 'E-mail',
       },
       {
         id: 'browser',
-        label: 'Navegador',
+        name: 'Navegador',
       },
       {
         id: 'communication',
-        label: 'Comunicação',
+        name: 'Comunicação',
       },
     ],
   },
   {
     id: 'features',
-    title: 'Características',
+    name: 'Características',
     items: [
       {
         id: 'descentralized',
-        label: 'Descentralizado',
+        name: 'Descentralizado',
       },
       {
         id: 'criptography',
-        label: 'Criptografia',
+        name: 'Criptografia',
       },
       {
         id: 'privacy',
-        label: 'Privacidade',
+        name: 'Privacidade',
       },
       {
         id: 'open_source',
-        label: 'Código aberto',
+        name: 'Código aberto',
       },
       {
         id: 'self_hosting',
-        label: 'Auto-hospedagem',
+        name: 'Auto-hospedagem',
       },
     ],
   },
   {
     id: 'devices',
-    title: 'Dispositivos',
+    name: 'Dispositivos',
     items: [
       {
         id: 'web',
-        label: 'Web',
+        name: 'Web',
       },
       {
         id: 'android',
-        label: 'Android',
+        name: 'Android',
       },
       {
         id: 'ios',
-        label: 'IOS',
+        name: 'IOS',
       },
       {
         id: 'desktop',
-        label: 'Desktop',
+        name: 'Desktop',
       },
       {
         id: 'linux',
-        label: 'Linux',
+        name: 'Linux',
       },
       {
         id: 'macos',
-        label: 'MacOS',
+        name: 'MacOS',
       },
       {
         id: 'windows',
-        label: 'Windows',
+        name: 'Windows',
       },
     ],
   },
   {
     id: 'difficulty',
-    text: 'Facilidade de uso',
+    name: 'Facilidade de uso',
     items: [
       {
         id: 'beginner',
-        label: 'Iniciante',
+        name: 'Iniciante',
       },
       {
         id: 'intermediate',
-        label: 'Intermediário',
+        name: 'Intermediário',
       },
       {
         id: 'advanced',
-        label: 'Avançado',
+        name: 'Avançado',
       },
     ],
   },
