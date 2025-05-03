@@ -1,0 +1,68 @@
+name: Deploy to VM
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+  DEPLOY_HOST: "sovereinia.org"
+  DEPLOY_USER: "seletor"
+  REPO_PATH: "/var/www/sovereinia.org/seletor"
+  
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:          
+      - name: Setup SSH with Passphrase
+        env:
+          SSH_PASSPHRASE: ${{ secrets.SSH_PASSPHRASE }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          echo "Setting up SSH directory and permissions..."
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+      
+          echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+      
+          echo "Adding deploy host to known_hosts..."
+          ssh-keyscan -H $DEPLOY_HOST >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+      
+          echo "Verifying private key file exists and is not empty..."
+          if [ ! -s ~/.ssh/id_rsa ]; then
+            echo "Private key file is missing or empty"; exit 1;
+          fi
+          echo "Key file OK ✅"
+      
+          echo "Spawning ssh-agent and setting up SSH_ASKPASS..."
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          echo "echo \$SSH_PASSPHRASE" > ~/.ssh_askpass
+          chmod +x ~/.ssh_askpass
+          DISPLAY=none SSH_ASKPASS=~/.ssh_askpass setsid ssh-add ~/.ssh/id_rsa < /dev/null
+
+      - name: Test SSH Connection
+        run: |
+          echo "Testing SSH connection to ensure configuration is correct..."
+          ssh -v -i ~/.ssh/id_rsa $DEPLOY_USER@$DEPLOY_HOST "echo 'SSH connection successful'"
+          
+      - name: Pull changes from git
+        run: |
+          echo "Pulling changes from git" 
+          ssh -i ~/.ssh/id_rsa $DEPLOY_USER@$DEPLOY_HOST  << EOF 
+            mkdir -p $REPO_PATH
+            cd $REPO_PATH
+            git pull origin main
+            npm install
+            npm run build
+            sudo /bin/systemctl stop nginx && sudo /bin/systemctl start nginx
+          EOF
+
+      - name: Clean Up Local SSH Keys
+        if: always()
+        run: |
+          rm -f ~/.ssh/id_rsa ~/.ssh_askpass ~/.ssh/known_hosts
