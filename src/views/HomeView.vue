@@ -1,15 +1,12 @@
-<script setup lang="ts">
-import { ref } from 'vue';
-import { useGlobalStore } from '../stores/global';
-
-const globalStore = useGlobalStore();
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <main class="p-4">
-    <h1 class="text-3xl font-bold mb-4">Seletor CI-CD ok</h1>
-    <button @click="globalStore.toggleTheme" class="btn btn-neutral">
-      Tema: {{ globalStore.theme }}
-    </button>
-  </main>
+  <header>
+    <h1 class="text-3xl font-bold mb-4 text-primary text-center">Aplicativos descentralizados</h1>
+    <p class="text-center text-base-300">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id molestie urna, id molestie
+      mi. Ut non imperdiet ante, eget condimentum felis. Mauris aliquam pretium fringilla. Ut id
+      tortor eget nibh posuere maximus.
+    </p>
+  </header>
 </template>

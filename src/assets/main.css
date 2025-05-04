@@ -4,7 +4,14 @@
     light --default,
     dark --prefersdark;
 }
-
-#main {
-  margin-left: 320px;
+@plugin "daisyui/theme" {
+  name: 'light';
+  --color-primary: #14253e;
+  --color-base-300: #4f4f4f;
+}
+@plugin "daisyui/theme" {
+  name: 'dark';
+  default: true;
+  --color-primary: #e4ebf5;
+  --color-base-300: #cccccc;
 }
