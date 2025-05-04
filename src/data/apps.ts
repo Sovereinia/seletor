@@ -6,7 +6,7 @@ const apps = [
       'Rede social de microblog federada, similar ao Twitter, composta de instâncias independentes interconectadas (Fediverso). Permite postar mensagens curtas, seguir usuários de qualquer servidor e participar de timelines públicas ou privadas.',
     logo: 'mastodon.svg',
     filters: [
-      'public_timelines',
+      'social_media',
       'private_messaging',
       'follower_model',
       'text',

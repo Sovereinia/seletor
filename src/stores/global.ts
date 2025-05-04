@@ -12,6 +12,12 @@ export const useGlobalStore = defineStore(
       if (!html) return;
       theme.value = theme.value === 'light' ? 'dark' : 'light';
       html.setAttribute('data-theme', theme.value);
+
+      if (isDark.value) {
+        html.classList.add('dark');
+      } else {
+        html.classList.remove('dark');
+      }
     };
 
     const loadTheme = () => {
