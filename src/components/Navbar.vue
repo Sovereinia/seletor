@@ -12,7 +12,7 @@ const navOptions = computed(() => [
 </script>
 
 <template>
-  <div class="navbar bg-base-100">
+  <div class="navbar bg-base-100 px-8">
     <div class="flex-1">
       <RouterLink
         to="/"
