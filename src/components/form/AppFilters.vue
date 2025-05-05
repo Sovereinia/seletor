@@ -32,12 +32,12 @@ function clearFilter(filterId: string, event: Event) {
 </script>
 
 <template>
-  <div class="flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-2 justify-center">
     <!-- Filtros principais -->
     <div v-for="filter in filters" :key="filter.id" class="dropdown">
       <button
         tabindex="0"
-        class="btn btn-sm rounded-full border-0 bg-base-200 hover:bg-primary hover:text-base-100 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        class="btn btn-sm rounded-full border-0 bg-primary text-base-100 hover:bg-primary  transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
       >
         <span class="flex items-center gap-1">
           <!-- Exibe o nome do filtro ou o valor selecionado -->
@@ -78,7 +78,7 @@ function clearFilter(filterId: string, event: Event) {
 
     <!-- Botão de redefinir todos -->
     <button 
-      class="btn btn-sm rounded-full border-0 bg-base-200 hover:bg-red-500 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+      class="btn btn-sm rounded-full border-0 bg-primary text-base-100 hover:bg-red-500 hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
       @click="resetFilters"
     >
       Redefinir
