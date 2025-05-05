@@ -10,7 +10,7 @@ import Navbar from './Navbar.vue';
 <template>
   <Navbar />
 
-  <main class="flex flex-col items-center min-h-dvh py-10 px-8 md:px-20">
+  <main class="flex flex-col items-center min-h-dvh py-10 px-8 md:px-20 max-w-7xl mx-auto">
     <slot name="content" />
   </main>
 </template>

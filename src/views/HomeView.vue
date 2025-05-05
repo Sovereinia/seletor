@@ -1,8 +1,30 @@
 <script setup lang="ts">
+import AppSearch from '@/components/form/AppSearch.vue';
 import AppCard from '@/components/AppCard.vue';
+import AppFilters from '@/components/form/AppFilters.vue'; 
 import apps from '../data/apps';
-import { ref, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 
+const searchQuery = ref('');
+const selectedFilters = ref<{ [key: string]: string }>({});
+
+// Sugestões para o autocomplete
+const suggestions = apps.map(app => app.name);
+
+// Função para filtrar apps
+const filteredApps = computed(() => {
+  return apps.filter(app => {
+    const matchesSearch = app.name.toLowerCase().includes(searchQuery.value.toLowerCase());
+    
+    const matchesFilters = Object.entries(selectedFilters.value).every(([filterId, itemId]) => {
+      return app.filters?.[filterId] === itemId;
+    });
+
+    return matchesSearch && matchesFilters;
+  });
+});
+
+// Headers dinâmicos
 const headers = [
   {
     title: 'Descubra o Fediverso',
@@ -53,9 +75,14 @@ onMounted(() => {
     </p>
   </header>
 
-  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <section class="w-full space-y-4">
+    <AppSearch v-model="searchQuery" :suggestions="suggestions" />
+    <AppFilters @update:selectedFilters="selectedFilters = $event" />
+  </section>
+
+  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
     <AppCard
-      v-for="(app, index) in apps"
+      v-for="(app, index) in filteredApps"
       :key="app.name + index"
       :name="app.name"
       :description="app.description"
