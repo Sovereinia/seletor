@@ -1,45 +1,38 @@
-# .
+# Guia de Apps — Sovereinia
 
-This template should help get you started developing with Vue 3 in Vite.
+O **Guia de Apps** é uma ferramenta interativa que ajuda pessoas a conhecer e comparar plataformas descentralizadas e auto-hospedadas. Ele apresenta alternativas a serviços centralizados, destacando como essas tecnologias promovem autonomia, privacidade e soberania digital.
 
-## Recommended IDE Setup
+📍 Acesse em: [https://sovereinia.org/seletor](https://sovereinia.org/seletor)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Objetivo
 
-## Type Support for `.vue` Imports in TS
+Facilitar o entendimento e a adoção de plataformas que não dependem de grandes corporações, explicando:
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- Para que servem
+- Como funcionam
+- Quais são suas vantagens e desafios
+- Como começar a usá-las
 
-## Customize configuration
+## Funcionalidades
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Exibição visual de aplicativos com descrições curtas
+- Separação por categorias como redes sociais, ferramentas de trabalho, protocolos abertos, etc.
+- Busca e filtros planejados para facilitar a navegação (em desenvolvimento)
 
-## Project Setup
+## Tecnologias
 
-```sh
-npm install
-```
+- [Vue 3](https://vuejs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
-### Compile and Hot-Reload for Development
+## Como contribuir
 
-```sh
-npm run dev
-```
+Este projeto é parte da iniciativa Sovereinia. Se quiser ajudar com conteúdo, tradução, código ou revisão, veja nosso artigo [Como Contribuir](https://sovereinia.org/blog/como-contribuir).
 
-### Type-Check, Compile and Minify for Production
+## Licença
 
-```sh
-npm run build
-```
+Distribuído sob a Licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+---
 
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Sovereinia é um espaço onde se aprende a ter soberania sobre os próprios dados. Acesse nosso site: [https://sovereinia.org](https://sovereinia.org)
