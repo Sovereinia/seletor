@@ -6,7 +6,7 @@ import ThemeToggler from './ThemeToggler.vue';
 const navOptions = computed(() => [
   {
     name: 'Blog',
-    link: '/',
+    link: 'https://sovereinia.org',
   },
 ]);
 </script>
