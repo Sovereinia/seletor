@@ -6,7 +6,7 @@ import ThemeToggler from './ThemeToggler.vue';
 const navOptions = computed(() => [
   {
     name: 'Blog',
-    link: 'https://sovereinia.org',
+    link: 'https://sovereinia.org/',
   },
 ]);
 </script>
@@ -15,7 +15,7 @@ const navOptions = computed(() => [
   <div class="navbar bg-base-100 px-8">
     <div class="flex-1">
       <RouterLink
-        to="/"
+        to="https://sovereinia.org/"
         class="hover:opacity-80 transition-opacity text-2xl font-bold text-primary"
       >
         Sovereinia
