@@ -10,7 +10,7 @@ env:
   SSH_AUTH_SOCK: /tmp/ssh_agent.sock
   DEPLOY_HOST: "sovereinia.org"
   DEPLOY_USER: "seletor"
-  REPO_PATH: "/var/www/sovereinia.org/seletor"
+  REPO_PATH: "/var/www/sovereinia/seletor"
   
 jobs:
   deploy:
@@ -54,7 +54,6 @@ jobs:
         run: |
           echo "Pulling changes from git" 
           ssh -i ~/.ssh/id_rsa $DEPLOY_USER@$DEPLOY_HOST  << EOF 
-            mkdir -p $REPO_PATH
             cd $REPO_PATH
             git pull origin main
             npm install
