@@ -1,12 +1,21 @@
 <script setup lang="ts">
 import AppSearch from '@/components/form/AppSearch.vue';
 import AppCard from '@/components/AppCard.vue';
-import AppFilters from '@/components/form/AppFilters.vue'; 
-import apps from '../data/apps';
+import AppFilters from '@/components/form/AppFilters.vue';
+import CategorySelector from '@/components/form/CategorySelector.vue';
+import { apps } from '@/data/apps';
+import { categories } from '@/data/categories';
+import { filtersByCategory } from '@/data/filters';
 import { ref, computed, onMounted } from 'vue';
+import type { CategoryId } from '@/types';
+import { toRaw } from 'vue';
+
 
 const searchQuery = ref('');
+
+const selectedCategory = ref<CategoryId>('all');
 const selectedFilters = ref<{ [key: string]: string }>({});
+const showFilters = ref(false);
 
 // Sugestões para o autocomplete
 const suggestions = apps.map(app => app.name);
@@ -14,15 +23,29 @@ const suggestions = apps.map(app => app.name);
 // Função para filtrar apps
 const filteredApps = computed(() => {
   return apps.filter(app => {
-    const matchesSearch = app.name.toLowerCase().includes(searchQuery.value.toLowerCase());
-    
-    const matchesFilters = Object.entries(selectedFilters.value).every(([filterId, itemId]) => {
-      return app.filters?.[filterId] === itemId;
-    });
+    const isSameCategory =
+      selectedCategory.value === 'all' ||
+      app.category === selectedCategory.value;
 
-    return matchesSearch && matchesFilters;
+    const nameMatchesQuery = app.name
+      .toLowerCase()
+      .includes(searchQuery.value.toLowerCase());
+
+    const filterMatches = Object.entries(selectedFilters.value).every(
+      ([filterId, selectedValuesRaw]) => {
+        const selectedValues = selectedValuesRaw as unknown as string[];
+        const appValues = app.filters?.[filterId];
+        return (
+          Array.isArray(appValues) &&
+          selectedValues.some(value => appValues.includes(value))
+        );
+      }
+    );
+
+    return isSameCategory && nameMatchesQuery && filterMatches;
   });
 });
+
 
 // Headers dinâmicos
 const headers = [
@@ -76,8 +99,23 @@ onMounted(() => {
   </header>
 
   <section class="w-full space-y-4">
-    <AppSearch v-model="searchQuery" :suggestions="suggestions" />
-    <AppFilters @update:selectedFilters="selectedFilters = $event" />
+    <AppSearch
+      v-model="searchQuery"
+      :suggestions="suggestions"
+      @focus="showFilters = true"
+      @click="showFilters = true"
+    />
+    <CategorySelector
+      v-if="showFilters"
+      v-model="selectedCategory"
+      :categories="categories"
+    />
+    <AppFilters
+      v-if="showFilters"
+      :filters="filtersByCategory[selectedCategory]"
+      @update:selectedFilters="selectedFilters = $event"
+    />
+
   </section>
 
   <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">

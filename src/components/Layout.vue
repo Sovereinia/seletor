@@ -1,9 +1,4 @@
 <script setup lang="ts">
-import features from '../data/features';
-import categories from '../data/categories';
-
-import Categories from './Categories.vue';
-import Features from './Features.vue';
 import Navbar from './Navbar.vue';
 </script>
 

@@ -6,7 +6,7 @@ defineProps<{
   description: string;
   bannerSrc: string;
   bannerAlt: string;
-  filters: string[];
+  filters: Record<string, string[]>;
 }>();
 </script>
 
@@ -22,11 +22,17 @@ defineProps<{
       </p>
       <div class="flex flex-wrap gap-2 mt-4">
         <div
-          v-for="filter in filters.slice(0, 6)"
-          :key="filter"
-          class="badge bg-brand border-0 rounded-full text-gray-200"
+          v-for="(values, key) in filters"
+          :key="key"
+          class="flex flex-wrap gap-1"
         >
-          {{ getFilterTitle(filter) }}
+          <div
+            v-for="(value, index) in values"
+            :key="`${key}-${value}`"
+            class="badge bg-brand border-0 rounded-full text-gray-200"
+          >
+            {{ getFilterTitle(value) }}
+          </div>
         </div>
       </div>
     </div>

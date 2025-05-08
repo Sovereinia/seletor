@@ -1,4 +1,4 @@
-import filters from '../data/filters';
+import filters from '../data/old/filters';
 
 export const getFilterTitle = (id: string) => {
   const filterItems = filters.flatMap((filter) => filter.items);

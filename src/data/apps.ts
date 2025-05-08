@@ -1,268 +1,190 @@
-const apps = [
+import type { App } from '../types'; // em apps.ts
+
+export const apps: App[] = [
   {
     name: 'Mastodon',
-    url: 'https://joinmastodon.org',
-    description:
-      'Rede social de microblog federada, similar ao Twitter, composta de instâncias independentes interconectadas (Fediverso). Permite postar mensagens curtas, seguir usuários de qualquer servidor e participar de timelines públicas ou privadas.',
-    logo: 'mastodon.svg',
-    filters: [
-      'social_media',
-      'private_messaging',
-      'follower_model',
-      'text',
-      'photos',
-      'open_source',
-      'no_ads',
-      'no_tracking',
-      'fediverse_compatible',
-      'user_led_moderation',
-    ],
+    description: 'Rede social de microblog federada...',
+    category: 'social',
+    filters: {
+      proposito: ['microblogging'],
+      interoperabilidade: ['fediverso'],
+      funcoes: ['minimalismo'],
+      tipoDeInteracao: ['seguidores'],
+      audiencia: ['publico'],
+      privacidade: ['publico'],
+      externsoes: [],
+      popularidade: ['grande'],
+},
     banner: {
-      src: 'https://placehold.co/600x400',
-      alt: 'Banner',
-    },
-  },
-  {
-    name: 'Pleroma',
-    url: 'https://pleroma.social',
-    description:
-      'Plataforma de microblog federada, compatível com ActivityPub, focada em ser leve e altamente customizável. Semelhante ao Mastodon em funcionalidade, porém requer menos recursos e permite instâncias pessoais pequenas. Possui um fork ativo (Akkoma) com recursos extras.',
-    logo: 'pleroma.svg',
-    filters: [
-      'public_timelines',
-      'private_messaging',
-      'follower_model',
-      'text',
-      'photos',
-      'open_source',
-      'no_ads',
-      'no_tracking',
-      'fediverse_compatible',
-    ],
-    banner: {
-      src: 'https://placehold.co/600x400',
-      alt: 'Banner',
-    },
-  },
-  {
-    name: 'Misskey',
-    url: 'https://misskey-hub.net',
-    description:
-      'Rede social de microblog federada com foco em personalização e reações. Originária do Japão, permite postagens com formatação, múltiplas reações emoji por post e interface altamente configurável com widgets. Possui forks como Calckey/Firefish que adicionam recursos.',
-    logo: 'misskey.svg',
-    filters: [
-      'public_timelines',
-      'private_messaging',
-      'follower_model',
-      'text',
-      'photos',
-      'video',
-      'open_source',
-      'no_ads',
-      'no_tracking',
-      'fediverse_compatible',
-    ],
-    banner: {
-      src: 'https://placehold.co/600x400',
-      alt: 'Banner',
-    },
+      src: 'https://placehold.co/600x400?text=Mastodon',
+      alt: 'Banner do Mastodon'
+    }
   },
   {
     name: 'Diaspora*',
-    url: 'https://diasporafoundation.org',
-    description:
-      'Rede social descentralizada focada em privacidade. Organizada em pods independentes (servidores) conectados. Permite compartilhamento de posts com diferentes grupos de amigos (aspectos). Sem anúncios e sem exigência de nome real, enfatiza controle do usuário sobre dados.',
-    logo: 'diaspora.svg',
-    filters: [
-      'public_timelines',
-      'private_messaging',
-      'friends_model',
-      'text',
-      'photos',
-      'open_source',
-      'no_ads',
-      'no_tracking',
-      'self_hostable',
-    ],
+    description: 'Rede descentralizada com foco em privacidade e controle pessoal.',
+    category: 'social',
+    filters: {
+      proposito: ['social'],
+      interoperabilidade: [],
+      funcoes: ['minimalismo'],
+      tipoDeInteracao: ['amigos'],
+      audiencia: ['privado'],
+      privacidade: ['privado'],
+      externsoes: [],
+      popularidade: ['ativo'],
+},
     banner: {
-      src: 'https://placehold.co/600x400',
-      alt: 'Banner',
-    },
+      src: 'https://placehold.co/600x400?text=Diaspora*',
+      alt: 'Banner do Diaspora*'
+    }
   },
   {
     name: 'Friendica',
-    url: 'https://friendi.ca',
-    description:
-      'Rede social descentralizada que integra diferentes redes. Oferece uma experiência estilo Facebook, incluindo feed de amigos, fóruns/grupos e integração com outras plataformas (StatusNet, Diaspora, etc.). Voltada a usuários avançados, altamente configurável e com foco em compatibilidade.',
-    logo: 'friendica.svg',
-    filters: [
-      'public_timelines',
-      'private_messaging',
-      'friends_model',
-      'forums',
-      'text',
-      'photos',
-      'open_source',
-      'fediverse_compatible',
-      'self_hostable',
-    ],
+    description: 'Plataforma social com ampla integração entre redes e personalização.',
+    category: 'social',
+    filters: {
+      proposito: ['social', 'multi'],
+      interoperabilidade: ['fediverso'],
+      funcoes: ['customizacao'],
+      tipoDeInteracao: ['amigos', 'grupo'],
+      audiencia: ['privado'],
+      privacidade: ['privado'],
+      externsoes: ['alguns'],
+      popularidade: ['ativo'],
+},
     banner: {
-      src: 'https://placehold.co/600x400',
-      alt: 'Banner',
-    },
+      src: 'https://placehold.co/600x400?text=Friendica',
+      alt: 'Banner do Friendica'
+    }
   },
   {
-    name: 'PixelFed',
-    url: 'https://pixelfed.org',
-    description:
-      'Plataforma de compartilhamento de fotos federada, alternativa aberta ao Instagram. Usuários publicam fotos/vídeos curtos com legendas e interagem via curtir e comentar. Permite seguir perfis entre instâncias no fediverso (ActivityPub). Foco em fotografia e artes visuais, sem anúncios.',
-    logo: 'pixelfed.svg',
-    filters: [
-      'public_timelines',
-      'photos',
-      'videos',
-      'open_source',
-      'no_ads',
-      'no_tracking',
-      'fediverse_compatible',
-      'self_hostable',
-      'custom_domains',
-    ],
+    name: 'Pixelfed',
+    description: 'Rede social descentralizada para compartilhamento de fotos.',
+    category: 'social',
+    filters: {
+      proposito: ['foto'],
+      interoperabilidade: ['fediverso'],
+      funcoes: ['minimalismo'],
+      tipoDeInteracao: ['seguidores'],
+      audiencia: ['publico'],
+      privacidade: ['publico'],
+      externsoes: [],
+      popularidade: ['emergente'],
+},
     banner: {
-      src: 'https://placehold.co/600x400',
-      alt: 'Banner',
-    },
+      src: 'https://placehold.co/600x400?text=Pixelfed',
+      alt: 'Banner do Pixelfed'
+    }
   },
   {
     name: 'PeerTube',
-    url: 'https://joinpeertube.org',
-    description:
-      'Plataforma de vídeo descentralizada e federada, alternativa ao YouTube. Permite que cada instância hospede vídeos e se interconecte com outras (ActivityPub), formando uma rede de compartilhamento. Utiliza P2P (WebTorrent) para distribuir o tráfego de vídeos entre os espectadores, aliviando o servidor. Sem anúncios e aberta.',
-    logo: 'peertube.svg',
-    filters: [
-      'video',
-      'livestreaming',
-      'open_source',
-      'no_ads',
-      'no_tracking',
-      'fediverse_compatible',
-      'self_hostable',
-      'plugins',
-      'custom_domains',
-    ],
+    description: 'Plataforma de vídeo descentralizada com instâncias federadas.',
+    category: 'social',
+    filters: {
+      proposito: ['video'],
+      interoperabilidade: ['fediverso'],
+      funcoes: [],
+      tipoDeInteracao: ['seguidores'],
+      audiencia: ['publico'],
+      privacidade: ['publico'],
+      externsoes: [],
+      popularidade: ['emergente'],
+},
     banner: {
-      src: 'https://placehold.co/600x400',
-      alt: 'Banner',
-    },
+      src: 'https://placehold.co/600x400?text=PeerTube',
+      alt: 'Banner do PeerTube'
+    }
   },
   {
     name: 'Lemmy',
-    url: 'https://join-lemmy.org',
-    description:
-      'Plataforma de fórum e agregador de links descentralizado, funcionando de forma similar ao Reddit. Organizado em comunidades temáticas (subs) que podem residir em instâncias distintas mas federam via ActivityPub. Permite postar links ou textos, votar (up/down) e comentar com threads. Ganhou destaque como alternativa ao Reddit com foco em controle comunitário.',
-    logo: 'lemmy.svg',
-    filters: [
-      'forums',
-      'private_messaging',
-      'open_source',
-      'no_ads',
-      'no_tracking',
-      'fediverse_compatible',
-      'self_hostable',
-      'user_led_moderation',
-    ],
+    description: 'Plataforma federada para discussão em comunidades e fóruns.',
+    category: 'social',
+    filters: {
+      proposito: ['forum'],
+      interoperabilidade: ['fediverso'],
+      funcoes: ['forum'],
+      tipoDeInteracao: ['grupo'],
+      audiencia: ['publico'],
+      privacidade: ['publico'],
+      externsoes: [],
+      popularidade: ['emergente'],
+},
     banner: {
-      src: 'https://placehold.co/600x400',
-      alt: 'Banner',
-    },
+      src: 'https://placehold.co/600x400?text=Lemmy',
+      alt: 'Banner do Lemmy'
+    }
   },
   {
-    name: 'Matrix (Element)',
-    url: 'https://element.io',
-    description:
-      'Protocolo aberto de comunicação em tempo real (Matrix) com cliente de referência Element. Permite mensagens instantâneas, em grupo ou privadas, com voz, vídeo e transferência de arquivos, tudo de forma federada entre servidores. Suporta criptografia ponta-a-ponta opcional e integração (bridges) com diversas outras plataformas de chat.',
-    logo: 'element.svg',
-    filters: [
-      'private_messaging',
-      'end_to_end_encryption',
-      'group_chats',
-      'voice_video_calls',
-      'text',
-      'open_source',
-      'no_ads',
-      'no_tracking',
-      'matrix_compatible',
-    ],
+    name: 'Misskey',
+    description: 'Rede social federada com foco em interações ricas e customização.',
+    category: 'social',
+    filters: {
+      proposito: ['microblogging'],
+      interoperabilidade: ['fediverso'],
+      funcoes: ['midia-rica', 'customizacao'],
+      tipoDeInteracao: ['seguidores'],
+      audiencia: ['publico'],
+      privacidade: ['publico'],
+      externsoes: [],
+      popularidade: ['emergente'],
+},
     banner: {
-      src: 'https://placehold.co/600x400',
-      alt: 'Banner',
-    },
+      src: 'https://placehold.co/600x400?text=Misskey',
+      alt: 'Banner do Misskey'
+    }
   },
   {
-    name: 'Rocket.Chat',
-    url: 'https://rocket.chat',
-    description:
-      'Plataforma de comunicação em equipe similar ao Slack, open source e auto-hospedável. Oferece canais de chat, mensagens diretas, threads, videoconferência integrada e diversas integrações (bots, webhooks). Focada em uso corporativo, com forte ênfase em segurança e customização dos dados.',
-    logo: 'rocketchat.svg',
-    filters: [
-      'private_messaging',
-      'group_chats',
-      'voice_video_calls',
-      'file_sharing',
-      'open_source',
-      'no_ads',
-      'self_hostable',
-      'plugins',
-      'api_availability',
-    ],
+    name: 'Pleroma',
+    description: 'Rede social leve e federada compatível com ActivityPub.',
+    category: 'social',
+    filters: {
+      proposito: ['microblogging'],
+      interoperabilidade: ['fediverso'],
+      funcoes: ['customizacao'],
+      tipoDeInteracao: ['seguidores'],
+      audiencia: ['publico'],
+      privacidade: ['publico'],
+      externsoes: [],
+      popularidade: ['ativo'],
+},
     banner: {
-      src: 'https://placehold.co/600x400',
-      alt: 'Banner',
-    },
+      src: 'https://placehold.co/600x400?text=Pleroma',
+      alt: 'Banner do Pleroma'
+    }
   },
   {
-    name: 'Mattermost',
-    url: 'https://mattermost.com',
-    description:
-      'Plataforma de mensagens de equipe semelhante ao Slack, com foco em auto-hospedagem e segurança. Suporta canais organizados, mensagens diretas, threads, integrações DevOps e extensibilidade via plugins. Disponível em edição open source e opções Enterprise com recursos adicionais.',
-    logo: 'mattermost.svg',
-    filters: [
-      'private_messaging',
-      'group_chats',
-      'voice_video_calls',
-      'file_sharing',
-      'open_source',
-      'no_ads',
-      'self_hostable',
-      'plugins',
-      'api_availability',
-    ],
+    name: 'Hubzilla',
+    description: 'Plataforma tudo-em-um com controle de identidade e múltiplos serviços.',
+    category: 'social',
+    filters: {
+      proposito: ['multi', 'social'],
+      interoperabilidade: ['fediverso'],
+      funcoes: ['customizacao'],
+      tipoDeInteracao: ['grupo', 'amigos'],
+      audiencia: ['privado'],
+      privacidade: ['publico', 'privado'],
+      externsoes: ['alguns', 'publico'],
+      popularidade: ['ativo'],
+},
     banner: {
-      src: 'https://placehold.co/600x400',
-      alt: 'Banner',
-    },
+      src: 'https://placehold.co/600x400?text=Hubzilla',
+      alt: 'Banner do Hubzilla'
+    }
   },
   {
-    name: 'Zulip',
-    url: 'https://zulip.com',
-    description:
-      'Aplicativo de chat em equipe com mensagens organizadas por tópicos dentro de canais, combinando chat em tempo real com estrutura de fórum. Open source e integrado a diversas ferramentas, adequado para comunicação interna de times com alto volume de mensagens.',
-    logo: 'zulip.svg',
-    filters: [
-      'private_messaging',
-      'group_chats',
-      'file_sharing',
-      'open_source',
-      'no_ads',
-      'self_hostable',
-      'plugins',
-      'api_availability',
-    ],
-    banner: {
-      src: 'https://placehold.co/600x400',
-      alt: 'Banner',
+    name: 'Matrix',
+    description: 'Protocolo aberto de mensagens...',
+    category: 'messaging',
+    filters: {
+      tipo: ['mensagens'],
+      dispositivos: ['todos'],
+      uso: ['avançado']
     },
+    banner: {
+      src: 'https://...',
+      alt: 'Banner do Matrix'
+    }
   },
+  // ...
 ];
-
-export default apps;
