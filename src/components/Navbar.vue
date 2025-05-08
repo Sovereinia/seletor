@@ -20,7 +20,7 @@ const navOptions = computed(() => [
         Sovereinia
       </a>
       <a
-        href="/"
+        href="https://sovereinia.org/seletor"
         class="hover:opacity-80 transition-opacity text-2xl text-primary"
       >
            Guia de Apps
