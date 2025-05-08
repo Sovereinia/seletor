@@ -1,9 +1,10 @@
-import filters from '../data/old/filters';
+import { filtersByCategory } from '@/data/filters';
 
-export const getFilterTitle = (id: string) => {
-  const filterItems = filters.flatMap((filter) => filter.items);
+export const getFilterTitle = (id: string): string => {
+  const filterItems = filtersByCategory.all.flatMap((filter) => filter.items);
   return filterItems.find((item) => item.id === id)?.name || 'Unknown';
 };
+
 
 export const sliceText = (text: string, length: number) => {
   if (text.length > length) {

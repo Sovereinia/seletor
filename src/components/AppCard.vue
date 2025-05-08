@@ -31,7 +31,7 @@ defineProps<{
             :key="`${key}-${value}`"
             class="badge bg-brand border-0 rounded-full text-gray-200"
           >
-            {{ value }}
+            {{ getFilterTitle(value) }}
           </div>
         </div>
       </div>
