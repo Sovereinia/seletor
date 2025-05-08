@@ -13,7 +13,8 @@ const emit = defineEmits<{
 const activeIndex = ref(-1);
 const showSuggestions = ref(false);
 const selectedTerms = ref<string[]>([]);
-const searchTimeout = ref<NodeJS.Timeout | null>(null);
+const searchTimeout = ref<number | null>(null);
+
 
 // Atualiza o input e aplica debounce
 function onInput(event: Event) {
@@ -95,12 +96,12 @@ watch(() => props.modelValue, (newValue) => {
         @input="onInput"
         @keydown="onKeyDown"
         type="text"
-        placeholder="Digite para buscar..."
+        placeholder="Pesquise por seu app favorito, ex: Instagram, Google Drive..."
         class="input w-full bg-primary text-base-100 placeholder:opacity-80 rounded-full pr-12 focus:outline-none focus:ring-2 focus:ring-accent transition"
         aria-label="Campo de busca para termos"
         aria-autocomplete="list"
         role="combobox"
-        :aria-expanded="showSuggestions.toString()"
+        :aria-expanded="showSuggestions"
         aria-controls="suggestions-list"
       />
 

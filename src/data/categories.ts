@@ -1,13 +1,9 @@
-// TODO - Create interface
-const categories = [
-  {
-    id: 'social_media',
-    label: 'Redes sociais',
-  },
-  {
-    id: 'professional_solutions',
-    label: 'Soluções profissionais',
-  },
-];
+import type { Category } from '@/types';
 
-export default categories;
+export const categories: Category[] = [
+  { id: 'all', name: 'Todos' },
+  { id: 'social', name: 'Redes Sociais' },
+  { id: 'messaging', name: 'Mensageiros' },
+  { id: 'tools', name: 'Ferramentas Profissionais' },
+  { id: 'protocols', name: 'Protocolos Abertos' },
+];
