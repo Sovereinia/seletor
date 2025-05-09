@@ -1,5 +1,6 @@
 import type { App } from '../types'; // em apps.ts
 
+
 export const apps: App[] = [
   {
     name: 'Mastodon',
@@ -16,7 +17,7 @@ export const apps: App[] = [
       popularidade: ['grande'],
 },
     banner: {
-      src: 'https://placehold.co/600x400?text=Mastodon',
+      src: './apps/Logo-Mastodon.png',
       alt: 'Banner do Mastodon'
     }
   },
@@ -35,7 +36,7 @@ export const apps: App[] = [
       popularidade: ['ativo'],
 },
     banner: {
-      src: 'https://placehold.co/600x400?text=Diaspora*',
+      src: './apps/Logo-Diaspora.png',
       alt: 'Banner do Diaspora*'
     }
   },
