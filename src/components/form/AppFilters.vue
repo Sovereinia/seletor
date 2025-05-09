@@ -6,7 +6,7 @@ const props = defineProps<{
   filters: FilterGroup[];
 }>();
 
-const selectedFilters = ref<{ [key: string]: string[] }>({});
+const selectedFilters = ref<Record<string, string[]>>({});
 
 function selectFilter(filterId: string, itemId: string) {
   const current = selectedFilters.value[filterId];
@@ -44,7 +44,9 @@ function clearFilter(filterId: string, event: Event) {
   delete selectedFilters.value[filterId];
 }
 
-const emit = defineEmits(['update:selectedFilters']);
+const emit = defineEmits<{
+  (e: 'update:selectedFilters', value: Record<string, string[]>): void
+}>();
 watch(selectedFilters, value => {
   emit('update:selectedFilters', value);
 }, { deep: true });

@@ -5,7 +5,7 @@ export const apps: App[] = [
   {
     name: 'Mastodon',
     description: 'Rede social de microblog federada...',
-    category: 'social',
+    categories: ['social'],
     filters: {
       proposito: ['microblogging'],
       interoperabilidade: ['fediverso'],
@@ -24,7 +24,7 @@ export const apps: App[] = [
   {
     name: 'Diaspora*',
     description: 'Rede descentralizada com foco em privacidade e controle pessoal.',
-    category: 'social',
+    categories: ['social'],
     filters: {
       proposito: ['social'],
       interoperabilidade: [],
@@ -43,7 +43,7 @@ export const apps: App[] = [
   {
     name: 'Friendica',
     description: 'Plataforma social com ampla integração entre redes e personalização.',
-    category: 'social',
+    categories: ['social'],
     filters: {
       proposito: ['social', 'multi'],
       interoperabilidade: ['fediverso'],
@@ -62,7 +62,7 @@ export const apps: App[] = [
   {
     name: 'Pixelfed',
     description: 'Rede social descentralizada para compartilhamento de fotos.',
-    category: 'social',
+    categories: ['social'],
     filters: {
       proposito: ['foto'],
       interoperabilidade: ['fediverso'],
@@ -81,7 +81,7 @@ export const apps: App[] = [
   {
     name: 'PeerTube',
     description: 'Plataforma de vídeo descentralizada com instâncias federadas.',
-    category: 'social',
+    categories: ['social'],
     filters: {
       proposito: ['video'],
       interoperabilidade: ['fediverso'],
@@ -100,7 +100,7 @@ export const apps: App[] = [
   {
     name: 'Lemmy',
     description: 'Plataforma federada para discussão em comunidades e fóruns.',
-    category: 'social',
+    categories: ['social'],
     filters: {
       proposito: ['forum'],
       interoperabilidade: ['fediverso'],
@@ -119,7 +119,7 @@ export const apps: App[] = [
   {
     name: 'Misskey',
     description: 'Rede social federada com foco em interações ricas e customização.',
-    category: 'social',
+    categories: ['social'],
     filters: {
       proposito: ['microblogging'],
       interoperabilidade: ['fediverso'],
@@ -138,7 +138,7 @@ export const apps: App[] = [
   {
     name: 'Pleroma',
     description: 'Rede social leve e federada compatível com ActivityPub.',
-    category: 'social',
+    categories: ['social'],
     filters: {
       proposito: ['microblogging'],
       interoperabilidade: ['fediverso'],
@@ -157,7 +157,7 @@ export const apps: App[] = [
   {
     name: 'Hubzilla',
     description: 'Plataforma tudo-em-um com controle de identidade e múltiplos serviços.',
-    category: 'social',
+    categories: ['social'],
     filters: {
       proposito: ['multi', 'social'],
       interoperabilidade: ['fediverso'],
@@ -176,7 +176,7 @@ export const apps: App[] = [
   {
     name: 'Matrix',
     description: 'Protocolo aberto de mensagens...',
-    category: 'messaging',
+    categories: ['messaging', 'tools'],
     filters: {
       tipo: ['mensagens'],
       dispositivos: ['todos'],

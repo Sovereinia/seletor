@@ -14,7 +14,7 @@ import { toRaw } from 'vue';
 const searchQuery = ref('');
 
 const selectedCategory = ref<CategoryId>('all');
-const selectedFilters = ref<{ [key: string]: string }>({});
+const selectedFilters = ref<Record<string, string[]>>({});
 const showFilters = ref(false);
 
 // Sugestões para o autocomplete
@@ -25,7 +25,7 @@ const filteredApps = computed(() => {
   return apps.filter(app => {
     const isSameCategory =
       selectedCategory.value === 'all' ||
-      app.category === selectedCategory.value;
+      app.categories.includes(selectedCategory.value);
 
     const nameMatchesQuery = app.name
       .toLowerCase()
