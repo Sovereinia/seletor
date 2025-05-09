@@ -13,7 +13,7 @@ defineProps<{
 <template>
   <article class="card bg-primary w-full shadow-lg rounded-xl overflow-hidden">
     <figure class="p-4 h-64">
-      <img :src="bannerSrc" :alt="bannerAlt" class="rounded-xl" />
+      <img :src="bannerSrc" :alt="bannerAlt" class="rounded-xl w-full h-full object-contain" />
     </figure>
     <div class="card-body bg-secondary rounded-t-xl">
       <h2 class="card-title text-2xl text-base-100">{{ name }}</h2>
