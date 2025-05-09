@@ -12,7 +12,6 @@ const emit = defineEmits<{
 
 const activeIndex = ref(-1);
 const showSuggestions = ref(false);
-const selectedTerms = ref<string[]>([]);
 const searchTimeout = ref<number | null>(null);
 
 
@@ -32,12 +31,8 @@ function onInput(event: Event) {
   }, 300);
 }
 
-// Seleciona uma sugestão
 function selectSuggestion(suggestion: string) {
-  if (!selectedTerms.value.includes(suggestion)) {
-    selectedTerms.value.push(suggestion);
-  }
-  emit('update:modelValue', '');
+  emit('update:modelValue', suggestion);
   activeIndex.value = -1;
   showSuggestions.value = false;
 }
@@ -45,10 +40,13 @@ function selectSuggestion(suggestion: string) {
 // Filtra sugestões
 const filteredSuggestions = computed(() => {
   if (!props.modelValue.trim()) return [];
-  return props.suggestions.filter(s =>
+
+  const uniqueSuggestions = [...new Set(props.suggestions)];
+  return uniqueSuggestions.filter(s =>
     s.toLowerCase().includes(props.modelValue.toLowerCase())
   );
 });
+
 
 // Navegação pelo teclado
 function onKeyDown(event: KeyboardEvent) {
@@ -68,14 +66,6 @@ function onKeyDown(event: KeyboardEvent) {
   } else if (event.key === 'Escape') {
     event.preventDefault();
     showSuggestions.value = false;
-  }
-}
-
-// Remove um termo selecionado
-function removeTerm(term: string) {
-  const index = selectedTerms.value.indexOf(term);
-  if (index !== -1) {
-    selectedTerms.value.splice(index, 1);
   }
 }
 
@@ -132,24 +122,6 @@ watch(() => props.modelValue, (newValue) => {
         {{ suggestion }}
       </li>
     </ul>
-
-    <!-- Termos selecionados -->
-    <div v-if="selectedTerms.length" class="mt-4 flex flex-wrap gap-2">
-      <span
-        v-for="(term, index) in selectedTerms"
-        :key="index"
-        class="bg-base-200 p-2 rounded-full flex items-center gap-2 transition shadow-sm"
-      >
-        {{ term }}
-        <button
-          @click="removeTerm(term)"
-          class="text-sm font-bold text-red-500 hover:text-red-700 transition"
-          aria-label="Remover termo"
-        >
-          &times;
-        </button>
-      </span>
-    </div>
   </div>
 </template>
 

@@ -6,6 +6,7 @@ export const apps: App[] = [
     name: 'Mastodon',
     description: 'Rede social de microblog federada...',
     categories: ['social'],
+    alternatives: ['twitter', 'x.com', 'tweetdeck'],
     filters: {
       proposito: ['microblogging'],
       interoperabilidade: ['fediverso'],
@@ -139,6 +140,7 @@ export const apps: App[] = [
     name: 'Pleroma',
     description: 'Rede social leve e federada compatível com ActivityPub.',
     categories: ['social'],
+    alternatives: ['Mastodon'],
     filters: {
       proposito: ['microblogging'],
       interoperabilidade: ['fediverso'],
@@ -165,7 +167,7 @@ export const apps: App[] = [
       tipoDeInteracao: ['grupo', 'amigos'],
       audiencia: ['privado'],
       privacidade: ['publico', 'privado'],
-      externsoes: ['alguns', 'publico'],
+      externsoes: ['alguns'],
       popularidade: ['ativo'],
 },
     banner: {

@@ -7,6 +7,7 @@ export interface App {
   description: string;
   categories: CategoryId[];
   filters: Record<string, string[]>; // filterId -> itemId
+  alternatives?: string[];
   banner: {
     src: string;
     alt: string;
