@@ -183,7 +183,7 @@ export const apps: App[] = [
       uso: ['avançado']
     },
     banner: {
-      src: 'https://...',
+      src: './apps/Logo-Matrix.svg',
       alt: 'Banner do Matrix'
     }
   },
