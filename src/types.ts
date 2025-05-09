@@ -5,7 +5,7 @@ export type CategoryId = 'all' | 'social' | 'messaging' | 'tools' | 'protocols';
 export interface App {
   name: string;
   description: string;
-  category: CategoryId;
+  categories: CategoryId[];
   filters: Record<string, string[]>; // filterId -> itemId
   banner: {
     src: string;
