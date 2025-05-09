@@ -1,29 +1,47 @@
 @import 'tailwindcss';
+
+/* Importação e definição dos temas */
 @plugin "daisyui" {
   themes:
     light --default,
     dark --prefersdark;
 }
+
 @plugin "daisyui/theme" {
   name: 'light';
   --color-primary: #14253e;
   --color-secondary: #4e5d6e;
+  --color-text: #1f2937; /* Cor de texto para light */
+  --color-muted: #6b7280; /* Texto secundário para light */
+  --base-100: #ffffff; /* Fundo claro */
 }
+
 @plugin "daisyui/theme" {
   name: 'dark';
   default: true;
-  --color-primary: #eeeeee;
-  --color-secondary: #e8e8e8;
+  --color-primary: #1f2937;
+  --color-secondary: #374151;
+  --color-text: #f3f4f6; /* Cor de texto para dark */
+  --color-muted: #9ca3af; /* Texto secundário para dark */
+  --base-100: #111827; /* Fundo escuro */
 }
 
+/* Variáveis globais */
 :root {
   --color-brand: #14253e;
 }
 
+/* Utilitários de marca */
 .bg-brand {
   background-color: var(--color-brand);
 }
 
 .text-brand {
   color: var(--color-brand);
+}
+
+/* Estilos de texto globais */
+body {
+  color: var(--color-text);
+  background-color: var(--base-100);
 }

@@ -31,7 +31,7 @@ function updateCategory(value: string) {
               border-r border-base-content/20 last:border-r-0
               hover:bg-base-content/10"
         :class="{
-          'bg-primary text-base-100': modelValue === category.id,
+          'bg-primary text-gray-200': modelValue === category.id,
           'bg-base-100 text-base-content': modelValue !== category.id
         }"
       >
