@@ -104,7 +104,7 @@ onUnmounted(() => {
 
 
 <template>
-  <div class="overflow-x-auto z-1 pb-2 scroll-container ">
+  <div class="overflow-x-auto z-1 pb-2">
     <div class="flex gap-2 w-max px-2">
       <!-- Filtros -->
       <div
@@ -199,22 +199,7 @@ onUnmounted(() => {
   opacity: 0;
   transform: translateY(-10px);
 }
-/* Scroll horizontal suave e invisível */
-::-webkit-scrollbar {
-  height: 0px; /* Faz a barra desaparecer */
-}
-::-webkit-scrollbar-thumb {
-  background: transparent; /* Nenhum polegar visível */
-}
 
-/* Para Firefox */
-.scroll-container {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE e Edge antigos */
-}
-.scroll-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
-}
 
 
 </style>
