@@ -94,7 +94,7 @@ onMounted(() => {
 
 <template>
   <header>
-    <h1 class="text-3xl font-bold text-primary text-center mb-4">{{ title }}</h1>
+    <h1 class="text-3xl font-bold text-color text-center mb-4">{{ title }}</h1>
     <p class="text-center text-base mb-8">
       {{ subtitleBase }} <span class="italic">{{ subtitleSuffix }}</span>
     </p>

@@ -5,7 +5,7 @@ const globalStore = useGlobalStore();
 </script>
 
 <template>
-  <label class="flex items-center cursor-pointer gap-2">
+  <label class="flex items-center cursor-pointer gap-2 ">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="20"
@@ -26,7 +26,7 @@ const globalStore = useGlobalStore();
       :checked="globalStore.isDark"
       @change="globalStore.toggleTheme"
       type="checkbox"
-      class="toggle toggle-primary"
+      class="toggle toggle-primary toggle-sm"
     />
     <svg
       xmlns="http://www.w3.org/2000/svg"

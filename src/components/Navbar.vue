@@ -11,17 +11,17 @@ const navOptions = computed(() => [
 </script>
 
 <template>
-  <div class="navbar bg-base-100 px-8">
+  <div class="navbar px-8">
     <div class="flex-1">
       <a
         href="https://sovereinia.org/"
-        class="hover:opacity-80 transition-opacity text-2xl font-bold text-primary"
+        class="hover:opacity-80 transition-opacity text-2xl font-bold text-color"
       >
         Sovereinia
       </a>
       <a
         href="https://sovereinia.org/seletor"
-        class="hover:opacity-80 transition-opacity text-2xl text-primary"
+        class="hover:opacity-80 transition-opacity text-2xl text-color"
       >
            Guia de Apps
       </a>

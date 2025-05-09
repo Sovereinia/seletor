@@ -28,7 +28,10 @@ const baseFilters: Omit<FiltersByCategory, 'all'> = {
       id: 'funcoes',
       name: 'Funções',
       items: [
-        { id: 'midia-rica', name: 'Posts enfeitdos, enquetes, reações, emoji, etc' },
+        { id: 'PostsEnfeidos', name: 'Posts enfeitdos'},
+        { id: 'enquetes', name: 'Enquetes' },
+        { id: 'reacoes', name: 'Reações' },
+        { id: 'emoji', name: 'Emoji' },
         { id: 'minimalismo', name: 'Minimalismo' },
         { id: 'customizacao', name: 'Experiência customizável' },
         { id: 'forum', name: 'Modelo de forum e discussõs' },

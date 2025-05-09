@@ -16,8 +16,8 @@ defineProps<{
       <img :src="bannerSrc" :alt="bannerAlt" class="rounded-xl w-full h-full object-contain" />
     </figure>
     <div class="card-body bg-secondary rounded-t-xl">
-      <h2 class="card-title text-2xl text-base-100">{{ name }}</h2>
-      <p class="text-base-100">
+      <h2 class="card-title text-2xl text-gray-200">{{ name }}</h2>
+      <p class="text-gray-200">
         {{ sliceText(description, 220) }}
       </p>
       <div class="flex flex-wrap gap-2 mt-4">
