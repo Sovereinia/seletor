@@ -87,7 +87,7 @@ watch(() => props.modelValue, (newValue) => {
         @keydown="onKeyDown"
         type="text"
         placeholder="Pesquise por seu app favorito, ex: Instagram, Google Drive..."
-        class="input w-full bg-primary text-base-100 placeholder:opacity-80 rounded-full pr-12 focus:outline-none focus:ring-2 focus:ring-accent transition"
+        class="input w-full bg-primary text-base-100 placeholder:opacity-80 rounded-full pr-12 focus:outline-none focus:ring-2 transition"
         aria-label="Campo de busca para termos"
         aria-autocomplete="list"
         role="combobox"
