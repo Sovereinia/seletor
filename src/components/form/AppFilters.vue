@@ -156,7 +156,7 @@ onUnmounted(() => {
 
       <!-- Redefinir todos -->
       <button
-        class="btn btn-sm rounded-full border-0 bg-red-500 text-color hover:bg-red-600 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+        class="btn btn-sm rounded-full border-0 bg-red-500 text-gray-200 hover:bg-red-600 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
         @click="resetFilters"
       >
         Redefinir
