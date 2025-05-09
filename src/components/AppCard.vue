@@ -29,7 +29,7 @@ defineProps<{
           <div
             v-for="(value, index) in values"
             :key="`${key}-${value}`"
-            class="badge bg-brand border-0 rounded-full text-gray-200"
+            class="badge bg-brand border-0 rounded-full text-gray-200 px-4 py-2 text-sm leading-snug break-words"
           >
             {{ getFilterTitle(value) }}
           </div>
