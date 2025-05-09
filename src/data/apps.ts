@@ -55,7 +55,7 @@ export const apps: App[] = [
       popularidade: ['ativo'],
 },
     banner: {
-      src: 'https://placehold.co/600x400?text=Friendica',
+      src: './apps/Logo-Friendica.png',
       alt: 'Banner do Friendica'
     }
   },
@@ -74,7 +74,7 @@ export const apps: App[] = [
       popularidade: ['emergente'],
 },
     banner: {
-      src: 'https://placehold.co/600x400?text=Pixelfed',
+      src: './apps/Logo-Pixelfed.svg',
       alt: 'Banner do Pixelfed'
     }
   },
@@ -93,7 +93,7 @@ export const apps: App[] = [
       popularidade: ['emergente'],
 },
     banner: {
-      src: 'https://placehold.co/600x400?text=PeerTube',
+      src: './apps/Logo-Peertube.png',
       alt: 'Banner do PeerTube'
     }
   },
@@ -112,7 +112,7 @@ export const apps: App[] = [
       popularidade: ['emergente'],
 },
     banner: {
-      src: 'https://placehold.co/600x400?text=Lemmy',
+      src: './apps/Logo-Lemmy.png',
       alt: 'Banner do Lemmy'
     }
   },
@@ -131,7 +131,7 @@ export const apps: App[] = [
       popularidade: ['emergente'],
 },
     banner: {
-      src: 'https://placehold.co/600x400?text=Misskey',
+      src: './apps/Logo-Misskey.png',
       alt: 'Banner do Misskey'
     }
   },
@@ -150,7 +150,7 @@ export const apps: App[] = [
       popularidade: ['ativo'],
 },
     banner: {
-      src: 'https://placehold.co/600x400?text=Pleroma',
+      src: './apps/Logo-Pleroma.png',
       alt: 'Banner do Pleroma'
     }
   },
@@ -169,7 +169,7 @@ export const apps: App[] = [
       popularidade: ['ativo'],
 },
     banner: {
-      src: 'https://placehold.co/600x400?text=Hubzilla',
+      src: './apps/Logo-Hubzilla.svg',
       alt: 'Banner do Hubzilla'
     }
   },
