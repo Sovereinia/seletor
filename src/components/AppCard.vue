@@ -12,7 +12,7 @@ defineProps<{
 
 <template>
   <article class="card bg-primary w-full shadow-lg rounded-xl overflow-hidden">
-    <figure class="p-4">
+    <figure class="p-4 h-64">
       <img :src="bannerSrc" :alt="bannerAlt" class="rounded-xl" />
     </figure>
     <div class="card-body bg-secondary rounded-t-xl">
