@@ -18,7 +18,7 @@ const selectedFilters = ref<Record<string, string[]>>({});
 const showFilters = ref(false);
 
 // Sugestões para o autocomplete
-const suggestions = apps.map(app => app.name);
+const suggestions = apps.flatMap(app => [app.name, ...(app.alternatives || [])]);
 
 // Função para filtrar apps
 const filteredApps = computed(() => {
@@ -27,9 +27,11 @@ const filteredApps = computed(() => {
       selectedCategory.value === 'all' ||
       app.categories.includes(selectedCategory.value);
 
-    const nameMatchesQuery = app.name
-      .toLowerCase()
-      .includes(searchQuery.value.toLowerCase());
+    const query = searchQuery.value.toLowerCase();
+    const nameMatchesQuery =
+      app.name.toLowerCase().includes(query) ||
+      app.alternatives?.some(alt => alt.toLowerCase().includes(query));
+
 
     const filterMatches = Object.entries(selectedFilters.value).every(
       ([filterId, selectedValuesRaw]) => {

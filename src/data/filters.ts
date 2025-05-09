@@ -63,8 +63,9 @@ const baseFilters: Omit<FiltersByCategory, 'all'> = {
       id: 'externsoes',
       name: 'Extensões',
       items: [
-        { id: 'alguns', name: 'Calendário, comparitlhamento de arquivos, grupos' },
-        { id: 'publico', name: 'Identidade portátil' },
+        { id: 'calendario', name: 'Calendário' },
+        { id: 'compartilha-arquivos', name: 'Compartilhamento de arquivos' },
+        { id: 'grupos', name: 'Grupos' },
       ]
     },
     {
