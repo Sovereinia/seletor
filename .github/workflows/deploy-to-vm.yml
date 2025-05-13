@@ -9,8 +9,8 @@ on:
 env:
   SSH_AUTH_SOCK: /tmp/ssh_agent.sock
   DEPLOY_HOST: "sovereinia.org"
-  DEPLOY_USER: "seletor"
-  REPO_PATH: "/var/www/sovereinia/seletor"
+  DEPLOY_USER: "guia"
+  REPO_PATH: "/var/www/sovereinia/guia"
   
 jobs:
   deploy:
