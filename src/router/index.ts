@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 
 const router = createRouter({
-  history: createWebHistory('/seletor/'),
+  history: createWebHistory('/guia/'),
   routes: [
     {
       path: '/',
@@ -10,8 +10,8 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/seletor',
-      name: 'seletor',
+      path: '/guia',
+      name: 'guia',
       component: HomeView,
     },
   ],
