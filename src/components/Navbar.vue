@@ -19,12 +19,6 @@ const navOptions = computed(() => [
       >
         Sovereinia
       </a>
-      <a
-        href="https://sovereinia.org/seletor"
-        class="hover:opacity-80 transition-opacity text-2xl text-color"
-      >
-           Guia de Apps
-      </a>
     </div>
     <ul class="flex gap-4 items-center">
       <li v-for="option in navOptions" :key="option.link">
