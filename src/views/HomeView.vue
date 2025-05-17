@@ -89,7 +89,7 @@ const mostrarModal = ref(false)
 
 onMounted(() => {
   const randomHeader = headers[Math.floor(Math.random() * headers.length)];
-  title.value = randomHeader.title;
+  title.value = "Guia de Apps" //randomHeader.title;
   subtitleBase.value = randomHeader.subtitle;
 });
 
