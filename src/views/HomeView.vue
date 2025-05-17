@@ -4,7 +4,7 @@ import AppCard from '@/components/AppCard.vue';
 import AppFilters from '@/components/form/AppFilters.vue';
 import CategorySelector from '@/components/form/CategorySelector.vue';
 import { apps } from '@/data/apps';
-import  AppModal  from '@/components/Appmodal.vue';
+import  AppModal  from '@/components/AppModal.vue';
 import { categories } from '@/data/categories';
 import { filtersByCategory } from '@/data/filters';
 import { ref, computed, onMounted } from 'vue';
