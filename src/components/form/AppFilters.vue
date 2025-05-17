@@ -71,10 +71,15 @@ function openDropdown(filterId: string, event: MouseEvent) {
     return;
   }
 
-  openFilterId.value = filterId;
+  // Fecha dropdown atual
+  openFilterId.value = null;
+
+  // Abre o novo dropdown após o ciclo de renderização
   nextTick(() => {
+    openFilterId.value = filterId;
     updateDropdownPosition();
   });
+  
 }
 
 function closeDropdown() {
@@ -176,29 +181,22 @@ onUnmounted(() => {
   border-radius: 4px;
 }
 
-/* Nova animação Slide Fade */
-.slide-fade-enter-active {
-  transition: all 0.2s ease-out;
-}
+/*  animação  */
+.slide-fade-enter-active,
 .slide-fade-leave-active {
-  transition: all 0.2s ease-in;
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
-.slide-fade-enter-from {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-.slide-fade-enter-to {
-  opacity: 1;
-  transform: translateY(0);
-}
-.slide-fade-leave-from {
-  opacity: 1;
-  transform: translateY(0);
-}
+.slide-fade-enter-from,
 .slide-fade-leave-to {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: scale(0.95);
 }
+.slide-fade-enter-to,
+.slide-fade-leave-from {
+  opacity: 1;
+  transform: scale(1);
+}
+
 
 
 
