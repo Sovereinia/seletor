@@ -4,6 +4,7 @@ import AppCard from '@/components/AppCard.vue';
 import AppFilters from '@/components/form/AppFilters.vue';
 import CategorySelector from '@/components/form/CategorySelector.vue';
 import { apps } from '@/data/apps';
+import  AppModal  from '@/components/Appmodal.vue';
 import { categories } from '@/data/categories';
 import { filtersByCategory } from '@/data/filters';
 import { ref, computed, onMounted } from 'vue';
@@ -84,12 +85,23 @@ const headers = [
 const title = ref('');
 const subtitleBase = ref('');
 const subtitleSuffix = ref('Pesquise abaixo para saber mais.');
+const mostrarModal = ref(false)
 
 onMounted(() => {
   const randomHeader = headers[Math.floor(Math.random() * headers.length)];
   title.value = randomHeader.title;
   subtitleBase.value = randomHeader.subtitle;
 });
+
+
+const modalData = ref({})
+
+function handleAbrirModal(payload) {
+  mostrarModal.value = true
+  console.log(payload)
+  modalData.value = payload
+  console.log(modalData.value, mostrarModal.value)
+}
 </script>
 
 <template>
@@ -121,7 +133,8 @@ onMounted(() => {
   </section>
 
   <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-    <AppCard
+    <AppCard 
+      @abrir="handleAbrirModal"
       v-for="(app, index) in filteredApps"
       :key="app.name + index"
       :name="app.name"
@@ -130,5 +143,13 @@ onMounted(() => {
       :bannerAlt="app.banner.alt"
       :filters="app.filters"
     />
+    <AppModal :abrir="mostrarModal" @atualizarAbrir="mostrarModal = $event"
+  :name="modalData.name"
+  :description="modalData.description"
+  :bannerSrc="modalData.bannerSrc" 
+  :bannerAlt="modalData.bannerAlt" 
+  :filters="modalData.filters"/>
   </section>
+
+
 </template>

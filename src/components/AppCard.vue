@@ -11,7 +11,7 @@ defineProps<{
 </script>
 
 <template>
-  <article class="card bg-primary w-full shadow-lg rounded-xl overflow-hidden">
+  <article @click="$emit('abrir', { name, description, bannerSrc, bannerAlt, filters: Object.values(filters).flat() })" class="card bg-primary w-full shadow-lg rounded-xl overflow-hidden" >
     <figure class="p-4 h-64">
       <img :src="bannerSrc" :alt="bannerAlt" class="rounded-xl w-full h-full object-contain" />
     </figure>
