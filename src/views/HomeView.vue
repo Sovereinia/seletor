@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import AppSearch from '@/components/form/AppSearch.vue';
 import AppCard from '@/components/AppCard.vue';
-import AppFilters from '@/components/form/AppFilters.vue';
 import CategorySelector from '@/components/form/CategorySelector.vue';
 import { apps } from '@/data/apps';
 import  AppModal  from '@/components/AppModal.vue';
 import { categories } from '@/data/categories';
-import { filtersByCategory } from '@/data/filters';
 import { ref, computed, onMounted } from 'vue';
 import type { CategoryId } from '@/types';
 import { toRaw } from 'vue';
@@ -33,19 +31,7 @@ const filteredApps = computed(() => {
       app.name.toLowerCase().includes(query) ||
       app.alternatives?.some(alt => alt.toLowerCase().includes(query));
 
-
-    const filterMatches = Object.entries(selectedFilters.value).every(
-      ([filterId, selectedValuesRaw]) => {
-        const selectedValues = selectedValuesRaw as unknown as string[];
-        const appValues = app.filters?.[filterId];
-        return (
-          Array.isArray(appValues) &&
-          selectedValues.some(value => appValues.includes(value))
-        );
-      }
-    );
-
-    return isSameCategory && nameMatchesQuery && filterMatches;
+    return isSameCategory && nameMatchesQuery; //&& filterMatches;
   });
 });
 
@@ -107,32 +93,26 @@ function handleAbrirModal(payload) {
 <template>
   <header>
     <h1 class="text-3xl font-bold text-color text-center mb-4">{{ title }}</h1>
-    <p class="text-center text-base mb-8">
+    <p class="text-center text-base mb-5">
       {{ subtitleBase }} <span class="italic">{{ subtitleSuffix }}</span>
     </p>
   </header>
 
-  <section class="w-full space-y-4">
+  <section class="w-full space-y-5">
+    <CategorySelector
+      v-if="showFilters"
+      v-model="selectedCategory"
+      :categories="categories"
+    />
     <AppSearch
       v-model="searchQuery"
       :suggestions="suggestions"
       @focus="showFilters = true"
       @click="showFilters = true"
     />
-    <CategorySelector
-      v-if="showFilters"
-      v-model="selectedCategory"
-      :categories="categories"
-    />
-    <AppFilters
-      v-if="showFilters"
-      :filters="filtersByCategory[selectedCategory]"
-      @update:selectedFilters="selectedFilters = $event"
-    />
-
   </section>
 
-  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-2">
     <AppCard 
       @abrir="handleAbrirModal"
       v-for="(app, index) in filteredApps"
@@ -141,15 +121,12 @@ function handleAbrirModal(payload) {
       :description="app.description"
       :bannerSrc="app.banner.src"
       :bannerAlt="app.banner.alt"
-      :filters="app.filters"
     />
     <AppModal :abrir="mostrarModal" @atualizarAbrir="mostrarModal = $event"
-  :name="modalData.name"
-  :description="modalData.description"
-  :bannerSrc="modalData.bannerSrc" 
-  :bannerAlt="modalData.bannerAlt" 
-  :filters="modalData.filters"/>
+      :name="modalData.name"
+      :description="modalData.description"
+      :bannerSrc="modalData.bannerSrc" 
+      :bannerAlt="modalData.bannerAlt" 
+    />
   </section>
-
-
 </template>
