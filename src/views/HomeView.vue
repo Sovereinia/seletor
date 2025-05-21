@@ -121,6 +121,7 @@ function handleAbrirModal(payload) {
       :description="app.description"
       :bannerSrc="app.banner.src"
       :bannerAlt="app.banner.alt"
+      :alternatives="app.alternatives"
     />
     <AppModal :abrir="mostrarModal" @atualizarAbrir="mostrarModal = $event"
       :name="modalData.name"

@@ -13,7 +13,9 @@
   --color-secondary: #4e5d6e;
   --color-text: #1f2937; /* Cor de texto para light */
   --color-muted: #6b7280; /* Texto secundário para light */
-  --base-100: #ffffff; /* Fundo claro */
+  --color-ring: #2969c8; /* Anel da barra de pesquisa */
+  --color-selected-radio: var(--color-brand); /* Botão relecionado no radiobutton  */
+  --base-100: #f0f0f0; /* Fundo claro */
 }
 
 @plugin "daisyui/theme" {
@@ -23,6 +25,8 @@
   --color-secondary: #374151;
   --color-text: #f3f4f6; /* Cor de texto para dark */
   --color-muted: #9ca3af; /* Texto secundário para dark */
+  --color-ring: #2969c8; /* Anel da barra de pesquisa */
+  --color-selected-radio: #103d80; /* Botão relecionado no radiobutton  */
   --base-100: #111827; /* Fundo escuro */
 }
 
