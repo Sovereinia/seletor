@@ -5,10 +5,9 @@ import CategorySelector from '@/components/form/CategorySelector.vue';
 import { apps } from '@/data/apps';
 import  AppModal  from '@/components/AppModal.vue';
 import { categories } from '@/data/categories';
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import type { CategoryId } from '@/types';
-import { toRaw } from 'vue';
-
+import { desktopHeaders, mobileHeaders } from '@/data/headers';
 
 const searchQuery = ref('');
 
@@ -35,50 +34,34 @@ const filteredApps = computed(() => {
   });
 });
 
-
-// Headers dinâmicos
-const headers = [
-  {
-    title: 'Descubra o Fediverso',
-    subtitle: 'Conheça uma nova forma de usar a internet, onde você tem mais controle sobre o que compartilha, escolhe com quem se conecta e participa de redes que funcionam sem a moderação de uma entidade central.',
-  },
-  {
-    title: 'Apps Descentralizados',
-    subtitle: 'Existem alternativas às plataformas comuns, feitas por comunidades independentes. Elas priorizam a sua liberdade e permitem que você use a internet com mais segurança e menos vigilância de comportamento.',
-  },
-  {
-    title: 'Liberdade Digital',
-    subtitle: 'Use ferramentas criadas para garantir sua autonomia na internet. Com elas, você escolhe como se comunicar, o que compartilhar e com quem interagir, tudo isso sem abrir mão da sua privacidade ou ficar preso a uma só entidade.',
-  },
-  {
-    title: 'Escolha seu App',
-    subtitle: 'Cada app tem uma proposta diferente: alguns focam em redes sociais, outros em vídeos, textos ou troca de mensagens. Descubra qual se encaixa melhor com seu jeito de usar a internet e experimente novas possibilidades.',
-  },
-  {
-    title: 'O que são apps descentralizados?',
-    subtitle: 'São aplicativos que funcionam sem um único dono. Eles usam uma rede de servidores independentes, onde cada pessoa ou grupo pode participar, compartilhar conteúdo e interagir com liberdade e privacidade.',
-  },
-  {
-    title: 'Catálogo de Plataformas',
-    subtitle: 'Navegue por uma seleção de ferramentas criadas com foco na liberdade digital. Veja quais delas permitem mais controle, quais são mais populares, e encontre aquela que mais combina com o que você procura.',
-  },
-  {
-    title: 'Ecossistema Descentralizado',
-    subtitle: 'As plataformas descentralizadas se conectam de formas diferentes, mas compartilham a ideia de uma internet mais aberta, colaborativa e justa. Aqui você entende como elas funcionam e por que isso importa.',
-  },
-];
-
-const title = ref('');
+const title = ref('Guia de Apps');
 const subtitleBase = ref('');
-const subtitleSuffix = ref('Pesquise abaixo para saber mais.');
+const subtitleSuffix = ref('');
 const mostrarModal = ref(false)
 
+const windowWidth = ref(window.innerWidth);
+const updateWindowWidth = () => (windowWidth.value = window.innerWidth);
+
+const searchPlaceholder = computed(() =>
+  windowWidth.value > 600
+    ? 'Procure por um app que você conhece (ex: Instagram, Google Drive...)'
+    : 'WhatsApp, Google Drive...'
+);
+
 onMounted(() => {
-  const randomHeader = headers[Math.floor(Math.random() * headers.length)];
-  title.value = "Guia de Apps" //randomHeader.title;
-  subtitleBase.value = randomHeader.subtitle;
+  window.addEventListener('resize', updateWindowWidth);
+
+  const isMobile = window.innerWidth <= 600;
+  const source = isMobile ? mobileHeaders : desktopHeaders;
+  const random = source[Math.floor(Math.random() * source.length)];
+
+  subtitleBase.value = random.subtitle;
+  subtitleSuffix.value = isMobile ? '' : 'Conheça aplicativos alternativos.';
 });
 
+onUnmounted(() => {
+  window.removeEventListener('resize', updateWindowWidth);
+});
 
 const modalData = ref({})
 
@@ -92,9 +75,9 @@ function handleAbrirModal(payload) {
 
 <template>
   <header>
-    <h1 class="text-3xl font-bold text-color text-center mb-4">{{ title }}</h1>
+    <h1 class="text-3xl font-bold text-color text-center mb-12">{{ title }}</h1>
     <p class="text-center text-base mb-5">
-      {{ subtitleBase }} <span class="italic">{{ subtitleSuffix }}</span>
+      {{ subtitleBase }} <span class="font-bold">{{ subtitleSuffix }}</span>
     </p>
   </header>
 
@@ -107,6 +90,7 @@ function handleAbrirModal(payload) {
     <AppSearch
       v-model="searchQuery"
       :suggestions="suggestions"
+      :placeholder="searchPlaceholder"
       @focus="showFilters = true"
       @click="showFilters = true"
     />

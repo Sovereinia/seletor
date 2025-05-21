@@ -4,7 +4,8 @@ import { defineProps, defineEmits, computed, ref, watch } from 'vue';
 // Props e emits
 const props = defineProps<{
   modelValue: string,
-  suggestions: string[]
+  suggestions: string[],
+  placeholder?: string
 }>();
 const emit = defineEmits<{
   (e: 'update:modelValue', value: string): void
@@ -86,7 +87,7 @@ watch(() => props.modelValue, (newValue) => {
         @input="onInput"
         @keydown="onKeyDown"
         type="text"
-        placeholder="Pesquise por seu app favorito, ex: Instagram, Google Drive..."
+        :placeholder="props.placeholder || 'Pesquise por seu app favorito, ex: Instagram, Google Drive...'"
         class="input focus:border-transparent 
           pl-11 w-full bg-base-100 text-base-content 
           placeholder:opacity-80 rounded-full pr-12 
