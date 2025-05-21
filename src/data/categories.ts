@@ -1,9 +1,9 @@
 import type { Category } from '@/types';
 
 export const categories: Category[] = [
-  { id: 'all', name: 'Todos' },
-  { id: 'social', name: 'Redes Sociais' },
-  { id: 'messaging', name: 'Mensageiros' },
-  { id: 'tools', name: 'Ferramentas Profissionais' },
-  { id: 'protocols', name: 'Protocolos Abertos' },
+  { id: 'all', name: 'Todos', short: 'Todos', icon: '🌐' },
+  { id: 'social', name: 'Redes Sociais', short: 'Sociais', icon: '👥' },
+  { id: 'messaging', name: 'Mensageiros', short: 'Mensageiros', icon: '💬' },
+  { id: 'tools', name: 'Ferramentas Profissionais', short: 'Profissionais', icon: '💼' },
+  { id: 'protocols', name: 'Protocolos Abertos', short: 'Protocolos', icon: '📡' },
 ];
