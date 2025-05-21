@@ -6,7 +6,7 @@ export const apps: App[] = [
     name: 'Mastodon',
     description: 'Rede social de microblog federada...',
     categories: ['social'],
-    alternatives: ['twitter', 'x.com', 'tweetdeck'],
+    alternatives: ['Twitter', 'x.com', 'Tweetdeck'],
     banner: {
       src: './apps/Logo-Mastodon.png',
       alt: 'Banner do Mastodon'
@@ -70,7 +70,7 @@ export const apps: App[] = [
     name: 'Pleroma',
     description: 'Rede social leve e federada compatível com ActivityPub.',
     categories: ['social'],
-    alternatives: ['Mastodon'],
+    alternatives: ['Twitter', 'x.com', 'Tweetdeck'],
     banner: {
       src: './apps/Logo-Pleroma.png',
       alt: 'Banner do Pleroma'
