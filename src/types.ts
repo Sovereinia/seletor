@@ -34,3 +34,7 @@ export interface Category {
   short: string;
   icon: string;
 }
+
+export type HeaderEntry = {
+  subtitle: string;
+};
