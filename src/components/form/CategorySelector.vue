@@ -40,7 +40,7 @@ const getCategoryLabel = (category: Category) => {
 
 <template>
   <div class="flex justify-center">
-    <div class="inline-flex rounded-full overflow-hidden border border-base-content/30">
+    <div v-if="windowWidth > 430" class="inline-flex rounded-full overflow-hidden border border-base-content/30">
      <label
         v-for="category in categories"
         :key="category.id"
@@ -64,6 +64,19 @@ const getCategoryLabel = (category: Category) => {
         />
         {{ getCategoryLabel(category) }}
       </label>
+    </div>
+    <div v-else class="flex flex-wrap justify-center gap-2">
+      <button
+        v-for="category in categories"
+        :key="category.id"
+        class="px-3 py-1 text-sm rounded-full border transition-colors duration-200 whitespace-nowrap"
+        :class="modelValue === category.id
+          ? 'bg-[var(--color-selected-radio)] text-base-100 border-transparent font-semibold'
+          : 'bg-base-100 text-base-content border-base-content/30 hover:bg-base-content/10'"
+        @click="updateCategory(category.id)"
+      >
+        {{ category.short }}
+      </button>
     </div>
   </div>
 </template>
