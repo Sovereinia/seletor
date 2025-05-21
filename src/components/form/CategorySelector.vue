@@ -71,7 +71,7 @@ const getCategoryLabel = (category: Category) => {
         :key="category.id"
         class="px-3 py-1 text-sm rounded-full border transition-colors duration-200 whitespace-nowrap"
         :class="modelValue === category.id
-          ? 'bg-[var(--color-selected-radio)] text-base-100 border-transparent font-semibold'
+          ? 'bg-[var(--color-selected-radio)] text-gray-100 border-transparent'
           : 'bg-base-100 text-base-content border-base-content/30 hover:bg-base-content/10'"
         @click="updateCategory(category.id)"
       >
