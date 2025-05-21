@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getFilterTitle, sliceText } from '../utils/global';
+import { sliceText } from '../utils/global';
 
 defineProps<{
   name: string;
@@ -11,11 +11,12 @@ defineProps<{
 </script>
 
 <template>
-  <article @click="$emit('abrir', { name, description, bannerSrc, bannerAlt, filters: Object.values(filters).flat() })" class="card bg-primary w-full shadow-lg rounded-xl overflow-hidden" >
-    <figure class="p-4 h-64">
+  <article @click="$emit('abrir', {name, description, bannerSrc, bannerAlt})"
+  class="card bg-primary w-full shadow-lg rounded-3xl overflow-hidden" >
+    <figure class="p-10 h-64">
       <img :src="bannerSrc" :alt="bannerAlt" class="rounded-xl w-full h-full object-contain" />
     </figure>
-    <div class="card-body bg-secondary rounded-t-xl">
+    <div class="card-body bg-secondary rounded-t-x1">
       <h2 class="card-title text-2xl text-gray-200">{{ name }}</h2>
       <p class="text-gray-200">
         {{ sliceText(description, 220) }}
@@ -31,7 +32,6 @@ defineProps<{
             :key="`${key}-${value}`"
             class="badge bg-brand border-0 rounded-full text-gray-200 px-4 py-2 text-sm leading-snug break-words"
           >
-            {{ getFilterTitle(value) }}
           </div>
         </div>
       </div>

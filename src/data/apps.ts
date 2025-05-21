@@ -7,16 +7,6 @@ export const apps: App[] = [
     description: 'Rede social de microblog federada...',
     categories: ['social'],
     alternatives: ['twitter', 'x.com', 'tweetdeck'],
-    filters: {
-      proposito: ['microblogging'],
-      interoperabilidade: ['fediverso'],
-      funcoes: ['minimalismo'],
-      tipoDeInteracao: ['seguidores'],
-      audiencia: ['publico'],
-      privacidade: ['publico'],
-      externsoes: [],
-      popularidade: ['grande'],
-},
     banner: {
       src: './apps/Logo-Mastodon.png',
       alt: 'Banner do Mastodon'
@@ -26,16 +16,6 @@ export const apps: App[] = [
     name: 'Diaspora*',
     description: 'Rede descentralizada com foco em privacidade e controle pessoal.',
     categories: ['social'],
-    filters: {
-      proposito: ['social'],
-      interoperabilidade: [],
-      funcoes: ['minimalismo'],
-      tipoDeInteracao: ['amigos'],
-      audiencia: ['privado'],
-      privacidade: ['privado'],
-      externsoes: [],
-      popularidade: ['ativo'],
-},
     banner: {
       src: './apps/Logo-Diaspora.png',
       alt: 'Banner do Diaspora*'
@@ -45,16 +25,6 @@ export const apps: App[] = [
     name: 'Friendica',
     description: 'Plataforma social com ampla integração entre redes e personalização.',
     categories: ['social'],
-    filters: {
-      proposito: ['social', 'multi'],
-      interoperabilidade: ['fediverso'],
-      funcoes: ['customizacao'],
-      tipoDeInteracao: ['amigos', 'grupo'],
-      audiencia: ['privado'],
-      privacidade: ['privado'],
-      externsoes: ['alguns'],
-      popularidade: ['ativo'],
-},
     banner: {
       src: './apps/Logo-Friendica.png',
       alt: 'Banner do Friendica'
@@ -64,16 +34,6 @@ export const apps: App[] = [
     name: 'Pixelfed',
     description: 'Rede social descentralizada para compartilhamento de fotos.',
     categories: ['social'],
-    filters: {
-      proposito: ['foto'],
-      interoperabilidade: ['fediverso'],
-      funcoes: ['minimalismo'],
-      tipoDeInteracao: ['seguidores'],
-      audiencia: ['publico'],
-      privacidade: ['publico'],
-      externsoes: [],
-      popularidade: ['emergente'],
-},
     banner: {
       src: './apps/Logo-Pixelfed.svg',
       alt: 'Banner do Pixelfed'
@@ -83,16 +43,6 @@ export const apps: App[] = [
     name: 'PeerTube',
     description: 'Plataforma de vídeo descentralizada com instâncias federadas.',
     categories: ['social'],
-    filters: {
-      proposito: ['video'],
-      interoperabilidade: ['fediverso'],
-      funcoes: [],
-      tipoDeInteracao: ['seguidores'],
-      audiencia: ['publico'],
-      privacidade: ['publico'],
-      externsoes: [],
-      popularidade: ['emergente'],
-},
     banner: {
       src: './apps/Logo-Peertube.png',
       alt: 'Banner do PeerTube'
@@ -102,16 +52,6 @@ export const apps: App[] = [
     name: 'Lemmy',
     description: 'Plataforma federada para discussão em comunidades e fóruns.',
     categories: ['social'],
-    filters: {
-      proposito: ['forum'],
-      interoperabilidade: ['fediverso'],
-      funcoes: ['forum'],
-      tipoDeInteracao: ['grupo'],
-      audiencia: ['publico'],
-      privacidade: ['publico'],
-      externsoes: [],
-      popularidade: ['emergente'],
-},
     banner: {
       src: './apps/Logo-Lemmy.png',
       alt: 'Banner do Lemmy'
@@ -121,16 +61,6 @@ export const apps: App[] = [
     name: 'Misskey',
     description: 'Rede social federada com foco em interações ricas e customização.',
     categories: ['social'],
-    filters: {
-      proposito: ['microblogging'],
-      interoperabilidade: ['fediverso'],
-      funcoes: ['midia-rica', 'customizacao'],
-      tipoDeInteracao: ['seguidores'],
-      audiencia: ['publico'],
-      privacidade: ['publico'],
-      externsoes: [],
-      popularidade: ['emergente'],
-},
     banner: {
       src: './apps/Logo-Misskey.png',
       alt: 'Banner do Misskey'
@@ -141,16 +71,6 @@ export const apps: App[] = [
     description: 'Rede social leve e federada compatível com ActivityPub.',
     categories: ['social'],
     alternatives: ['Mastodon'],
-    filters: {
-      proposito: ['microblogging'],
-      interoperabilidade: ['fediverso'],
-      funcoes: ['customizacao'],
-      tipoDeInteracao: ['seguidores'],
-      audiencia: ['publico'],
-      privacidade: ['publico'],
-      externsoes: [],
-      popularidade: ['ativo'],
-},
     banner: {
       src: './apps/Logo-Pleroma.png',
       alt: 'Banner do Pleroma'
@@ -160,16 +80,6 @@ export const apps: App[] = [
     name: 'Hubzilla',
     description: 'Plataforma tudo-em-um com controle de identidade e múltiplos serviços.',
     categories: ['social'],
-    filters: {
-      proposito: ['multi', 'social'],
-      interoperabilidade: ['fediverso'],
-      funcoes: ['customizacao'],
-      tipoDeInteracao: ['grupo', 'amigos'],
-      audiencia: ['privado'],
-      privacidade: ['publico', 'privado'],
-      externsoes: ['alguns'],
-      popularidade: ['ativo'],
-},
     banner: {
       src: './apps/Logo-Hubzilla.svg',
       alt: 'Banner do Hubzilla'
@@ -179,11 +89,6 @@ export const apps: App[] = [
     name: 'Matrix',
     description: 'Protocolo aberto de mensagens...',
     categories: ['messaging', 'tools'],
-    filters: {
-      tipo: ['mensagens'],
-      dispositivos: ['todos'],
-      uso: ['avançado']
-    },
     banner: {
       src: './apps/Logo-Matrix.svg',
       alt: 'Banner do Matrix'
