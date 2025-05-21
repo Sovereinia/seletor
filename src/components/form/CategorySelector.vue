@@ -28,12 +28,12 @@ function updateCategory(value: string) {
         v-for="category in categories"
         :key="category.id"
         class="px-4 py-2 font-medium text-sm cursor-pointer transition-colors duration-200
-              border-r border-base-content/20 last:border-r-0
-              hover:bg-base-content/10"
-        :class="{
-          'bg-primary text-gray-200': modelValue === category.id,
-          'bg-base-100 text-base-content': modelValue !== category.id
-        }"
+              border-r border-base-content/20 last:border-r-0"
+        :class="[
+          modelValue === category.id
+            ? 'bg-[var(--color-selected-radio)] text-gray-100'
+            : 'bg-base-100 text-base-content hover:bg-base-content/10'
+        ]"
       >
         <input
           type="radio"

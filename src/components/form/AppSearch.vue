@@ -87,7 +87,12 @@ watch(() => props.modelValue, (newValue) => {
         @keydown="onKeyDown"
         type="text"
         placeholder="Pesquise por seu app favorito, ex: Instagram, Google Drive..."
-        class="input w-full bg-primary text-gray-200 placeholder:opacity-80 rounded-full pr-12 focus:outline-none focus:ring-2 transition"
+        class="input focus:border-transparent 
+          pl-11 w-full bg-base-100 text-base-content 
+          placeholder:opacity-80 rounded-full pr-12 
+          focus:outline-none focus:ring-1 
+          focus:shadow-md
+          focus:ring-[var(--color-ring)]"
         aria-label="Campo de busca para termos"
         aria-autocomplete="list"
         role="combobox"
@@ -95,7 +100,7 @@ watch(() => props.modelValue, (newValue) => {
         aria-controls="suggestions-list"
       />
 
-      <div class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-200 opacity-70 pointer-events-none">
+      <div class="absolute left-3 top-1/2 pointer-events-none z-10 transform -translate-y-1/2 text-base-content opacity-70">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M7.5 10a7.5 7.5 0 1015 0 7.5 7.5 0 00-15 0z" />
         </svg>

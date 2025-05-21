@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { sliceText } from '../utils/global';
+import { alternativeIcons } from '@/data/alternatives';
 
 defineProps<{
   name: string;
   description: string;
   bannerSrc: string;
   bannerAlt: string;
-  filters: Record<string, string[]>;
+  alternatives?: string[];
 }>();
 </script>
 
@@ -21,20 +22,20 @@ defineProps<{
       <p class="text-gray-200">
         {{ sliceText(description, 220) }}
       </p>
-      <div class="flex flex-wrap gap-2 mt-4">
-        <div
-          v-for="(values, key) in filters"
-          :key="key"
-          class="flex flex-wrap gap-1"
-        >
-          <div
-            v-for="(value, index) in values"
-            :key="`${key}-${value}`"
-            class="badge bg-brand border-0 rounded-full text-gray-200 px-4 py-2 text-sm leading-snug break-words"
-          >
-          </div>
-        </div>
+      <div v-if="alternatives?.length" class="mt-4">
+      
+      <p class="text-gray-400 text-sm mb-2">Alternativas:</p>
+      <div class="flex gap-2">
+        <img
+          v-for="(alt, index) in alternatives.slice(0, 3)"
+          :key="alt"
+          :src="alternativeIcons[alt] || '/alternatives/default.png'"
+          :alt="alt"
+          class="w-8 h-8 rounded-full object-contain border border-gray-500"
+          :title="alt"
+        />
       </div>
+    </div>
     </div>
   </article>
 </template>
