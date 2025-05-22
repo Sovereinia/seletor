@@ -40,14 +40,26 @@ function selectSuggestion(suggestion: string) {
 
 // Filtra sugestões
 const filteredSuggestions = computed(() => {
-  if (!props.modelValue.trim()) return [];
+  const query = props.modelValue.trim().toLowerCase();
+  if (!query) return [];
 
   const uniqueSuggestions = [...new Set(props.suggestions)];
-  return uniqueSuggestions.filter(s =>
-    s.toLowerCase().includes(props.modelValue.toLowerCase())
-  );
-});
 
+  return uniqueSuggestions
+    .filter(s => s.toLowerCase().includes(query))
+    .sort((a, b) => {
+      const aLower = a.toLowerCase();
+      const bLower = b.toLowerCase();
+
+      const aStarts = aLower.startsWith(query);
+      const bStarts = bLower.startsWith(query);
+
+      if (aStarts && !bStarts) return -1;
+      if (!aStarts && bStarts) return 1;
+
+      return aLower.localeCompare(bLower); // fallback alfabético
+    });
+});
 
 // Navegação pelo teclado
 function onKeyDown(event: KeyboardEvent) {
@@ -112,7 +124,9 @@ watch(() => props.modelValue, (newValue) => {
     <ul
       v-if="filteredSuggestions.length && showSuggestions"
       id="suggestions-list"
-      class="absolute bg-base-100 w-full shadow-lg rounded-md mt-2 z-10 max-h-60 overflow-auto transition-all duration-200"
+      class="absolute mt-2 z-10 max-h-60 overflow-auto rounded-xl border border-base-content/20 bg-base-100 shadow-xl ring-1 ring-base-content/10 transition-all duration-200
+        w-fit min-w-[200px] max-w-full
+        divide-y divide-base-content/10"
       role="listbox"
       aria-live="polite"
     >
@@ -120,14 +134,18 @@ watch(() => props.modelValue, (newValue) => {
         v-for="(suggestion, index) in filteredSuggestions"
         :key="index"
         @click="selectSuggestion(suggestion)"
-        class="p-2 cursor-pointer hover:bg-base-200 transition-colors"
-        :class="{ 'bg-base-300': index === activeIndex }"
+        class="px-4 py-2 text-sm cursor-pointer transition-colors duration-150 whitespace-nowrap"
+        :class="{
+          'bg-base-200': index === activeIndex,
+          'hover:bg-base-100/70': index !== activeIndex
+        }"
         role="option"
         :aria-selected="index === activeIndex"
       >
         {{ suggestion }}
       </li>
     </ul>
+
   </div>
 </template>
 
