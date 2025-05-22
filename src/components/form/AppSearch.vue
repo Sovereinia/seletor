@@ -124,9 +124,8 @@ watch(() => props.modelValue, (newValue) => {
     <ul
       v-if="filteredSuggestions.length && showSuggestions"
       id="suggestions-list"
-      class="absolute mt-2 z-10 max-h-60 overflow-auto rounded-xl border border-base-content/20 bg-base-100 shadow-xl ring-1 ring-base-content/10 transition-all duration-200
-        w-fit min-w-[200px] max-w-full
-        divide-y divide-base-content/10"
+      class="absolute mt-2 z-10 max-h-60 overflow-auto rounded-xl border border-base-content/20 bg-base-100 shadow-xl ring-1 ring-base-content/10
+        transition-all duration-200 w-auto max-w-full divide-y divide-base-content/10"
       role="listbox"
       aria-live="polite"
     >
