@@ -70,6 +70,7 @@ function handleAbrirModal(payload) {
   console.log(payload)
   modalData.value = payload
   console.log(modalData.value, mostrarModal.value)
+  console.log(modalData.value.alternatives)
 }
 </script>
 
@@ -112,6 +113,8 @@ function handleAbrirModal(payload) {
       :description="modalData.description"
       :bannerSrc="modalData.bannerSrc" 
       :bannerAlt="modalData.bannerAlt" 
+      :filters="modalData.filters"
+      :alternatives="modalData.alternatives"
     />
   </section>
 </template>

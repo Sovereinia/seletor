@@ -1,7 +1,8 @@
 <template>
   <div>
-    <dialog ref="myModal" class="modal" @cancel="closeModal">
-      <div class="modal-box">
+    <!-- ✅ Atualizado aqui: @cancel → @click.self -->
+    <dialog ref="myModal" class="modal" @click.self="closeModal">
+      <div class="modal-box p-0 md:max-w-4xl">
         <form method="dialog">
           <button
             type="button"
@@ -12,32 +13,63 @@
           </button>
         </form>
 
-        <!-- Banner -->
-        <img :src="bannerSrc" :alt="bannerAlt" class="w-full rounded mb-4" />
+        <!-- Layout responsivo -->
+        <div class="flex flex-col md:flex-row">
+          <!-- Banner -->
+          <img
+            :src="bannerSrc"
+            :alt="bannerAlt"
+            class=" md:w-1/3 p-10 h-auto object-cover rounded-l md:rounded-l-lg md:rounded-r-none rounded-b md:rounded-b-none"
+          />
 
-        <!-- Nome -->
-        <h3 class="text-lg font-bold mb-2">{{ name }}</h3>
+          <!-- Conteúdo -->
+          <div class="p-6 md:w-1/2 flex flex-col">
+            <h3 class="text-xl font-bold mb-2">{{ name }}</h3>
+            <p class="mb-4 text-base">{{ description }}</p>
 
-        <!-- Descrição -->
-        <p class="mb-4">{{ description }}</p>
+            <!-- Alternativas -->
+            <div v-if="alternatives?.length" class="mt-4">
+              <h4 class="text-lg font-semibold mb-2">Alternativas:</h4>
+              <div class="flex gap-2">
+                <img
+                  v-for="(alt, index) in alternatives.slice(0, 3)"
+                  :key="alt"
+                  :src="getAlternativeIcon(alt)"
+                  :alt="alt"
+                  class="w-12 h-12 rounded-full object-contain border border-gray-500"
+                  :title="alt"
+                />
+              </div>
+            </div>
 
-        <!-- Filters -->
-        <div v-if="filters.length" class="flex gap-2 flex-wrap">
-          <span
-            v-for="(filter, index) in filters"
-            :key="index"
-            class="badge badge-primary"
-          >
-            {{ filter }}
-          </span>
+            <!-- Filters -->
+            <div v-if="filters.length" class="flex gap-2 flex-wrap mt-auto">
+              <span
+                v-for="(filter, index) in filters"
+                :key="index"
+                class="badge badge-primary"
+              >
+                {{ filter }}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- ❌ REMOVIDO: método antigo que causava bug de estado -->
+      <!--
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+      -->
     </dialog>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, defineProps, watch } from 'vue'
+import { getAlternativeIcon } from '@/utils/global.ts';
+
 const emit = defineEmits(['atualizarAbrir'])
 
 const props = withDefaults(defineProps<{
@@ -47,27 +79,29 @@ const props = withDefaults(defineProps<{
   bannerSrc?: string
   bannerAlt?: string
   filters?: string[]
+  alternatives?: string[]
 }>(), {
   name: '',
   description: '',
   bannerSrc: '',
   bannerAlt: '',
-  filters: () => []
+  filters: () => [],
+  alternatives: () => []
 })
 
 const myModal = ref<HTMLDialogElement | null>(null)
 
 watch(
-    () => props.abrir,
-    (newValue) => {
-        if (newValue) {
-        console.log('Modal aberto aqui oh!')
-        openModal()
-        } else {
-            console.log('Modal fechado ou não aberto')
-        closeModal()
-        }
+  () => props.abrir,
+  (newValue) => {
+    if (newValue) {
+      console.log('Modal aberto aqui oh!')
+      openModal()
+    } else {
+      console.log('Modal fechado ou não aberto')
+      closeModal()
     }
+  }
 )
 
 function openModal() {
@@ -80,8 +114,4 @@ function closeModal() {
   emit('atualizarAbrir', false)
   console.log('Modal fechado')
 }
-
-
-
-
 </script>
