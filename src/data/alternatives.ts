@@ -1,6 +1,7 @@
+
+
 export const alternativeIcons: Record<string, string> = {
-  Twitter: '/alternatives/twitter.png',
-  'x.com': '/alternatives/xcom.png',
-  Tweetdeck: '/alternatives/tweetdeck.png',
-  // adicione outros conforme necessário
+  "Twitter": '/alternatives/twitter.png',
+  'X.com': '/alternatives/xcom.png',
+  // tamanho 128x128 px
 };

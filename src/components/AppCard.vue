@@ -9,29 +9,42 @@ defineProps<{
   bannerAlt: string;
   alternatives?: string[];
 }>();
+
+const base = import.meta.env.BASE_URL;
+
+const getAlternativeIcon = (name: string): string => {
+  const key = name.trim().toLowerCase();
+
+  const iconMap: Record<string, string> = {
+    twitter: 'alternatives/twitter.png',
+    'x.com': 'alternatives/xcom.png',
+  };
+
+  return iconMap[key] ? `${base}${iconMap[key]}` : `${base}alternatives/default.png`;
+};
+
 </script>
 
 <template>
   <article @click="$emit('abrir', {name, description, bannerSrc, bannerAlt})"
-  class="card bg-primary w-full shadow-lg rounded-3xl overflow-hidden" >
+  class="card bg-[var(--color-card-primary)] w-full shadow-lg rounded-3xl overflow-hidden" >
     <figure class="p-10 h-64">
       <img :src="bannerSrc" :alt="bannerAlt" class="rounded-xl w-full h-full object-contain" />
     </figure>
-    <div class="card-body bg-secondary rounded-t-x1">
+    <div class="card-body bg-[var(--color-card-secondary)] rounded-t-x1">
       <h2 class="card-title text-2xl text-gray-200">{{ name }}</h2>
       <p class="text-gray-200">
         {{ sliceText(description, 220) }}
       </p>
       <div v-if="alternatives?.length" class="mt-4">
       
-      <p class="text-gray-400 text-sm mb-2">Alternativas:</p>
-      <div class="flex gap-2">
+      <div class="flex gap-2 justify-end">
         <img
           v-for="(alt, index) in alternatives.slice(0, 3)"
           :key="alt"
-          :src="alternativeIcons[alt] || '/alternatives/default.png'"
+          :src="getAlternativeIcon(alt)"
           :alt="alt"
-          class="w-8 h-8 rounded-full object-contain border border-gray-500"
+          class="w-12 h-12 rounded-full object-contain border border-gray-500"
           :title="alt"
         />
       </div>
