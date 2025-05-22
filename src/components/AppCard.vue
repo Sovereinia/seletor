@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { sliceText } from '../utils/global';
 import { alternativeIcons } from '@/data/alternatives';
+import { getAlternativeIcon } from '@/utils/global.ts';
 
 defineProps<{
   name: string;
@@ -12,22 +13,14 @@ defineProps<{
 
 const base = import.meta.env.BASE_URL;
 
-const getAlternativeIcon = (name: string): string => {
-  const key = name.trim().toLowerCase();
-
-  const iconMap: Record<string, string> = {
-    twitter: 'alternatives/twitter.png',
-    'x.com': 'alternatives/xcom.png',
-  };
-
-  return iconMap[key] ? `${base}${iconMap[key]}` : `${base}alternatives/default.png`;
-};
 
 </script>
 
 <template>
-  <article @click="$emit('abrir', {name, description, bannerSrc, bannerAlt})"
-  class="card bg-[var(--color-card-primary)] w-full shadow-lg rounded-3xl overflow-hidden" >
+  <article
+  @click="$emit('abrir', {name, description, bannerSrc, bannerAlt, alternatives})"
+  class="card bg-[var(--color-card-primary)] w-full shadow-lg rounded-3xl overflow-hidden transform transition-transform duration-200 hover:scale-[1.03] hover:shadow-xl"
+>
     <figure class="p-10 h-64">
       <img :src="bannerSrc" :alt="bannerAlt" class="rounded-xl w-full h-full object-contain" />
     </figure>
