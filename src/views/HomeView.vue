@@ -16,7 +16,7 @@ const selectedFilters = ref<Record<string, string[]>>({});
 const showFilters = ref(false);
 
 // Sugestões para o autocomplete
-const suggestions = apps.flatMap(app => [app.name, ...(app.alternatives || [])]);
+const suggestions = apps.flatMap(app => app.alternatives || []);
 
 // Função para filtrar apps
 const filteredApps = computed(() => {

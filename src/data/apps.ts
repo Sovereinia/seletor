@@ -16,6 +16,7 @@ export const apps: App[] = [
     name: 'Diaspora*',
     description: 'Rede descentralizada com foco em privacidade e controle pessoal.',
     categories: ['social'],
+    alternatives: ['faTwitter', 'x.com', 'Tweetdeck'],
     banner: {
       src: './apps/Logo-Diaspora.png',
       alt: 'Banner do Diaspora*'
