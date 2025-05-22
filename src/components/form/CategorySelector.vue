@@ -40,7 +40,9 @@ const getCategoryLabel = (category: Category) => {
 
 <template>
   <div class="flex justify-center">
-    <div v-if="windowWidth > 430" class="inline-flex rounded-full overflow-hidden border border-base-content/30">
+    <div v-if="windowWidth > 430" class=
+      "inline-flex rounded-full overflow-hidden 
+      border border-base-content/30">
      <label
         v-for="category in categories"
         :key="category.id"

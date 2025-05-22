@@ -6,7 +6,7 @@ export const apps: App[] = [
     name: 'Mastodon',
     description: 'Rede social de microblog federada...',
     categories: ['social'],
-    alternatives: ['Twitter', 'x.com', 'Tweetdeck'],
+    alternatives: ['Twitter', 'X.com',],
     banner: {
       src: './apps/Logo-Mastodon.png',
       alt: 'Banner do Mastodon'
@@ -16,7 +16,6 @@ export const apps: App[] = [
     name: 'Diaspora*',
     description: 'Rede descentralizada com foco em privacidade e controle pessoal.',
     categories: ['social'],
-    alternatives: ['faTwitter', 'x.com', 'Tweetdeck'],
     banner: {
       src: './apps/Logo-Diaspora.png',
       alt: 'Banner do Diaspora*'
@@ -71,7 +70,7 @@ export const apps: App[] = [
     name: 'Pleroma',
     description: 'Rede social leve e federada compatível com ActivityPub.',
     categories: ['social'],
-    alternatives: ['Twitter', 'x.com', 'Tweetdeck'],
+    alternatives: ['Twitter', 'X.com'],
     banner: {
       src: './apps/Logo-Pleroma.png',
       alt: 'Banner do Pleroma'
