@@ -1,3 +1,39 @@
+<script setup lang="ts">
+import { ref, defineProps, watch } from 'vue'
+import { getAlternativeIcon } from '@/utils/global.ts';
+import { getProtocolInfo } from '@/utils/global.ts';
+import type { App } from '@/types';
+
+
+const { abrir, app } = defineProps<{
+  abrir: boolean;
+  app: Partial<App>;
+}>();
+
+const emit = defineEmits(['atualizarAbrir'])
+
+const myModal = ref<HTMLDialogElement | null>(null)
+
+watch(
+  () => abrir,
+  (newValue) => {
+    newValue ? openModal() : closeModal();
+  }
+);
+
+function openModal() {
+  myModal.value?.showModal()
+  console.log('Modal aberto aqui no appModal')
+}
+
+function closeModal() {
+  myModal.value?.close()
+  emit('atualizarAbrir', false)
+  console.log('Modal fechado')
+}
+</script>
+
+
 <template>
   <div>
     <!-- ✅ Atualizado aqui: @cancel → @click.self -->
@@ -14,25 +50,75 @@
         </form>
 
         <!-- Layout responsivo -->
-        <div class="flex flex-col md:flex-row">
+        <div class="flex flex-col">
           <!-- Banner -->
           <img
-            :src="bannerSrc"
-            :alt="bannerAlt"
-            class=" md:w-1/3 p-10 h-auto object-cover rounded-l md:rounded-l-lg md:rounded-r-none rounded-b md:rounded-b-none"
+            :src="app.modalBanner?.src || app.banner?.src"
+            :alt="app.modalBanner?.alt || app.banner?.alt"
+            class="mx-auto max-w-md p-4 object-contain"
           />
 
           <!-- Conteúdo -->
-          <div class="p-6 md:w-1/2 flex flex-col">
-            <h3 class="text-xl font-bold mb-2">{{ name }}</h3>
-            <p class="mb-4 text-base">{{ description }}</p>
+          <div class="p-6 px-20 w-full flex flex-col">
+            <h3 class="text-xl font-bold mb-2">{{ app.name }}</h3>
+            <!-- Descrição longa -->
+            <p class="mb-4 text-base whitespace-pre-line">{{ app.longDescription }}</p>
+
+            <!-- Características -->
+            <ul v-if="app.features?.length" class="list-disc list-inside mb-4 text-sm">
+              <li v-for="(feature, index) in app.features" :key="index">{{ feature }}</li>
+            </ul>
+
+            <!-- Protocolos + Botões, lado a lado  -->
+            <div v-if="app.protocol?.length" class="mt-6">
+              <div class="flex flex-wrap items-start justify-between gap-4">
+
+                <!-- Protocolos na esquerda -->
+                <div>
+                  <h4 class="text-lg font-semibold mb-2">Protocolos e federação:</h4>
+                  <div class="flex flex-wrap gap-2">
+                    <a
+                      v-for="proto in app.protocol"
+                      :key="proto"
+                      :href="getProtocolInfo(proto)?.url"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="hover:opacity-80 transition-opacity"
+                    >
+                      <img
+                        v-if="getProtocolInfo(proto)"
+                        :src="getProtocolInfo(proto)?.src"
+                        :alt="getProtocolInfo(proto)?.alt"
+                        class="h-6 object-contain"
+                        :title="proto"
+                      />
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Botões alinhados à direita -->
+                <div v-if="app.links?.length" class="flex gap-2 py-4 flex-wrap justify-end">
+                  <a
+                    v-for="(link, index) in app.links"
+                    :key="index"
+                    :href="link.url"
+                    class="btn btn-outline btn-sm"
+                    target="_blank" rel="noopener noreferrer"
+                  >
+                    {{ link.label }}
+                  </a>
+                </div>
+              </div>
+            </div>
+
+
 
             <!-- Alternativas -->
-            <div v-if="alternatives?.length" class="mt-4">
-              <h4 class="text-lg font-semibold mb-2">Alternativas:</h4>
+            <div v-if="app.alternatives?.length" class="mt-4">
+              <h4 class="text-lg font-semibold mb-2">Alternativo para:</h4>
               <div class="flex gap-2">
                 <img
-                  v-for="(alt, index) in alternatives.slice(0, 3)"
+                  v-for="(alt, index) in app.alternatives.slice(0, 3)"
                   :key="alt"
                   :src="getAlternativeIcon(alt)"
                   :alt="alt"
@@ -41,77 +127,10 @@
                 />
               </div>
             </div>
-
-            <!-- Filters -->
-            <div v-if="filters.length" class="flex gap-2 flex-wrap mt-auto">
-              <span
-                v-for="(filter, index) in filters"
-                :key="index"
-                class="badge badge-primary"
-              >
-                {{ filter }}
-              </span>
-            </div>
           </div>
         </div>
       </div>
-
-      <!-- ❌ REMOVIDO: método antigo que causava bug de estado -->
-      <!--
-      <form method="dialog" class="modal-backdrop">
-        <button>close</button>
-      </form>
-      -->
     </dialog>
   </div>
 </template>
 
-<script setup lang="ts">
-import { ref, defineProps, watch } from 'vue'
-import { getAlternativeIcon } from '@/utils/global.ts';
-
-const emit = defineEmits(['atualizarAbrir'])
-
-const props = withDefaults(defineProps<{
-  abrir: boolean
-  name?: string
-  description?: string
-  bannerSrc?: string
-  bannerAlt?: string
-  filters?: string[]
-  alternatives?: string[]
-}>(), {
-  name: '',
-  description: '',
-  bannerSrc: '',
-  bannerAlt: '',
-  filters: () => [],
-  alternatives: () => []
-})
-
-const myModal = ref<HTMLDialogElement | null>(null)
-
-watch(
-  () => props.abrir,
-  (newValue) => {
-    if (newValue) {
-      console.log('Modal aberto aqui oh!')
-      openModal()
-    } else {
-      console.log('Modal fechado ou não aberto')
-      closeModal()
-    }
-  }
-)
-
-function openModal() {
-  myModal.value?.showModal()
-  console.log('Modal aberto aqui no appModal')
-}
-
-function closeModal() {
-  myModal.value?.close()
-  emit('atualizarAbrir', false)
-  console.log('Modal fechado')
-}
-</script>

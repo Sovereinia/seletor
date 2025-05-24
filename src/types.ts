@@ -4,13 +4,22 @@ export type CategoryId = 'all' | 'social' | 'messaging' | 'tools' | 'protocols';
 
 export interface App {
   name: string;
-  description: string;
+  description: string;        // usado no card
+  longDescription?: string;   // usado no modal
+  features?: string[];        // bullet points
+  links?: { label: string; url: string }[];  // botões
   categories: CategoryId[];
   alternatives?: string[];
+  protocol?: string[];
   banner: {
+  src: string;
+  alt: string;
+  };
+  modalBanner?: {
     src: string;
     alt: string;
   };
+
 }
 
 export interface FilterItem {
@@ -38,3 +47,9 @@ export interface Category {
 export type HeaderEntry = {
   subtitle: string;
 };
+
+export interface ProtocolInfo {
+  src: string;
+  url: string;
+  alt: string;
+}
