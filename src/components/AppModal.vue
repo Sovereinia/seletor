@@ -37,100 +37,97 @@ function closeModal() {
 <template>
   <div>
     <!-- ✅ Atualizado aqui: @cancel → @click.self -->
-    <dialog ref="myModal" class="modal" @click.self="closeModal">
-      <div class="modal-box p-0 md:max-w-4xl">
-        <form method="dialog">
-          <button
-            type="button"
-            class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-            @click="closeModal"
-          >
-            ✕
-          </button>
-        </form>
+   <dialog ref="myModal" class="modal" @click.self="closeModal">
+  <div class="modal-box w-full max-w-lg md:max-w-4xl h-[70vh] md:h-auto overflow-hidden md:overflow-visible rounded-xl relative bg-base-100">
 
-        <!-- Layout responsivo -->
-        <div class="flex flex-col">
-          <!-- Banner -->
-          <img
-            :src="app.modalBanner?.src || app.banner?.src"
-            :alt="app.modalBanner?.alt || app.banner?.alt"
-            class="mx-auto max-w-md p-4 object-contain"
-          />
+    <!-- Botão de fechar -->
+    <button
+      type="button"
+      class="absolute top-4 right-4 z-20 bg-base-200 hover:bg-base-300 text-gray-800 rounded-full p-2 shadow-md"
+      @click="closeModal"
+      aria-label="Fechar"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
 
-          <!-- Conteúdo -->
-          <div class="p-6 px-20 w-full flex flex-col">
-            <h3 class="text-xl font-bold mb-2">{{ app.name }}</h3>
-            <!-- Descrição longa -->
-            <p class="mb-4 text-base whitespace-pre-line">{{ app.longDescription }}</p>
+    <!-- Conteúdo com rolagem apenas em telas pequenas -->
+    <div class="flex flex-col h-full md:h-auto overflow-y-auto md:overflow-visible px-4 py-6">
 
-            <!-- Características -->
-            <ul v-if="app.features?.length" class="list-disc list-inside mb-4 text-sm">
-              <li v-for="(feature, index) in app.features" :key="index">{{ feature }}</li>
-            </ul>
+      <!-- Banner -->
+      <img
+        :src="app.modalBanner?.src || app.banner?.src"
+        :alt="app.modalBanner?.alt || app.banner?.alt"
+        class="mx-auto w-full max-w-sm p-2 object-contain"
+      />
 
-            <!-- Protocolos + Botões, lado a lado  -->
-            <div v-if="app.protocol?.length" class="mt-6">
-              <div class="flex flex-wrap items-start justify-between gap-4">
+      <!-- Texto e conteúdos -->
+      <div class="w-full flex flex-col px-2 md:px-10">
+        <h3 class="text-xl font-bold mb-2">{{ app.name }}</h3>
+        <p class="mb-4 text-base text-justify">{{ app.longDescription }}</p>
 
-                <!-- Protocolos na esquerda -->
-                <div>
-                  <h4 class="text-lg font-semibold mb-2">Protocolos e federação:</h4>
-                  <div class="flex flex-wrap gap-2">
-                    <a
-                      v-for="proto in app.protocol"
-                      :key="proto"
-                      :href="getProtocolInfo(proto)?.url"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="hover:opacity-80 transition-opacity"
-                    >
-                      <img
-                        v-if="getProtocolInfo(proto)"
-                        :src="getProtocolInfo(proto)?.src"
-                        :alt="getProtocolInfo(proto)?.alt"
-                        class="h-6 object-contain"
-                        :title="proto"
-                      />
-                    </a>
-                  </div>
-                </div>
+        <ul v-if="app.features?.length" class="list-disc list-inside mb-4 text-sm">
+          <li v-for="(feature, index) in app.features" :key="index">{{ feature }}</li>
+        </ul>
 
-                <!-- Botões alinhados à direita -->
-                <div v-if="app.links?.length" class="flex gap-2 py-4 flex-wrap justify-end">
-                  <a
-                    v-for="(link, index) in app.links"
-                    :key="index"
-                    :href="link.url"
-                    class="btn btn-outline btn-sm"
-                    target="_blank" rel="noopener noreferrer"
-                  >
-                    {{ link.label }}
-                  </a>
-                </div>
+        <div v-if="app.protocol?.length" class="mt-6">
+          <div class="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <h4 class="text-lg font-semibold mb-2">Protocolos e federação:</h4>
+              <div class="flex flex-wrap gap-2">
+                <a
+                  v-for="proto in app.protocol"
+                  :key="proto"
+                  :href="getProtocolInfo(proto)?.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:opacity-80 transition-opacity"
+                >
+                  <img
+                    v-if="getProtocolInfo(proto)"
+                    :src="getProtocolInfo(proto)?.src"
+                    :alt="getProtocolInfo(proto)?.alt"
+                    class="h-6 object-contain"
+                    :title="proto"
+                  />
+                </a>
               </div>
             </div>
 
-
-
-            <!-- Alternativas -->
-            <div v-if="app.alternatives?.length" class="mt-4">
-              <h4 class="text-lg font-semibold mb-2">Alternativo para:</h4>
-              <div class="flex gap-2">
-                <img
-                  v-for="(alt, index) in app.alternatives.slice(0, 3)"
-                  :key="alt"
-                  :src="getAlternativeIcon(alt)"
-                  :alt="alt"
-                  class="w-12 h-12 rounded-full object-contain border border-gray-500"
-                  :title="alt"
-                />
-              </div>
+            <div v-if="app.links?.length" class="flex-start gap-2 py-4 flex-wrap justify-end">
+              <a
+                v-for="(link, index) in app.links"
+                :key="index"
+                :href="link.url"
+                class="btn btn-outline btn-sm"
+                target="_blank" rel="noopener noreferrer"
+              >
+                {{ link.label }}
+              </a>
             </div>
           </div>
         </div>
+
+        <div v-if="app.alternatives?.length" class="mt-4">
+          <h4 class="text-lg font-semibold mb-2">Alternativo para:</h4>
+          <div class="flex gap-2">
+            <img
+              v-for="(alt, index) in app.alternatives.slice(0, 3)"
+              :key="alt"
+              :src="getAlternativeIcon(alt)"
+              :alt="alt"
+              class="w-12 h-12 rounded-full object-contain border border-gray-500"
+              :title="alt"
+            />
+          </div>
+        </div>
       </div>
-    </dialog>
+    </div>
+  </div>
+</dialog>
+
+
   </div>
 </template>
 
