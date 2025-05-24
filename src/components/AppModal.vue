@@ -41,16 +41,26 @@ function closeModal() {
   <div class="modal-box w-full max-w-lg md:max-w-4xl h-[70vh] md:h-auto overflow-hidden md:overflow-visible rounded-xl relative bg-base-100">
 
     <!-- Botão de fechar -->
-    <button
-      type="button"
-      class="absolute top-4 right-4 z-20 bg-base-200 hover:bg-base-300 text-gray-800 rounded-full p-2 shadow-md"
-      @click="closeModal"
-      aria-label="Fechar"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
+<button
+  type="button"
+  class="absolute top-4 right-4 z-20 bg-base-200 hover:bg-base-300 rounded-full p-2 shadow-md"
+  @click="closeModal"
+  aria-label="Fechar"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-5 w-5 stroke-current"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M6 18L18 6M6 6l12 12"
+    />
+  </svg>
+</button>
 
     <!-- Conteúdo com rolagem apenas em telas pequenas -->
     <div class="flex flex-col h-full md:h-auto overflow-y-auto md:overflow-visible px-4 py-6">
