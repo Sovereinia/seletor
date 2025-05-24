@@ -8,11 +8,14 @@ import { categories } from '@/data/categories';
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import type { CategoryId } from '@/types';
 import { desktopHeaders, mobileHeaders } from '@/data/headers';
+import type { App } from '@/types';
+
+
+const modalData = ref<Partial<App>>({});
 
 const searchQuery = ref('');
 
 const selectedCategory = ref<CategoryId>('all');
-const selectedFilters = ref<Record<string, string[]>>({});
 const showFilters = ref(false);
 
 // Sugestões para o autocomplete
@@ -63,14 +66,9 @@ onUnmounted(() => {
   window.removeEventListener('resize', updateWindowWidth);
 });
 
-const modalData = ref({})
-
-function handleAbrirModal(payload) {
-  mostrarModal.value = true
-  console.log(payload)
-  modalData.value = payload
-  console.log(modalData.value, mostrarModal.value)
-  console.log(modalData.value.alternatives)
+function handleAbrirModal(app: App) {
+  mostrarModal.value = true;
+  modalData.value = app;
 }
 </script>
 
@@ -99,22 +97,17 @@ function handleAbrirModal(payload) {
 
   <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-2">
     <AppCard 
+      v-for="app in filteredApps"
+      :key="app.name"
+      :app="app"
       @abrir="handleAbrirModal"
-      v-for="(app, index) in filteredApps"
-      :key="app.name + index"
-      :name="app.name"
-      :description="app.description"
-      :bannerSrc="app.banner.src"
-      :bannerAlt="app.banner.alt"
-      :alternatives="app.alternatives"
     />
-    <AppModal :abrir="mostrarModal" @atualizarAbrir="mostrarModal = $event"
-      :name="modalData.name"
-      :description="modalData.description"
-      :bannerSrc="modalData.bannerSrc" 
-      :bannerAlt="modalData.bannerAlt" 
-      :filters="modalData.filters"
-      :alternatives="modalData.alternatives"
+
+    <AppModal
+      :abrir="mostrarModal"
+      :app="modalData"
+      @atualizarAbrir="mostrarModal = $event"
     />
+
   </section>
 </template>

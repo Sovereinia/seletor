@@ -4,95 +4,30 @@ import type { App } from '../types'; // em apps.ts
 export const apps: App[] = [
   {
     name: 'Mastodon',
-    description: 'Rede social de microblog federada...',
-    categories: ['social'],
-    alternatives: ['Twitter', 'X.com',],
-    banner: {
-      src: './apps/Logo-Mastodon.png',
-      alt: 'Banner do Mastodon'
-    }
-  },
-  {
-    name: 'Diaspora*',
-    description: 'Rede descentralizada com foco em privacidade e controle pessoal.',
-    categories: ['social'],
-    banner: {
-      src: './apps/Logo-Diaspora.png',
-      alt: 'Banner do Diaspora*'
-    }
-  },
-  {
-    name: 'Friendica',
-    description: 'Plataforma social com ampla integração entre redes e personalização.',
-    categories: ['social'],
-    banner: {
-      src: './apps/Logo-Friendica.png',
-      alt: 'Banner do Friendica'
-    }
-  },
-  {
-    name: 'Pixelfed',
-    description: 'Rede social descentralizada para compartilhamento de fotos.',
-    categories: ['social'],
-    banner: {
-      src: './apps/Logo-Pixelfed.svg',
-      alt: 'Banner do Pixelfed'
-    }
-  },
-  {
-    name: 'PeerTube',
-    description: 'Plataforma de vídeo descentralizada com instâncias federadas.',
-    categories: ['social'],
-    banner: {
-      src: './apps/Logo-Peertube.png',
-      alt: 'Banner do PeerTube'
-    }
-  },
-  {
-    name: 'Lemmy',
-    description: 'Plataforma federada para discussão em comunidades e fóruns.',
-    categories: ['social'],
-    banner: {
-      src: './apps/Logo-Lemmy.png',
-      alt: 'Banner do Lemmy'
-    }
-  },
-  {
-    name: 'Misskey',
-    description: 'Rede social federada com foco em interações ricas e customização.',
-    categories: ['social'],
-    banner: {
-      src: './apps/Logo-Misskey.png',
-      alt: 'Banner do Misskey'
-    }
-  },
-  {
-    name: 'Pleroma',
-    description: 'Rede social leve e federada compatível com ActivityPub.',
+    description: 'Uma rede social parecida com o Twitter, mas sem anúncios, sem algoritmo e com mais controle para quem usa.',
+    longDescription: 'O Mastodon é uma rede social de microblog onde você pode publicar textos, imagens, vídeos e enquetes. Ele funciona por meio de várias instâncias independentes que se conectam entre si. Você escolhe em qual instância quer entrar, ou pode criar a sua. O feed é sempre cronológico, sem algoritmos nem anúncios, e cada comunidade tem suas próprias regras. Tudo isso faz do Mastodon uma rede mais aberta, tranquila e com foco na experiência do usuário.',
+    features: [
+      'Sem algoritmo: o feed é sempre cronológico',
+      'Postagens com texto, imagens, vídeos e enquetes',
+      'Você escolhe sua instância (ou pode criar a sua)'
+    ],
+    links: [
+      { label: 'Crie sua conta', url: 'https://sovereinia.org/como-criar-uma-conta-no-mastodon/' },
+      { label: 'Código Fonte', url: 'https://github.com/mastodon/mastodon' },
+      { label: 'Auto-hospede o Mastodon', url: 'https://sovereinia.org/como-auto-hospedar-sua-propria-instancia-do-mastodon/' },
+    ],
     categories: ['social'],
     alternatives: ['Twitter', 'X.com'],
+    protocol: ['ActivityPub', 'Fediverso'],
     banner: {
-      src: './apps/Logo-Pleroma.png',
-      alt: 'Banner do Pleroma'
+      src: './apps/icons/mastodon.png',
+      alt: 'Ícone do Mastodon'
+    },
+    modalBanner: {
+      src: './apps/logos/mastodon.png',
+      alt: 'Logo do Mastodon'
     }
   },
-  {
-    name: 'Hubzilla',
-    description: 'Plataforma tudo-em-um com controle de identidade e múltiplos serviços.',
-    categories: ['social'],
-    banner: {
-      src: './apps/Logo-Hubzilla.svg',
-      alt: 'Banner do Hubzilla'
-    }
-  },
-  {
-    name: 'Matrix',
-    description: 'Protocolo aberto de mensagens...',
-    categories: ['messaging', 'tools'],
-    banner: {
-      src: './apps/Logo-Matrix.svg',
-      alt: 'Banner do Matrix'
-    }
-  },
-  // ...
+
+
 ];
