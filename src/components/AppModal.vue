@@ -105,7 +105,7 @@ function closeModal() {
               </div>
             </div>
 
-            <div v-if="app.links?.length" class="flex-start gap-2 py-4 flex-wrap justify-end">
+            <div v-if="app.links?.length" class="flex gap-2 py-4 flex-wrap justify-start">
               <a
                 v-for="(link, index) in app.links"
                 :key="index"
