@@ -2,7 +2,7 @@
 
 O **Guia de Apps** é uma ferramenta interativa que ajuda pessoas a conhecer e comparar plataformas descentralizadas e auto-hospedadas. Ele apresenta alternativas a serviços centralizados, destacando como essas tecnologias promovem autonomia, privacidade e soberania digital.
 
-📍 Acesse em: [https://sovereinia.org/seletor](https://sovereinia.org/seletor)
+📍 Acesse em: [https://sovereinia.org/guia](https://sovereinia.org/guia)
 
 ## Objetivo
 
