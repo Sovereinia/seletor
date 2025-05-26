@@ -9,6 +9,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 import time
 import shutil
+from PIL import Image
+import cairosvg
+import tempfile
 
 def collect_hosts(src_data_path):
     hosts = set()
@@ -31,22 +34,43 @@ def get_favicon_url(driver, host):
         )
         time.sleep(2)
     except Exception as e:
-        print(f"⚠️ Timeout ou erro carregando {host}: {e}")
+        print(f"⚠ Timeout ou erro carregando {host}: {e}")
         return None
 
     links = driver.find_elements(By.CSS_SELECTOR, "link[rel*='icon']")
     for link in links:
         href = link.get_attribute("href")
-        if href and (".png" in href or ".ico" in href):
+        if href and (".png" in href or ".ico" in href or ".svg" in href):
             return urljoin(f'https://{host}', href)
     return None
 
-def download(url, path):
+def download_and_convert_to_png(url, output_png_path):
     with urllib.request.urlopen(url, timeout=15) as r:
+        content_type = r.headers.get("Content-Type", "")
         data = r.read()
-        with open(path, 'wb') as f:
+
+    if "png" in content_type:
+        with open(output_png_path, 'wb') as f:
             f.write(data)
-    return len(data)
+        return len(data)
+
+    with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
+        tmp_file.write(data)
+        tmp_path = tmp_file.name
+
+    try:
+        if "svg" in content_type or url.endswith(".svg"):
+            cairosvg.svg2png(url=tmp_path, write_to=output_png_path)
+        else:
+            with Image.open(tmp_path) as img:
+                img.save(output_png_path, format='PNG')
+        os.remove(tmp_path)
+        return os.path.getsize(output_png_path)
+    except Exception as e:
+        print(f"❌ Erro ao converter para PNG: {e}")
+        if os.path.exists(tmp_path):
+            os.remove(tmp_path)
+        return 0
 
 def get_root_domain(host):
     parts = host.split('.')
@@ -58,7 +82,6 @@ def main(project_root):
     src_path = os.path.join(project_root, "src", "data")
     out_path = os.path.join(project_root, "public", "favicons")
 
-    # 🧹 Limpa favicons antigos
     if os.path.exists(out_path):
         print(f"🧹 Limpando favicons antigos em {out_path}...")
         shutil.rmtree(out_path)
@@ -69,37 +92,35 @@ def main(project_root):
     driver = webdriver.Firefox(options=options)
 
     for host in collect_hosts(src_path):
-        output_file = os.path.join(out_path, f"{host}.png")
+        output_path = os.path.join(out_path, f"{host}.png")
 
         print(f"🌐 Buscando favicon de {host}...")
         url = get_favicon_url(driver, host)
 
-        fallback_used = False
         if url:
             try:
-                size = download(url, output_file)
+                size = download_and_convert_to_png(url, output_path)
                 if size > 300:
-                    print(f"✅ Favicon salvo: {output_file}")
+                    print(f"✅ Favicon salvo: {output_path} ({size} bytes)")
                     continue
                 else:
-                    print(f"⚠️ Favicon pequeno ({size} bytes), apagando.")
-                    os.remove(output_file)
+                    print(f"⚠ Favicon pequeno ({size} bytes), apagando.")
+                    os.remove(output_path)
             except Exception as e:
                 print(f"❌ Erro ao baixar {url}: {e}")
 
-        # fallback se falhar ou for inválido
         root = get_root_domain(host)
         if root != host:
             print(f"🔁 Tentando domínio raiz: {root}")
             url = get_favicon_url(driver, root)
             if url:
                 try:
-                    size = download(url, output_file)
+                    size = download_and_convert_to_png(url, output_path)
                     if size > 300:
-                        print(f"✅ Favicon salvo (fallback): {output_file}")
+                        print(f"✅ Favicon salvo (fallback): {output_path} ({size} bytes)")
                     else:
-                        print(f"⚠️ Favicon do fallback pequeno ({size} bytes), apagando.")
-                        os.remove(output_file)
+                        print(f"⚠ Favicon do fallback pequeno ({size} bytes), apagando.")
+                        os.remove(output_path)
                 except Exception as e:
                     print(f"❌ Erro ao baixar favicon do fallback {url}: {e}")
             else:
