@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, defineProps, watch } from 'vue'
+import { ref, type Ref, defineProps, watch } from 'vue'
 import { getAlternativeIcon } from '@/utils/global.ts';
 import { getProtocolInfo } from '@/utils/global.ts';
+import { getFaviconPath } from '@/utils/global.ts';
 import type { App } from '@/types';
 
 
@@ -31,6 +32,37 @@ function closeModal() {
   emit('atualizarAbrir', false)
   console.log('Modal fechado')
 }
+
+function faviconSrc(url: string): { src: string; visible: Ref<boolean>; onError: () => void } {
+  const src = getFaviconPath(url);
+  const visible = ref(true);
+  const onError = () => (visible.value = false);
+  return { src, visible, onError };
+}
+
+const favicons = ref<{ 
+  label: string; 
+  url: string; 
+  faviconSrc: string; 
+  faviconVisible: Ref<boolean>; 
+  faviconError: () => void;
+}[]>([]);
+
+watch(
+  () => app.links,
+  (newLinks) => {
+    if (newLinks?.length) {
+      favicons.value = newLinks.map(link => {
+        const { src, visible, onError } = faviconSrc(link.url);
+        return { ...link, faviconSrc: src, faviconVisible: visible, faviconError: onError };
+      });
+    }
+  },
+  { immediate: true } // roda logo de cara
+);
+
+
+
 </script>
 
 
@@ -77,6 +109,7 @@ function closeModal() {
         <h3 class="text-xl font-bold mb-2">{{ app.name }}</h3>
         <p class="mb-4 text-base text-justify">{{ app.longDescription }}</p>
 
+      <!-- Caracteristicas -->
         <ul v-if="app.features?.length" class="list-disc list-inside mb-4 text-sm">
           <li v-for="(feature, index) in app.features" :key="index">{{ feature }}</li>
         </ul>
@@ -105,17 +138,38 @@ function closeModal() {
               </div>
             </div>
 
-            <div v-if="app.links?.length" class="flex gap-2 py-4 flex-wrap justify-start">
+
+            <!-- Botoes -->
+            <div v-if="favicons.length" class="flex gap-2 py-4 flex-wrap justify-start">
               <a
-                v-for="(link, index) in app.links"
+                v-for="(link, index) in favicons"
                 :key="index"
                 :href="link.url"
-                class="btn btn-outline btn-sm"
+                class="btn btn-outline btn-sm flex items-center gap-2"
                 target="_blank" rel="noopener noreferrer"
               >
+                <!-- Favicon visível só se não deu erro -->
+                <img
+                  v-if="link.faviconVisible"
+                  :src="link.faviconSrc"
+                  class="w-4 h-4"
+                  @error="link.faviconError"
+                  alt=""
+                />
+
+                <!-- Bandeira BR -->
+                <img
+                  v-if="link.url.includes('sovereinia.org')"
+                  src="/br-flag.svg"
+                  alt="BR"
+                  class="w-4 h-4"
+                />
+
                 {{ link.label }}
               </a>
             </div>
+
+
           </div>
         </div>
 

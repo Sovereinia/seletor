@@ -10,6 +10,11 @@ export const protocolIcons: Record<string, ProtocolInfo> = {
     src: '/protocols/fediverse.png',
     url: 'https://pt.wikipedia.org/wiki/Fediverse',
     alt: 'Logo do Fediverso',
+  },
+  "WebDAV": {
+    src: '/protocols/webdav.png',
+    url: 'https://pt.wikipedia.org/wiki/WebDAV',
+    alt: 'Logo do WebDAV',
   }
 };
   // altura 48 px
