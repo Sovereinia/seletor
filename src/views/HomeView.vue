@@ -9,6 +9,8 @@ import { ref, computed, onMounted, onUnmounted } from 'vue';
 import type { CategoryId } from '@/types';
 import { desktopHeaders, mobileHeaders } from '@/data/headers';
 import type { App } from '@/types';
+import { sortAppsByLinksThenRandom, filterApps } from '@/utils/filter';
+
 
 
 const modalData = ref<Partial<App>>({});
@@ -21,21 +23,12 @@ const showFilters = ref(false);
 // Sugestões para o autocomplete
 const suggestions = apps.flatMap(app => app.alternatives || []);
 
-// Função para filtrar apps
+const orderedApps = computed(() => sortAppsByLinksThenRandom(apps));
+
 const filteredApps = computed(() => {
-  return apps.filter(app => {
-    const isSameCategory =
-      selectedCategory.value === 'all' ||
-      app.categories.includes(selectedCategory.value);
-
-    const query = searchQuery.value.toLowerCase();
-    const nameMatchesQuery =
-      app.name.toLowerCase().includes(query) ||
-      app.alternatives?.some(alt => alt.toLowerCase().includes(query));
-
-    return isSameCategory && nameMatchesQuery; //&& filterMatches;
-  });
+  return filterApps(orderedApps.value, selectedCategory.value, searchQuery.value);
 });
+
 
 const title = ref('Guia de Apps');
 const subtitleBase = ref('');

@@ -1,3 +1,4 @@
+//globals.ts
 import { protocolIcons } from '@/data/protocols.ts';
 import { alternativeIcons } from '@/data/alternatives';
 
@@ -40,4 +41,14 @@ export function getAlternativeIcon(name: string): string {
 
   console.log(`Icon for ${name} →`, finalPath);
   return finalPath;
+}
+
+export function getFaviconPath(url: string): string {
+  try {
+    const hostname = new URL(url).hostname.toLowerCase();
+    const base = import.meta.env.BASE_URL;
+    return `${base}favicons/${hostname}.png`;
+  } catch {
+    return `${import.meta.env.BASE_URL}favicon.png`; // fallback
+  }
 }
