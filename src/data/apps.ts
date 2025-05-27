@@ -20,7 +20,7 @@ export const apps: App[] = [
     alternatives: ['YouTube', 'Vimeo'],
     protocol: ['ActivityPub', 'Fediverso'],
     banner: {
-      src: './apps/icons/peertube.png',
+      src: './apps/icons/peertube.svg',
       alt: 'Ícone do PeerTube'
     },
     modalBanner: {
@@ -94,7 +94,7 @@ export const apps: App[] = [
     { label: 'Auto-hospede o Vaultwarden', url: 'https://github.com/dani-garcia/vaultwarden/wiki/Installation' },
   ],
   categories: ['tools'],
-  alternatives: ['Bitwarden', 'LastPass'],
+  alternatives: ['Google Password Manager'],
   protocol: [''],
   banner: {
     src: './apps/icons/vaultwarden.png',
@@ -120,10 +120,10 @@ export const apps: App[] = [
     { label: 'Auto-hospede o Passbolt', url: 'https://www.passbolt.com/help/tech/install' },
   ],
   categories: ['tools'],
-  alternatives: ['1Password Business', 'Bitwarden Teams'],
+  alternatives: ['Google Password Manager'],
   protocol: [''],
   banner: {
-    src: './apps/icons/passbolt.png',
+    src: './apps/icons/passbolt.svg',
     alt: 'Ícone do Passbolt'
   },
   modalBanner: {
@@ -150,7 +150,7 @@ export const apps: App[] = [
   alternatives: ['WhatsApp', 'Telegram', 'Slack'],
   protocol: ['Matrix'],
   banner: {
-    src: './apps/icons/element.png',
+    src: './apps/icons/element.svg',
     alt: 'Ícone do Element'
   },
   modalBanner: {
@@ -174,9 +174,9 @@ export const apps: App[] = [
   ],
   categories: ['social'],
   alternatives: ['Reddit', 'Hacker News'],
-  protocol: ['ActivityPub', 'Fediverso', 'Lemmyverso'],
+  protocol: ['ActivityPub', 'Fediverso'],
   banner: {
-    src: './apps/icons/lemmy.png',
+    src: './apps/icons/lemmy.svg',
     alt: 'Ícone do Lemmy'
   },
   modalBanner: {
@@ -230,7 +230,7 @@ export const apps: App[] = [
   alternatives: ['Confluence', 'Notion', 'MediaWiki'],
   protocol: [''],
   banner: {
-    src: './apps/icons/bookstack.png',
+    src: './apps/icons/bookstack.svg',
     alt: 'Ícone do BookStack'
   },
   modalBanner: {
@@ -253,10 +253,10 @@ export const apps: App[] = [
     { label: 'Auto-hospede o RSSHub', url: 'https://docs.rsshub.app/install/' },
   ],
   categories: ['tools'],
-  alternatives: ['Feedly (combinado com serviços de terceiros)', 'PolitePol'],
+  alternatives: ['Newsletters'],
   protocol: ['RSS'],
   banner: {
-    src: './apps/icons/rsshub.png',
+    src: './apps/icons/rsshub.svg',
     alt: 'Ícone do RSSHub'
   },
   modalBanner: {
@@ -279,10 +279,10 @@ export const apps: App[] = [
     { label: 'Auto-hospede o Discourse', url: 'https://github.com/discourse/discourse/blob/main/docs/INSTALL-cloud.md' },
   ],
   categories: ['social', 'tools'],
-  alternatives: ['Reddit', 'Facebook Groups', 'phpBB'],
+  alternatives: ['Reddit', 'Facebook Groups'],
   protocol: [''],
   banner: {
-    src: './apps/icons/discourse.png',
+    src: './apps/icons/discourse.svg',
     alt: 'Ícone do Discourse'
   },
   modalBanner: {
@@ -309,7 +309,7 @@ export const apps: App[] = [
   alternatives: ['Instagram'],
   protocol: ['ActivityPub', 'Fediverso'],
   banner: {
-    src: './apps/icons/pixelfed.png',
+    src: './apps/icons/pixelfed.svg',
     alt: 'Ícone do Pixelfed'
   },
   modalBanner: {
@@ -336,7 +336,7 @@ export const apps: App[] = [
   alternatives: ['WhatsApp', 'Telegram'],
   protocol: ['Signal Protocol'],
   banner: {
-    src: './apps/icons/signal.png',
+    src: './apps/icons/signal.svg',
     alt: 'Ícone do Signal'
   },
   modalBanner: {
@@ -387,7 +387,7 @@ export const apps: App[] = [
   alternatives: ['OStatus', 'Zot'],
   protocol: ['ActivityPub', 'Fediverso'],
   banner: {
-    src: './apps/icons/activitypub.png',
+    src: './apps/icons/activitypub.svg',
     alt: 'Ícone do ActivityPub'
   },
   modalBanner: {
@@ -414,7 +414,7 @@ export const apps: App[] = [
   alternatives: ['XMPP', 'Signal Protocol'],
   protocol: ['Matrix'],
   banner: {
-    src: './apps/icons/matrix.png',
+    src: './apps/icons/matrix.svg',
     alt: 'Ícone do Matrix'
   },
   modalBanner: {
@@ -441,7 +441,7 @@ export const apps: App[] = [
   alternatives: ['Matrix', 'Signal Protocol'],
   protocol: ['XMPP'],
   banner: {
-    src: './apps/icons/xmpp.png',
+    src: './apps/icons/xmpp.svg',
     alt: 'Ícone do XMPP'
   },
   modalBanner: {
@@ -450,7 +450,7 @@ export const apps: App[] = [
   }
 },
 {
-  name: 'E-mail',
+  name: 'Email',
   description: 'Protocolo clássico de comunicação digital, descentralizado por natureza e amplamente compatível.',
   longDescription: 'O e-mail é uma das formas mais antigas e universais de comunicação na internet. Ele funciona com base em protocolos abertos como SMTP, IMAP e POP3, o que permite que diferentes provedores e servidores troquem mensagens entre si. Ao contrário de redes sociais e mensageiros modernos, o e-mail já nasceu descentralizado: qualquer pessoa pode hospedar seu próprio servidor e ter controle completo sobre suas mensagens. É compatível com praticamente todos os sistemas e dispositivos.',
   features: [
@@ -465,14 +465,14 @@ export const apps: App[] = [
   ],
   categories: ['protocols'],
   alternatives: ['Gmail', 'Outlook'],
-  protocol: ['Email'],
+  protocol: ['SMTP', 'IMAP', 'POP3'],
   banner: {
-    src: './apps/icons/email.png',
-    alt: 'Ícone de E-mail'
+    src: './apps/icons/email.svg',
+    alt: 'Ícone de Email'
   },
   modalBanner: {
     src: './apps/logos/email.png',
-    alt: 'Logo de E-mail'
+    alt: 'Logo de Email'
   }
 },
 {
@@ -522,7 +522,7 @@ export const apps: App[] = [
   alternatives: ['Twitter', 'X.com'],
   protocol: ['ActivityPub', 'Fediverso'],
   banner: {
-    src: './apps/icons/misskey.png',
+    src: './apps/icons/misskey.svg',
     alt: 'Ícone do Misskey'
   },
   modalBanner: {
@@ -548,7 +548,7 @@ export const apps: App[] = [
   alternatives: ['Slack', 'Microsoft Teams', 'Zendesk'],
   protocol: [''],
   banner: {
-    src: './apps/icons/rocketchat.png',
+    src: './apps/icons/rocketchat.svg',
     alt: 'Ícone do Rocket.Chat'
   },
   modalBanner: {
@@ -571,10 +571,10 @@ export const apps: App[] = [
     { label: 'Auto-hospede o Plane', url: 'https://docs.plane.so/' },
   ],
   categories: ['tools'],
-  alternatives: ['Trello', 'Jira', 'Linear'],
+  alternatives: ['Trello', 'Jira'],
   protocol: [''],
   banner: {
-    src: './apps/icons/plane.png',
+    src: './apps/icons/plane.svg',
     alt: 'Ícone do Plane'
   },
   modalBanner: {
@@ -600,7 +600,7 @@ export const apps: App[] = [
   alternatives: ['HTTP', 'BitTorrent'],
   protocol: [],
   banner: {
-    src: './apps/icons/ipfs.png',
+    src: './apps/icons/ipfs.svg',
     alt: 'Ícone do IPFS'
   },
   modalBanner: {
@@ -623,10 +623,10 @@ export const apps: App[] = [
     { label: 'Auto-hospede o Bitwarden', url: 'https://bitwarden.com/help/install-on-premise/' },
   ],
   categories: ['tools'],
-  alternatives: ['1Password', 'LastPass', 'Dashlane'],
+  alternatives: ['Google Password Manager'],
   protocol: [],
   banner: {
-    src: './apps/icons/bitwarden.png',
+    src: './apps/icons/bitwarden.svg',
     alt: 'Ícone do Bitwarden'
   },
   modalBanner: {
@@ -653,7 +653,7 @@ export const apps: App[] = [
   alternatives: ['Facebook'],
   protocol: ['Diaspora protocol'],
   banner: {
-    src: './apps/icons/diaspora.png',
+    src: './apps/icons/diaspora.svg',
     alt: 'Ícone do Diaspora*'
   },
   modalBanner: {
@@ -676,10 +676,10 @@ export const apps: App[] = [
     { label: 'Auto-hospede o Jellyfin', url: 'https://jellyfin.org/docs/general/administration/installing/' },
   ],
   categories: ['tools'],
-  alternatives: ['Plex', 'Emby', 'Kodi'],
+  alternatives: ['Plex'],
   protocol: [''],
   banner: {
-    src: './apps/icons/jellyfin.png',
+    src: './apps/icons/jellyfin.svg',
     alt: 'Ícone do Jellyfin'
   },
   modalBanner: {
@@ -705,7 +705,7 @@ export const apps: App[] = [
   alternatives: ['Slack', 'Microsoft Teams', 'Discord'],
   protocol: [''],
   banner: {
-    src: './apps/icons/zulip.png',
+    src: './apps/icons/zulip.svg',
     alt: 'Ícone do Zulip'
   },
   modalBanner: {
@@ -757,7 +757,7 @@ export const apps: App[] = [
   alternatives: ['Facebook', 'Mastodon', 'Diaspora*'],
   protocol: ['ActivityPub', 'Diaspora protocol', 'OStatus'],
   banner: {
-    src: './apps/icons/friendica.png',
+    src: './apps/icons/friendica.svg',
     alt: 'Ícone do Friendica'
   },
   modalBanner: {
@@ -784,7 +784,7 @@ export const apps: App[] = [
   alternatives: ['Mastodon', 'Misskey'],
   protocol: ['ActivityPub', 'Fediverso'],
   banner: {
-    src: './apps/icons/pleroma.png',
+    src: './apps/icons/pleroma.svg',
     alt: 'Ícone do Pleroma'
   },
   modalBanner: {
@@ -799,7 +799,7 @@ export const apps: App[] = [
   features: [
     'Identidade portátil entre servidores (Zot protocol)',
     'Postagens, fóruns, blogs e wikis no mesmo lugar',
-    'Controle avançado de permissões e privacidade'
+    'Controle avançado de permissões e privacidade',
   ],
   links: [
     { label: 'Acesse o site oficial', url: 'https://hubzilla.org/' },
@@ -810,7 +810,7 @@ export const apps: App[] = [
   alternatives: ['Facebook', 'Diaspora*', 'Mastodon'],
   protocol: ['Zot', 'ActivityPub'],
   banner: {
-    src: './apps/icons/hubzilla.png',
+    src: './apps/icons/hubzilla.svg',
     alt: 'Ícone do Hubzilla'
   },
   modalBanner: {
@@ -836,7 +836,7 @@ export const apps: App[] = [
   alternatives: ['Slack', 'Microsoft Teams', 'Rocket.Chat', 'GitLab'],
   protocol: [''],
   banner: {
-    src: './apps/icons/mattermost.png',
+    src: './apps/icons/mattermost.svg',
     alt: 'Ícone do Mattermost'
   },
   modalBanner: {
@@ -862,7 +862,7 @@ export const apps: App[] = [
   alternatives: ['Zoom', 'Google Meet', 'Microsoft Teams'],
   protocol: ['WebRTC'],
   banner: {
-    src: './apps/icons/bigbluebutton.png',
+    src: './apps/icons/bigbluebutton.svg',
     alt: 'Ícone do BigBlueButton'
   },
   modalBanner: {
@@ -888,7 +888,7 @@ export const apps: App[] = [
   alternatives: ['GitHub', 'Bitbucket', 'Gitea'],
   protocol: ['Git'],
   banner: {
-    src: './apps/icons/gitlab.png',
+    src: './apps/icons/gitlab.svg',
     alt: 'Ícone do GitLab'
   },
   modalBanner: {
@@ -911,10 +911,10 @@ export const apps: App[] = [
     { label: 'Auto-hospede o Gitea', url: 'https://docs.gitea.io/en-us/install-from-binary/' },
   ],
   categories: ['tools'],
-  alternatives: ['GitHub', 'GitLab', 'SourceHut'],
+  alternatives: ['GitHub', 'GitLab'],
   protocol: ['Git'],
   banner: {
-    src: './apps/icons/gitea.png',
+    src: './apps/icons/gitea.svg',
     alt: 'Ícone do Gitea'
   },
   modalBanner: {
@@ -940,7 +940,7 @@ export const apps: App[] = [
   alternatives: ['Jira', 'Trello', 'Asana'],
   protocol: [''],
   banner: {
-    src: './apps/icons/openproject.png',
+    src: './apps/icons/openproject.svg',
     alt: 'Ícone do OpenProject'
   },
   modalBanner: {
@@ -962,10 +962,10 @@ export const apps: App[] = [
     { label: 'Auto-hospede o Uptime Kuma', url: 'https://github.com/louislam/uptime-kuma/wiki' },
   ],
   categories: ['tools'],
-  alternatives: ['Uptime Robot', 'StatusCake', 'Pingdom'],
+  alternatives: [''],
   protocol: [''],
   banner: {
-    src: './apps/icons/uptimekuma.png',
+    src: './apps/icons/uptimekuma.svg',
     alt: 'Ícone do Uptime Kuma'
   },
   modalBanner: {
@@ -991,7 +991,7 @@ export const apps: App[] = [
   alternatives: ['Jellyfin', 'Emby', 'Kodi'],
   protocol: [''],
   banner: {
-    src: './apps/icons/plex.png',
+    src: './apps/icons/plex.svg',
     alt: 'Ícone do Plex'
   },
   modalBanner: {
@@ -1066,7 +1066,7 @@ export const apps: App[] = [
     { label: 'Auto-hospede o AzuraCast', url: 'https://www.azuracast.com/install/' },
   ],
   categories: ['tools'],
-  alternatives: ['Radio.co', 'Shoutcast', 'Icecast'],
+  alternatives: ['Radio.co', 'Shoutcast'],
   protocol: [''],
   banner: {
     src: './apps/icons/azuracast.png',
@@ -1121,7 +1121,7 @@ export const apps: App[] = [
   alternatives: ['Ghost', 'Wix', 'Squarespace'],
   protocol: [''],
   banner: {
-    src: './apps/icons/wordpress.png',
+    src: './apps/icons/wordpress.svg',
     alt: 'Ícone do WordPress'
   },
   modalBanner: {
@@ -1197,10 +1197,10 @@ export const apps: App[] = [
     { label: 'Gere feeds com o RSSHub', url: 'https://rsshub.app/' },
   ],
   categories: ['protocols'],
-  alternatives: ['Newsletters', 'Redes Sociais'],
+  alternatives: ['Newsletters', 'Atom'],
   protocol: [],
   banner: {
-    src: './apps/icons/rss.png',
+    src: './apps/icons/rss.svg',
     alt: 'Ícone do RSS'
   },
   modalBanner: {
@@ -1304,7 +1304,7 @@ export const apps: App[] = [
   alternatives: ['VPN', 'I2P', 'Proxy'],
   protocol: ['Tor'],
   banner: {
-    src: './apps/icons/tor.png',
+    src: './apps/icons/tor.svg',
     alt: 'Ícone do Tor'
   },
   modalBanner: {
@@ -1330,7 +1330,7 @@ export const apps: App[] = [
   alternatives: ['Kibana', 'Datadog', 'Tableau'],
   protocol: [''],
   banner: {
-    src: './apps/icons/grafana.png',
+    src: './apps/icons/grafana.svg',
     alt: 'Ícone do Grafana'
   },
   modalBanner: {
@@ -1353,10 +1353,10 @@ export const apps: App[] = [
     { label: 'Auto-hospede o Prometheus', url: 'https://prometheus.io/docs/prometheus/latest/installation/' },
   ],
   categories: ['tools'],
-  alternatives: ['Zabbix', 'Datadog', 'InfluxDB'],
+  alternatives: ['Zabbix', 'Datadog'],
   protocol: [''],
   banner: {
-    src: './apps/icons/prometheus.png',
+    src: './apps/icons/prometheus.svg',
     alt: 'Ícone do Prometheus'
   },
   modalBanner: {

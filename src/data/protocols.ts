@@ -71,11 +71,6 @@ export const protocolIcons: Record<string, ProtocolInfo> = {
     url: 'https://pt.wikipedia.org/wiki/Bluesky',
     alt: 'Logo do AT Protocol',
   },
-  "Email": {
-    src: '/protocols/email.png',
-    url: 'https://pt.wikipedia.org/wiki/Email',
-    alt: 'Logo do protocolo Email',
-  },
   "RSS": {
     src: '/protocols/rss.png',
     url: 'https://pt.wikipedia.org/wiki/RSS',
@@ -101,7 +96,25 @@ export const protocolIcons: Record<string, ProtocolInfo> = {
     url: 'https://pt.wikipedia.org/wiki/XMPP',
     alt: 'Logo do protocolo XMPP',
   },
+  "IMAP": {
+  src: '/protocols/imap.png',
+  url: 'https://pt.wikipedia.org/wiki/IMAP',
+  alt: 'Logo do protocolo IMAP',
+  },
+  "SMTP": {
+    src: '/protocols/smtp.png',
+    url: 'https://pt.wikipedia.org/wiki/SMTP',
+    alt: 'Logo do protocolo SMTP',
+  },
+  "POP3": {
+    src: '/protocols/pop3.png',
+    url: 'https://pt.wikipedia.org/wiki/Post_Office_Protocol',
+    alt: 'Logo do protocolo POP3',
+  },
 };
-
-  // altura 48 px
+//
+ // protocol: ['SMTP', 'IMAP', 'POP3'],
+  // If SVG is available, that's best
+  // otherwise, PNG with the following dimensions:
+  // - protocol logos: height best: 80px mminimum: 60px
 
