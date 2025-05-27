@@ -598,7 +598,7 @@ export const apps: App[] = [
   ],
   categories: ['protocols'],
   alternatives: ['HTTP', 'BitTorrent'],
-  protocol: [],
+  protocol: [''],
   banner: {
     src: './apps/icons/ipfs.svg',
     alt: 'Ícone do IPFS'
@@ -624,7 +624,7 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['Google Password Manager'],
-  protocol: [],
+  protocol: [''],
   banner: {
     src: './apps/icons/bitwarden.svg',
     alt: 'Ícone do Bitwarden'
@@ -1145,7 +1145,7 @@ export const apps: App[] = [
   ],
   categories: ['protocols'],
   alternatives: ['ActivityPub', 'Diaspora protocol'],
-  protocol: [],
+  protocol: [''],
   banner: {
     src: './apps/icons/atprotocol.png',
     alt: 'Ícone do AT Protocol'
@@ -1198,7 +1198,7 @@ export const apps: App[] = [
   ],
   categories: ['protocols'],
   alternatives: ['Newsletters', 'Atom'],
-  protocol: [],
+  protocol: [''],
   banner: {
     src: './apps/icons/rss.svg',
     alt: 'Ícone do RSS'
@@ -1224,7 +1224,7 @@ export const apps: App[] = [
   ],
   categories: ['protocols'],
   alternatives: ['RSS', 'Newsletters'],
-  protocol: [],
+  protocol: [''],
   banner: {
     src: './apps/icons/atom.png',
     alt: 'Ícone do Atom'
