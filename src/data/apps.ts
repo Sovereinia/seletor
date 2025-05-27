@@ -354,7 +354,6 @@ export const apps: App[] = [
     'Tudo funciona no navegador, sem envio para a nuvem'
   ],
   links: [
-    { label: 'Acesse o repositório', url: 'https://github.com/Stirling-Tools/Stirling-PDF' },
     { label: 'Código Fonte', url: 'https://github.com/Stirling-Tools/Stirling-PDF' },
     { label: 'Auto-hospede o Stirling-PDF', url: 'https://github.com/Stirling-Tools/Stirling-PDF/wiki/Docker-Install' },
   ],
@@ -546,7 +545,7 @@ export const apps: App[] = [
     { label: 'Auto-hospede o Rocket.Chat', url: 'https://docs.rocket.chat/installation/' },
   ],
   categories: ['messaging', 'tools'],
-  alternatives: ['Slack', 'Microsoft Teams', 'Discord'],
+  alternatives: ['Slack', 'Microsoft Teams', 'Zendesk'],
   protocol: [''],
   banner: {
     src: './apps/icons/rocketchat.png',
@@ -586,7 +585,7 @@ export const apps: App[] = [
 {
   name: 'IPFS',
   description: 'Protocolo para armazenar e compartilhar arquivos de forma distribuída, sem depender de servidores centrais.',
-  longDescription: 'O IPFS (InterPlanetary File System) é um protocolo que permite armazenar e acessar arquivos de forma descentralizada, parecida com o funcionamento de torrents. Em vez de depender de um servidor fixo, os arquivos são distribuídos entre os computadores da rede. Isso torna o acesso mais resistente a falhas, censura e apagamentos. Ele é usado para sites, imagens, vídeos e outros conteúdos que precisam ficar disponíveis de forma mais segura e permanente.',
+  longDescription: 'O IPFS (InterPlanetary File System) é um protocolo que permite armazenar e acessar arquivos de forma descentralizada, parecida com o funcionamento de torrents. Em vez de depender de um servidor fixo, os arquivos são distribuídos entre os computadores da rede. Isso torna o acesso mais resistente a falhas, censura e apagamentos. Ele é usado para sites, imagens, vídeos e outros conteúdos que precisam ficar disponíveis de forma mais segura e permanente. Vale lembrar que o IPFS não substitui sozinho um sistema de indexação ou nomeação. Para isso, utiliza-se o IPNS ou outras camadas adicionais.',
   features: [
     'Armazenamento e acesso a arquivos sem servidores centrais',
     'Conteúdo é identificado por seu código (hash), não por endereço fixo',
@@ -639,7 +638,7 @@ export const apps: App[] = [
 {
   name: 'Diaspora*',
   description: 'Rede social descentralizada com foco em privacidade, sem anúncios nem rastreamento.',
-  longDescription: 'O Diaspora* é uma rede social que funciona por meio de "pods", servidores independentes que se conectam entre si. Você pode escolher um pod para criar sua conta ou hospedar o seu próprio. O sistema permite seguir pessoas, publicar textos, imagens, curtir e comentar, tudo com foco em controle do usuário e privacidade. Ele foi um dos primeiros projetos a propor uma alternativa livre às redes sociais centralizadas como o Facebook.',
+  longDescription: 'O Diaspora* é uma rede social que funciona por meio de "pods", servidores independentes que se conectam entre si. Você pode escolher um pod para criar sua conta ou hospedar o seu próprio. O sistema permite seguir pessoas, publicar textos, imagens, curtir e comentar, tudo com foco em controle do usuário e privacidade. Ele foi um dos primeiros projetos a propor uma alternativa livre às redes sociais centralizadas como o Facebook. Diferente do Mastodon ou do Friendica, o protocolo usado pelo Diaspora* não é compatível com o ActivityPub, o que limita a comunicação direta com outras redes do Fediverso.',
   features: [
     'Rede descentralizada com foco em privacidade',
     'Publicações com texto, links e imagens',
@@ -834,7 +833,7 @@ export const apps: App[] = [
     { label: 'Auto-hospede o Mattermost', url: 'https://docs.mattermost.com/install/self-managed.html' },
   ],
   categories: ['messaging', 'tools'],
-  alternatives: ['Slack', 'Microsoft Teams', 'Rocket.Chat'],
+  alternatives: ['Slack', 'Microsoft Teams', 'Rocket.Chat', 'GitLab'],
   protocol: [''],
   banner: {
     src: './apps/icons/mattermost.png',
@@ -1133,7 +1132,7 @@ export const apps: App[] = [
 {
   name: 'AT Protocol',
   description: 'Protocolo criado para redes sociais descentralizadas, mas por enquanto limitado ao uso no Bluesky.',
-  longDescription: 'O AT Protocol foi desenvolvido para ser a base técnica do Bluesky, uma rede social descentralizada que surgiu como alternativa ao Twitter. Ele promete oferecer controle de identidade, portabilidade de dados e interoperabilidade. No entanto, até agora só é usado pelo próprio Bluesky e ainda não está totalmente aberto para uso por terceiros. Por isso, embora seja apresentado como um protocolo aberto, sua adoção prática e comunidade ainda são muito limitadas.',
+  longDescription: 'O AT Protocol foi desenvolvido para ser a base técnica do Bluesky, uma rede social descentralizada que surgiu como alternativa ao Twitter. Ele promete oferecer controle de identidade, portabilidade de dados e interoperabilidade. No entanto, até agora só é usado pelo próprio Bluesky e ainda não está totalmente aberto para uso por terceiros. Por isso, embora seja apresentado como protocolo aberto, ainda não é possível utilizá-lo fora do ecossistema do Bluesky, nem auto-hospedar serviços compatíveis.',
   features: [
     'Foco em redes sociais descentralizadas com identidade portátil',
     'Desenvolvido junto com a plataforma Bluesky',
