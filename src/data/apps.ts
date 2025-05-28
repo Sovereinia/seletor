@@ -72,7 +72,7 @@ export const apps: App[] = [
     alternatives: ['Google Drive', 'OneDrive', 'Dropbox'],
     protocol: ['WebDAV'],
     banner: {
-      src: './apps/icons/nextcloud.png',
+      src: './apps/icons/nextcloud.svg',
       alt: 'Ícone do Nextcloud'
     },
     modalBanner: {
@@ -1043,7 +1043,7 @@ export const apps: App[] = [
   alternatives: ['Twitch', 'YouTube Live', 'Facebook Live'],
   protocol: [''],
   banner: {
-    src: './apps/icons/owncast.png',
+    src: './apps/icons/owncast.svg',
     alt: 'Ícone do Owncast'
   },
   modalBanner: {
@@ -1069,7 +1069,7 @@ export const apps: App[] = [
   alternatives: ['Radio.co', 'Shoutcast'],
   protocol: [''],
   banner: {
-    src: './apps/icons/azuracast.png',
+    src: './apps/icons/azuracast.svg',
     alt: 'Ícone do AzuraCast'
   },
   modalBanner: {
@@ -1095,7 +1095,7 @@ export const apps: App[] = [
   alternatives: ['Auth0', 'Okta', 'Firebase Auth'],
   protocol: ['OIDC', 'SAML', 'OAuth2'],
   banner: {
-    src: './apps/icons/keycloak.png',
+    src: './apps/icons/keycloak.svg',
     alt: 'Ícone do Keycloak'
   },
   modalBanner: {
@@ -1147,7 +1147,7 @@ export const apps: App[] = [
   alternatives: ['ActivityPub', 'Diaspora protocol'],
   protocol: [''],
   banner: {
-    src: './apps/icons/atprotocol.png',
+    src: './apps/icons/atprotocol.svg',
     alt: 'Ícone do AT Protocol'
   },
   modalBanner: {
@@ -1174,7 +1174,7 @@ export const apps: App[] = [
   alternatives: ['Twitter'],
   protocol: ['AT Protocol'],
   banner: {
-    src: './apps/icons/bluesky.png',
+    src: './apps/icons/bluesky.svg',
     alt: 'Ícone do Bluesky'
   },
   modalBanner: {
@@ -1226,7 +1226,7 @@ export const apps: App[] = [
   alternatives: ['RSS', 'Newsletters'],
   protocol: [''],
   banner: {
-    src: './apps/icons/atom.png',
+    src: './apps/icons/atom.svg',
     alt: 'Ícone do Atom'
   },
   modalBanner: {
@@ -1252,7 +1252,7 @@ export const apps: App[] = [
   alternatives: ['IPFS', 'HTTP', 'Resilio Sync'],
   protocol: ['BitTorrent'],
   banner: {
-    src: './apps/icons/bittorrent.png',
+    src: './apps/icons/bittorrent.svg',
     alt: 'Ícone do BitTorrent'
   },
   modalBanner: {
@@ -1278,7 +1278,7 @@ export const apps: App[] = [
   alternatives: ['ActivityPub', 'AT Protocol'],
   protocol: ['Nostr'],
   banner: {
-    src: './apps/icons/nostr.png',
+    src: './apps/icons/nostr.svg',
     alt: 'Ícone do Nostr'
   },
   modalBanner: {
@@ -1382,7 +1382,7 @@ export const apps: App[] = [
   alternatives: ['Spotify', 'SoundCloud'],
   protocol: ['ActivityPub', 'Fediverso'],
   banner: {
-    src: './apps/icons/funkwhale.png',
+    src: './apps/icons/funkwhale.svg',
     alt: 'Ícone do Funkwhale'
   },
   modalBanner: {
