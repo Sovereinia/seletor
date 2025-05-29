@@ -3,7 +3,7 @@ import { sliceText } from '../utils/global';
 import { getAlternativeIcon } from '@/utils/global.ts';
 import type { App } from '@/types';
 import { getProtocolInfo } from '@/utils/global.ts';
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 
 const props = defineProps<{
   app: App;
@@ -18,19 +18,17 @@ function abrirModal() {
   emit('abrir', props.app);
 }
 
-const visibleAlternatives = ref<Record<string, boolean>>({});
+const hiddenAlternatives = ref(new Set<string>());
+const hiddenProtocols = ref(new Set<string>());
 
-const visibleProtocols = ref<Record<string, boolean>>({});
-
-onMounted(() => {
-  for (const alt of props.app.alternatives || []) {
-    visibleAlternatives.value[alt] = true;
-  }
-  for (const proto of props.app.protocol || []) {
-    visibleProtocols.value[proto] = true;
-  }
-});
-
+const protocolInfos = computed(() =>
+  (props.app.protocol || [])
+    .map(proto => {
+      const info = getProtocolInfo(proto);
+      return info ? { proto, info } : null;
+    })
+    .filter((x): x is { proto: string; info: { src: string; alt: string; url: string } } => x !== null)
+);
 
 
 </script>
@@ -54,14 +52,14 @@ onMounted(() => {
       <h2 class="card-title text-2xl text-gray-200">{{ app.name }}</h2>
         <div class="flex flex-col items-end gap-1 max-h-14 overflow-hidden ml-auto">
           <img
-            v-for="proto in app.protocol || []"
+            v-for="{ proto, info } in protocolInfos"
             :key="proto"
-            v-show="visibleProtocols[proto]"
-            :src="getProtocolInfo(proto)?.src"
-            :alt="getProtocolInfo(proto)?.alt"
+            v-show="!hiddenProtocols.has(proto)"
+            :src="info.src"
+            :alt="info.alt"
             class="h-5 object-contain"
             :title="proto"
-            @error="() => (visibleProtocols[proto] = false)"
+            @error="() => hiddenProtocols.add(proto)"
           />
         </div>
       </div>
@@ -73,14 +71,14 @@ onMounted(() => {
       
       <div class="flex gap-2 justify-end">
         <img
-          v-for="(alt, index) in app.alternatives.slice(0, 3)"
+          v-for="(alt, index) in app.alternatives"
           :key="alt"
-          v-show="visibleAlternatives[alt]"
+          v-show="!hiddenAlternatives.has(alt)"
           :src="getAlternativeIcon(alt)"
           :alt="alt"
           class="w-12 h-12 rounded-full object-contain border border-gray-500"
           :title="alt"
-          @error="() => (visibleAlternatives[alt] = false)"
+          @error="() => hiddenAlternatives.add(alt)"
         />
 
       </div>
