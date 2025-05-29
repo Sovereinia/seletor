@@ -101,6 +101,16 @@ function handleAbrirModal(app: App) {
       :app="modalData"
       @atualizarAbrir="mostrarModal = $event"
     />
+  
+    <div class="hidden">
+      <AppModal
+        v-for="app in filteredApps"
+        :key="'preload-' + app.name"
+        :app="app"
+        :abrir="false"
+        @atualizarAbrir="() => {}"
+      />
+    </div>
 
   </section>
 </template>
