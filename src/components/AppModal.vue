@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, type Ref, defineProps, watch, onMounted, onBeforeUnmount } from 'vue'
+import { ref, type Ref, defineProps, watch, onMounted, onBeforeUnmount, nextTick, computed } from 'vue'
 import { getAlternativeIcon } from '@/utils/global.ts';
 import { getProtocolInfo } from '@/utils/global.ts';
 import { getFaviconPath } from '@/utils/global.ts';
@@ -17,17 +17,34 @@ const expandido = ref(false);
 
 const bannerErrored = ref(false);
 
+const visible = ref(false);
+
+const localApp = ref<Partial<App>>({});
+
+
 const myModal = ref<HTMLDialogElement | null>(null)
 
-watch(() => abrir, (newValue) => {
+watch(() => abrir, async (newValue) => {
   if (newValue) {
     bannerErrored.value = false;
     expandido.value = false;
-    openModal();
+    visible.value = false;
+    localApp.value = {};
+
+    await nextTick(); // desmonta com segurança
+
+    localApp.value = { ...app };
+    myModal.value?.showModal();
+
+    await nextTick(); // garante render
+    visible.value = true;
   } else {
-    closeModal();
+    visible.value = false;
+    myModal.value?.close();
+    emit('atualizarAbrir', false);
   }
 });
+
 
 function openModal() {
   myModal.value?.showModal()
@@ -43,6 +60,7 @@ function closeModal() {
   expandido.value = false;
   visibleAlternatives.value = {};
   favicons.value = [];
+  localApp.value = {};
 
   emit('atualizarAbrir', false);
 }
@@ -53,7 +71,7 @@ watch(
   () => app.alternatives,
   (alts) => {
     visibleAlternatives.value = {};
-    (alts || []).slice(0, 3).forEach((alt) => {
+    (alts || []).forEach((alt) => {
       visibleAlternatives.value[alt] = true;
     });
   },
@@ -105,6 +123,11 @@ function handleResize() {
   isMobile.value = window.innerWidth < 640;
 }
 
+const protocolInfos = computed(() =>
+  (localApp.value.protocol || [])
+    .map(p => getProtocolInfo(p))
+    .filter((info): info is { src: string; alt: string; url: string } => !!info)
+);
 
 </script>
 
@@ -112,8 +135,12 @@ function handleResize() {
 <template>
   <div>
   <!-- ✅ Atualizado aqui: @cancel → @click.self -->
-  <dialog ref="myModal" class="modal fixed inset-0 flex items-center justify-center p-2 sm:p-4 overflow-auto" @click.self="closeModal">
-  <div class="modal-box w-full max-w-[880px] max-h-[calc(100vh-2rem)] overflow-y-auto rounded-xl relative bg-base-100 sm:px-6 sm:py-6 box-border">
+  <dialog 
+    ref="myModal" 
+    class="modal fixed inset-0 flex items-center justify-center p-2 sm:p-4 overflow-auto" 
+    @click.self="closeModal"
+  >
+  <div v-if="visible" class="modal-box w-full max-w-[880px] max-h-[calc(100vh-2rem)] overflow-y-auto rounded-xl relative bg-base-100 sm:px-6 sm:py-6 box-border">
 
 
     <!-- Botão de fechar -->
@@ -145,8 +172,8 @@ function handleResize() {
         mt-0 sm:mt-2 md:mt-4"
       >
         <img
-          :src="bannerErrored ? app.banner?.src : app.modalBanner?.src || app.banner?.src"
-          :alt="bannerErrored ? app.banner?.alt : app.modalBanner?.alt || app.banner?.alt"
+          :src="bannerErrored ? localApp.banner?.src : localApp.modalBanner?.src || localApp.banner?.src"
+          :alt="bannerErrored ? localApp.banner?.alt : localApp.modalBanner?.alt || localApp.banner?.alt"
           @error="bannerErrored = true"
           class="mx-auto w-full max-w-lg max-h-[120px] object-contain mb-2"
         />
@@ -154,7 +181,7 @@ function handleResize() {
 
       <!-- Texto e conteúdos -->
       <div class="w-full flex flex-col md:px-4 lg:px-6">
-        <!-- <h3 class="text-xl font-bold mb-2">{{ app.name }}</h3> -->
+        <!-- <h3 class="text-xl font-bold mb-2">{{ localApp.name }}</h3> -->
         <div
           class="mb-4 rounded-lg px-3 sm:px-4 py-1 sm:mt-3 text-sm sm:text-base leading-relaxed transition-all duration-300 cursor-pointer sm:cursor-default"
           :class="[
@@ -164,34 +191,33 @@ function handleResize() {
           ]"
           @click="(expandido = !expandido)"
         >
-          {{ app.longDescription }}
+          {{ localApp.longDescription }}
         </div>
 
 
       <!-- Caracteristicas -->
-        <ul v-if="app.features?.length" class="list-disc text-sm sm:text-base space-y-2 list-inside mb-4 text-sm">
-          <li v-for="(feature, index) in app.features" :key="index">{{ feature }}</li>
+        <ul v-if="localApp.features?.length" class="list-disc text-sm sm:text-base space-y-2 list-inside mb-4 text-sm">
+          <li v-for="(feature, index) in localApp.features" :key="index">{{ feature }}</li>
         </ul>
 
         <div class="mt-2">
           <div class="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <h4 v-if="app.protocol?.length"  class="sm:text-lg font-semibold mb-2">Protocolos e federação:</h4>
+              <h4 v-if="localApp.protocol?.length"  class="sm:text-lg font-semibold mb-2">Protocolos e federação:</h4>
               <div class="flex flex-wrap gap-2">
                 <a
-                  v-for="proto in app.protocol"
-                  :key="proto"
-                  :href="getProtocolInfo(proto)?.url"
+                  v-for="proto in protocolInfos"
+                  :key="proto.alt"
+                  :href="proto.url"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="hover:opacity-80 transition-opacity"
                 >
                   <img
-                    v-if="getProtocolInfo(proto)"
-                    :src="getProtocolInfo(proto)?.src"
-                    :alt="getProtocolInfo(proto)?.alt"
+                    :src="proto.src"
+                    :alt="proto.alt"
                     class="h-6 object-contain"
-                    :title="proto"
+                    :title="proto.alt"
                   />
                 </a>
               </div>
@@ -232,10 +258,10 @@ function handleResize() {
           </div>
         </div>
 
-        <div v-if="app.alternatives?.length" class="mt-4">
+        <div v-if="localApp.alternatives?.length" class="mt-4">
           <h4 class="sm:text-lg font-semibold mb-2">Alternativo para:</h4>
           <div class="flex flex-wrap gap-2">
-            <span v-for="(alt, index) in app.alternatives.slice(0, 3)" :key="alt">
+            <span v-for="(alt, index) in localApp.alternatives" :key="alt">
               <img
                 v-if="visibleAlternatives[alt]"
                 :src="getAlternativeIcon(alt)"
