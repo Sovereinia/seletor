@@ -456,7 +456,6 @@ export const apps: App[] = [
     { label: 'Lista de softwares de e-mail', url: 'https://github.com/Kickball/awesome-selfhosted#email' },
   ],
   categories: ['protocols'],
-  alternatives: ['Gmail', 'Outlook'],
   protocol: ['SMTP', 'IMAP', 'POP3'],
   banner: {
     src: './apps/icons/email.svg',

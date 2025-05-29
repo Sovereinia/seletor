@@ -39,6 +39,21 @@ function closeModal() {
   emit('atualizarAbrir', false);
 }
 
+const visibleAlternatives = ref<Record<string, boolean>>({});
+
+watch(
+  () => app.alternatives,
+  (alts) => {
+    visibleAlternatives.value = {};
+    (alts || []).slice(0, 3).forEach((alt) => {
+      visibleAlternatives.value[alt] = true;
+    });
+  },
+  { immediate: true }
+);
+
+
+
 function faviconSrc(url: string): { src: string; visible: Ref<boolean>; onError: () => void } {
   const src = getFaviconPath(url);
   const visible = ref(true);
@@ -117,12 +132,15 @@ function handleResize() {
 
       
       <!-- Banner -->
-      <div class="px-6 sm:px-10 py-0 sm:py-4 md:py-6">
+      <div class="px-6 sm:px-10 
+        mb-2  sm:mb-4 
+        mt-0 sm:mt-2 md:mt-4"
+      >
         <img
           :src="bannerErrored ? app.banner?.src : app.modalBanner?.src || app.banner?.src"
           :alt="bannerErrored ? app.banner?.alt : app.modalBanner?.alt || app.banner?.alt"
           @error="bannerErrored = true"
-          class="mx-auto w-full max-w-lg max-h-[120px] object-contain "
+          class="mx-auto w-full max-w-lg max-h-[120px] object-contain"
         />
       </div>
 
@@ -130,7 +148,7 @@ function handleResize() {
       <div class="w-full flex flex-col md:px-4 lg:px-6">
         <!-- <h3 class="text-xl font-bold mb-2">{{ app.name }}</h3> -->
         <div
-          class="mb-4 rounded-lg px-3 sm:px-4 md:px-6 py-1 mb-1 sm:mt-3 text-sm sm:text-base leading-relaxed transition-all duration-300 cursor-pointer sm:cursor-default"
+          class="mb-4 rounded-lg px-3 sm:px-4 py-1 sm:mt-3 text-sm sm:text-base leading-relaxed transition-all duration-300 cursor-pointer sm:cursor-default"
           :class="[
             'text-base',
             expandido ? '' : 'line-clamp-2 overflow-hidden',
@@ -150,7 +168,7 @@ function handleResize() {
         <div class="mt-2">
           <div class="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <h4 v-if="app.protocol?.length"  class="text-lg font-semibold mb-2">Protocolos e federação:</h4>
+              <h4 v-if="app.protocol?.length"  class="sm:text-lg font-semibold mb-2">Protocolos e federação:</h4>
               <div class="flex flex-wrap gap-2">
                 <a
                   v-for="proto in app.protocol"
@@ -207,16 +225,19 @@ function handleResize() {
         </div>
 
         <div v-if="app.alternatives?.length" class="mt-4">
-          <h4 class="text-lg font-semibold mb-2">Alternativo para:</h4>
-          <div class="flex gap-2">
-            <img
-              v-for="(alt, index) in app.alternatives.slice(0, 3)"
-              :key="alt"
-              :src="getAlternativeIcon(alt)"
-              :alt="alt"
-              class="w-12 h-12 rounded-full object-contain border border-gray-500"
-              :title="alt"
-            />
+          <h4 class="sm:text-lg font-semibold mb-2">Alternativo para:</h4>
+          <div class="flex flex-wrap gap-2">
+            <span v-for="(alt, index) in app.alternatives.slice(0, 3)" :key="alt">
+              <img
+                v-if="visibleAlternatives[alt]"
+                :src="getAlternativeIcon(alt)"
+                :alt="alt"
+                :title="alt"
+                class="w-12 h-12 rounded-full object-contain border border-gray-500"
+                @error="visibleAlternatives[alt] = false"
+              />
+            </span>
+
           </div>
         </div>
     </div>
