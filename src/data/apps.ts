@@ -446,7 +446,7 @@ export const apps: App[] = [
   description: 'Protocolo clássico de comunicação digital, descentralizado por natureza e amplamente compatível.',
   longDescription: 'E-mail é uma das formas mais antigas e universais de comunicação na internet. Ele funciona com base em protocolos abertos como SMTP, IMAP e POP3, o que permite que diferentes provedores e servidores troquem mensagens entre si. Ao contrário de redes sociais e mensageiros modernos, o e-mail já nasceu descentralizado: qualquer pessoa pode hospedar seu próprio servidor e ter controle completo sobre suas mensagens. É compatível com praticamente todos os sistemas e dispositivos.',
   features: [
-    'Baseado em protocolos abertos (SMTP, IMAP, POP3)',
+    'Baseado em protocolos abertos',
     'Totalmente descentralizado: qualquer um pode rodar seu servidor',
     'Funciona em qualquer lugar, com milhares de apps e clientes compatíveis'
   ],
