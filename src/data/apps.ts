@@ -5,7 +5,7 @@ export const apps: App[] = [
     {
     name: 'PeerTube',
     description: 'Plataforma de vídeos parecida com o YouTube, mas sem centralização e com streaming entre instâncias.',
-    longDescription: 'O PeerTube é uma plataforma de vídeos que funciona de forma descentralizada. Em vez de um único site como o YouTube, existem várias instâncias independentes que hospedam vídeos e se conectam entre si. Você pode assistir, comentar e até se inscrever em canais de outras instâncias. Um diferencial do PeerTube é o uso de tecnologia P2P (ponto a ponto) para ajudar no carregamento dos vídeos, especialmente em momentos com muitos acessos. Ele é ideal para quem quer compartilhar vídeos com mais liberdade e menos rastreamento.',
+    longDescription: 'PeerTube é uma plataforma de vídeos que funciona de forma descentralizada. Em vez de um único site como o YouTube, existem várias instâncias independentes que hospedam vídeos e se conectam entre si. Você pode assistir, comentar e até se inscrever em canais de outras instâncias. Um diferencial do PeerTube é o uso de tecnologia P2P (ponto a ponto) para ajudar no carregamento dos vídeos, especialmente em momentos com muitos acessos. Ele é ideal para quem quer compartilhar vídeos com mais liberdade e menos rastreamento.',
     features: [
       'Cada instância faz a customização e moderação como preferir',
       'Você pode seguir canais de outras instâncias',
@@ -31,7 +31,7 @@ export const apps: App[] = [
   {
     name: 'Mastodon',
     description: 'Uma rede social parecida com o Twitter, mas sem anúncios, sem algoritmo e com mais controle para quem usa.',
-    longDescription: 'O Mastodon é uma rede social de microblog onde você pode publicar textos, imagens, vídeos e enquetes. Ele funciona por meio de várias instâncias independentes que se conectam entre si. Você escolhe em qual instância quer entrar, ou pode criar a sua. O feed é sempre cronológico, sem algoritmos nem anúncios, e cada comunidade tem suas próprias regras. Tudo isso faz do Mastodon uma rede mais aberta, tranquila e com foco na experiência do usuário.',
+    longDescription: 'Mastodon é uma rede social de microblog onde você pode publicar textos, imagens, vídeos e enquetes. Ele funciona por meio de várias instâncias independentes que se conectam entre si. Você escolhe em qual instância quer entrar, ou pode criar a sua. O feed é sempre cronológico, sem algoritmos nem anúncios, e cada comunidade tem suas próprias regras. Tudo isso faz do Mastodon uma rede mais aberta, tranquila e com foco na experiência do usuário.',
     features: [
       'Sem algoritmo: o feed é sempre cronológico',
       'Postagens com texto, imagens, vídeos e enquetes',
@@ -57,7 +57,7 @@ export const apps: App[] = [
   {
     name: 'Nextcloud',
     description: 'Alternativa ao Google Drive que permite salvar, compartilhar e sincronizar arquivos em um servidor próprio.',
-    longDescription: 'O Nextcloud é uma plataforma completa para guardar e acessar seus arquivos pela internet, como se fosse um Google Drive privado. Com ele, você pode enviar documentos, fotos e vídeos, organizar pastas, compartilhar links e sincronizar tudo entre seus dispositivos. Também é possível ativar recursos extras como calendário, contatos, chat, vídeo chamadas e edição colaborativa de documentos. Tudo isso no seu próprio servidor, com total controle e sem depender de empresas terceiras.',
+    longDescription: 'Nextcloud é uma plataforma completa para guardar e acessar seus arquivos pela internet, como se fosse um Google Drive privado. Com ele, você pode enviar documentos, fotos e vídeos, organizar pastas, compartilhar links e sincronizar tudo entre seus dispositivos. Também é possível ativar recursos extras como calendário, contatos, chat, vídeo chamadas e edição colaborativa de documentos. Tudo isso no seu próprio servidor, com total controle e sem depender de empresas terceiras.',
     features: [
       'Armazenamento e sincronização de arquivos entre dispositivos',
       'Compartilhamento com links públicos ou protegidos por senha',
@@ -83,7 +83,7 @@ export const apps: App[] = [
 {
   name: 'Vaultwarden',
   description: 'Gerenciador de senhas compatível com o Bitwarden, leve e fácil de auto-hospedar.',
-  longDescription: 'O Vaultwarden é uma alternativa leve ao Bitwarden, um dos gerenciadores de senhas mais populares. Com ele, você pode guardar senhas, logins, notas seguras e outras informações de forma criptografada, acessando tudo pelo navegador ou pelo app oficial do Bitwarden. A grande vantagem do Vaultwarden é que ele consome poucos recursos e é muito simples de instalar, ideal para quem quer controlar suas senhas em um servidor próprio, sem depender da nuvem de terceiros.',
+  longDescription: 'Vaultwarden é uma alternativa leve ao Bitwarden, um dos gerenciadores de senhas mais populares. Com ele, você pode guardar senhas, logins, notas seguras e outras informações de forma criptografada, acessando tudo pelo navegador ou pelo app oficial do Bitwarden. A grande vantagem do Vaultwarden é que ele consome poucos recursos e é muito simples de instalar, ideal para quem quer controlar suas senhas em um servidor próprio, sem depender da nuvem de terceiros.',
   features: [
     'Compatível com os apps oficiais do Bitwarden',
     'Criptografia de ponta a ponta para senhas e dados sensíveis',
@@ -107,7 +107,7 @@ export const apps: App[] = [
 {
   name: 'Passbolt',
   description: 'Gerenciador de senhas focado em uso colaborativo por equipes e empresas.',
-  longDescription: 'O Passbolt é um gerenciador de senhas feito especialmente para times. Ele permite compartilhar senhas com segurança entre colegas de equipe, com controle de permissões e registro de atividades. Todas as senhas são criptografadas de ponta a ponta, e o acesso é feito pelo navegador usando uma extensão. É uma boa escolha para empresas ou grupos que precisam gerenciar credenciais em conjunto, mas ainda assim com total controle por estar rodando no seu próprio servidor.',
+  longDescription: 'Passbolt é um gerenciador de senhas feito especialmente para times. Ele permite compartilhar senhas com segurança entre colegas de equipe, com controle de permissões e registro de atividades. Todas as senhas são criptografadas de ponta a ponta, e o acesso é feito pelo navegador usando uma extensão. É uma boa escolha para empresas ou grupos que precisam gerenciar credenciais em conjunto, mas ainda assim com total controle por estar rodando no seu próprio servidor.',
   features: [
     'Compartilhamento seguro de senhas entre membros da equipe',
     'Controle de permissões e registros de acesso',
@@ -133,7 +133,7 @@ export const apps: App[] = [
 {
   name: 'Element',
   description: 'Aplicativo de mensagens seguro e descentralizado, baseado no protocolo Matrix.',
-  longDescription: 'O Element é um app de mensagens parecido com o WhatsApp ou o Telegram, mas com uma grande diferença: ele usa o protocolo aberto Matrix, que permite comunicação entre servidores diferentes. Você pode criar salas públicas ou privadas, enviar arquivos, fazer chamadas de voz e vídeo, e até conversar com pessoas em outros serviços (como Slack, Discord ou Telegram via ponte). O Element pode ser usado em servidores públicos ou no seu próprio, oferecendo privacidade e controle total sobre os dados.',
+  longDescription: 'Element é um app de mensagens parecido com o WhatsApp ou o Telegram, mas com uma grande diferença: ele usa o protocolo aberto Matrix, que permite comunicação entre servidores diferentes. Você pode criar salas públicas ou privadas, enviar arquivos, fazer chamadas de voz e vídeo, e até conversar com pessoas em outros serviços (como Slack, Discord ou Telegram via ponte). O Element pode ser usado em servidores públicos ou no seu próprio, oferecendo privacidade e controle total sobre os dados.',
   features: [
     'Mensagens, arquivos, chamadas de voz e vídeo',
     'Criação de salas públicas ou privadas',
@@ -159,7 +159,7 @@ export const apps: App[] = [
 {
   name: 'Lemmy',
   description: 'Plataforma de fóruns e comunidades, parecida com o Reddit, mas descentralizada e sem rastreamento.',
-  longDescription: 'O Lemmy é uma rede de fóruns em formato de comunidades temáticas, onde qualquer pessoa pode postar links, textos e iniciar discussões. Ele funciona de forma federada, com várias instâncias que se conectam entre si, como no Mastodon. Cada instância pode ter suas próprias regras, mas você pode participar de comunidades de outras instâncias sem precisar criar várias contas. É uma ótima alternativa ao Reddit para quem busca mais privacidade e liberdade.',
+  longDescription: 'Lemmy é uma rede de fóruns em formato de comunidades temáticas, onde qualquer pessoa pode postar links, textos e iniciar discussões. Ele funciona de forma federada, com várias instâncias que se conectam entre si, como no Mastodon. Cada instância pode ter suas próprias regras, mas você pode participar de comunidades de outras instâncias sem precisar criar várias contas. É uma ótima alternativa ao Reddit para quem busca mais privacidade e liberdade.',
   features: [
     'Comunidades temáticas com votação por votos positivos ou negativos',
     'Federação entre instâncias via ActivityPub',
@@ -186,7 +186,7 @@ export const apps: App[] = [
 {
   name: 'Jitsi Meet',
   description: 'Ferramenta de videoconferência segura e sem necessidade de cadastro, ideal para reuniões rápidas.',
-  longDescription: 'O Jitsi Meet é uma plataforma de chamadas de vídeo que funciona direto do navegador, sem precisar instalar nada ou criar conta. É uma alternativa ao Zoom e ao Google Meet, com foco em privacidade e facilidade de uso. Você pode hospedar sua própria instância para ter total controle das reuniões. Ele permite compartilhar a tela, conversar por chat, gravar reuniões e proteger salas com senha. É ideal para equipes, aulas e reuniões online.',
+  longDescription: 'Jitsi Meet é uma plataforma de chamadas de vídeo que funciona direto do navegador, sem precisar instalar nada ou criar conta. É uma alternativa ao Zoom e ao Google Meet, com foco em privacidade e facilidade de uso. Você pode hospedar sua própria instância para ter total controle das reuniões. Ele permite compartilhar a tela, conversar por chat, gravar reuniões e proteger salas com senha. É ideal para equipes, aulas e reuniões online.',
   features: [
     'Chamadas de vídeo e áudio direto no navegador',
     'Compartilhamento de tela e chat integrado',
@@ -213,7 +213,7 @@ export const apps: App[] = [
 {
   name: 'BookStack',
   description: 'Plataforma de documentação e anotações em formato de livros e páginas, ideal para equipes ou uso pessoal.',
-  longDescription: 'O BookStack é uma ferramenta para organizar conhecimento em formato de livros, capítulos e páginas. Pode ser usada para criar manuais, wikis, documentações técnicas ou anotações pessoais. A interface é simples e funciona direto no navegador, com suporte a permissões por usuário, histórico de edições e editor visual. Por ser auto-hospedado, você tem controle total sobre o conteúdo e pode adaptar para uso individual ou em equipe.',
+  longDescription: 'BookStack é uma ferramenta para organizar conhecimento em formato de livros, capítulos e páginas. Pode ser usada para criar manuais, wikis, documentações técnicas ou anotações pessoais. A interface é simples e funciona direto no navegador, com suporte a permissões por usuário, histórico de edições e editor visual. Por ser auto-hospedado, você tem controle total sobre o conteúdo e pode adaptar para uso individual ou em equipe.',
   features: [
     'Organização por livros, capítulos e páginas',
     'Editor visual com histórico de alterações',
@@ -238,7 +238,7 @@ export const apps: App[] = [
 {
   name: 'RSSHub',
   description: 'Gerador de feeds RSS para sites que não oferecem suporte nativo, ideal para acompanhar tudo em um só lugar.',
-  longDescription: 'O RSSHub permite criar feeds RSS de praticamente qualquer site, mesmo aqueles que não oferecem essa função. Com ele, você pode acompanhar atualizações de redes sociais, blogs, fóruns, lojas online e muito mais, tudo em um leitor de RSS. É uma ótima ferramenta para centralizar notícias e evitar o uso de redes sociais para se manter informado. Por ser auto-hospedado, você tem controle sobre quais fontes seguir e pode evitar rastreadores.',
+  longDescription: 'RSSHub permite criar feeds RSS de praticamente qualquer site, mesmo aqueles que não oferecem essa função. Com ele, você pode acompanhar atualizações de redes sociais, blogs, fóruns, lojas online e muito mais, tudo em um leitor de RSS. É uma ótima ferramenta para centralizar notícias e evitar o uso de redes sociais para se manter informado. Por ser auto-hospedado, você tem controle sobre quais fontes seguir e pode evitar rastreadores.',
   features: [
     'Cria feeds RSS para sites que não têm suporte nativo',
     'Funciona com redes sociais, e-commerces, blogs e fóruns',
@@ -264,7 +264,7 @@ export const apps: App[] = [
 {
   name: 'Discourse',
   description: 'Plataforma moderna de fóruns, com suporte a login social, notificações e interface parecida com apps de chat.',
-  longDescription: 'O Discourse é uma ferramenta de fórum com visual moderno e recursos atuais. Pode ser usada para criar comunidades, grupos de suporte, áreas de discussão interna e muito mais. Ele suporta login com redes sociais, envio de notificações por e-mail, sistema de menções e organização por categorias. Além disso, é responsivo, funcionando bem em celulares. Como é auto-hospedado, você pode configurar do seu jeito, com regras próprias e controle total da base de usuários.',
+  longDescription: 'Discourse é uma ferramenta de fórum com visual moderno e recursos atuais. Pode ser usada para criar comunidades, grupos de suporte, áreas de discussão interna e muito mais. Ele suporta login com redes sociais, envio de notificações por e-mail, sistema de menções e organização por categorias. Além disso, é responsivo, funcionando bem em celulares. Como é auto-hospedado, você pode configurar do seu jeito, com regras próprias e controle total da base de usuários.',
   features: [
     'Fóruns organizados por categorias e com sistema de reputação',
     'Interface moderna com suporte a menções, markdown e notificações',
@@ -290,7 +290,7 @@ export const apps: App[] = [
 {
   name: 'Pixelfed',
   description: 'Rede social para compartilhar fotos, parecida com o Instagram, mas sem anúncios nem rastreamento.',
-  longDescription: 'O Pixelfed é uma rede social para fotos e vídeos curtos, pensada para quem quer compartilhar imagens com privacidade e controle. Ele tem um visual parecido com o Instagram, com feed, curtidas e comentários, mas sem algoritmos nem publicidade. Assim como o Mastodon, o Pixelfed funciona em várias instâncias que se comunicam entre si. Você pode seguir e ser seguido por pessoas de outras instâncias do Fediverso, tudo com código aberto e sem depender de empresas centralizadas.',
+  longDescription: 'Pixelfed é uma rede social para fotos e vídeos curtos, pensada para quem quer compartilhar imagens com privacidade e controle. Ele tem um visual parecido com o Instagram, com feed, curtidas e comentários, mas sem algoritmos nem publicidade. Assim como o Mastodon, o Pixelfed funciona em várias instâncias que se comunicam entre si. Você pode seguir e ser seguido por pessoas de outras instâncias do Fediverso, tudo com código aberto e sem depender de empresas centralizadas.',
   features: [
     'Feed de fotos com curtidas, comentários e stories',
     'Sem anúncios, rastreadores ou algoritmo de recomendação',
@@ -317,7 +317,7 @@ export const apps: App[] = [
 {
   name: 'Signal',
   description: 'Mensageiro com foco em privacidade, com criptografia de ponta a ponta e sem rastreamento.',
-  longDescription: 'O Signal é um aplicativo de mensagens que prioriza a segurança e a privacidade. Todas as conversas são protegidas por criptografia de ponta a ponta, e nenhum dado é armazenado além do necessário. Você pode trocar mensagens, fazer chamadas de voz e vídeo, criar grupos e enviar arquivos. O app oficial usa servidores da própria organização, mas também é possível hospedar seu próprio servidor Signal para ter controle total sobre os dados. É usado por pessoas e organizações que valorizam a confidencialidade.',
+  longDescription: 'Signal é um aplicativo de mensagens que prioriza a segurança e a privacidade. Todas as conversas são protegidas por criptografia de ponta a ponta, e nenhum dado é armazenado além do necessário. Você pode trocar mensagens, fazer chamadas de voz e vídeo, criar grupos e enviar arquivos. O app oficial usa servidores da própria organização, mas também é possível hospedar seu próprio servidor Signal para ter controle total sobre os dados. É usado por pessoas e organizações que valorizam a confidencialidade.',
   features: [
     'Criptografia de ponta a ponta por padrão',
     'Chamadas de voz e vídeo seguras',
@@ -343,7 +343,7 @@ export const apps: App[] = [
 {
   name: 'Stirling-PDF',
   description: 'Ferramenta completa para editar e converter arquivos PDF no navegador, direto do seu servidor.',
-  longDescription: 'O Stirling-PDF é um aplicativo web que permite fazer várias operações com arquivos PDF, como juntar, dividir, girar, converter, proteger com senha, extrair texto e muito mais. Tudo funciona direto no navegador, sem precisar enviar seus arquivos para serviços externos. Ele é ideal para quem quer uma solução prática, local e segura para lidar com PDFs no dia a dia, seja no trabalho ou uso pessoal.',
+  longDescription: 'Stirling-PDF é um aplicativo web que permite fazer várias operações com arquivos PDF, como juntar, dividir, girar, converter, proteger com senha, extrair texto e muito mais. Tudo funciona direto no navegador, sem precisar enviar seus arquivos para serviços externos. Ele é ideal para quem quer uma solução prática, local e segura para lidar com PDFs no dia a dia, seja no trabalho ou uso pessoal.',
   features: [
     'Juntar, dividir, girar e converter arquivos PDF',
     'Proteger com senha, extrair texto e imagens',
@@ -367,7 +367,7 @@ export const apps: App[] = [
 {
   name: 'ActivityPub',
   description: 'Protocolo aberto que permite que diferentes plataformas se comuniquem entre si no Fediverso.',
-  longDescription: 'O ActivityPub é um protocolo de comunicação usado para conectar diferentes plataformas federadas. Ele permite que uma pessoa em um site (como o Mastodon) interaja com outra em um serviço diferente (como o PeerTube ou o Pixelfed), como se estivessem na mesma rede. Com isso, cada servidor pode ter suas próprias regras e foco, mas ainda assim conversar com os outros. É a base do que chamamos de Fediverso - um conjunto de serviços livres que funcionam juntos.',
+  longDescription: 'ActivityPub é um protocolo de comunicação usado para conectar diferentes plataformas federadas. Ele permite que uma pessoa em um site (como o Mastodon) interaja com outra em um serviço diferente (como o PeerTube ou o Pixelfed), como se estivessem na mesma rede. Com isso, cada servidor pode ter suas próprias regras e foco, mas ainda assim conversar com os outros. É a base do que chamamos de Fediverso - um conjunto de serviços livres que funcionam juntos.',
   features: [
     'Permite a federação entre diferentes serviços',
     'Base de redes como Mastodon, PeerTube, Pixelfed e Lemmy',
@@ -393,7 +393,7 @@ export const apps: App[] = [
 {
   name: 'Matrix',
   description: 'Protocolo aberto de comunicação em tempo real, usado por apps como o Element.',
-  longDescription: 'O Matrix é um protocolo que permite a troca de mensagens, chamadas e arquivos entre diferentes servidores. Ele foi criado para ser seguro, descentralizado e interoperável. Com ele, você pode usar um app como o Element para se comunicar com pessoas de outros servidores Matrix, ou até mesmo integrar com serviços como Slack e Telegram por meio de pontes (bridges). É uma base sólida para quem quer ter controle total sobre sua comunicação online.',
+  longDescription: 'Matrix é um protocolo que permite a troca de mensagens, chamadas e arquivos entre diferentes servidores. Ele foi criado para ser seguro, descentralizado e interoperável. Com ele, você pode usar um app como o Element para se comunicar com pessoas de outros servidores Matrix, ou até mesmo integrar com serviços como Slack e Telegram por meio de pontes (bridges). É uma base sólida para quem quer ter controle total sobre sua comunicação online.',
   features: [
     'Mensagens, chamadas e compartilhamento de arquivos',
     'Funciona entre servidores diferentes (federação)',
@@ -418,7 +418,7 @@ export const apps: App[] = [
 {
   name: 'XMPP',
   description: 'Protocolo aberto de mensagens instantâneas, usado há décadas em serviços livres e federados.',
-  longDescription: 'O XMPP (Extensible Messaging and Presence Protocol) é um protocolo de mensagens criado em 1999, muito antes dos mensageiros modernos. Ele permite trocar mensagens, arquivos e até fazer chamadas, tudo de forma descentralizada. Existem muitos servidores e clientes XMPP, e você pode escolher livremente com quem se conectar. Mesmo sendo antigo, ele continua sendo mantido, com foco em simplicidade, privacidade e liberdade.',
+  longDescription: 'XMPP (Extensible Messaging and Presence Protocol) é um protocolo de mensagens criado em 1999, muito antes dos mensageiros modernos. Ele permite trocar mensagens, arquivos e até fazer chamadas, tudo de forma descentralizada. Existem muitos servidores e clientes XMPP, e você pode escolher livremente com quem se conectar. Mesmo sendo antigo, ele continua sendo mantido, com foco em simplicidade, privacidade e liberdade.',
   features: [
     'Mensagens instantâneas e presença (online/offline)',
     'Totalmente federado, com vários clientes e servidores disponíveis',
@@ -444,7 +444,7 @@ export const apps: App[] = [
 {
   name: 'Email',
   description: 'Protocolo clássico de comunicação digital, descentralizado por natureza e amplamente compatível.',
-  longDescription: 'O e-mail é uma das formas mais antigas e universais de comunicação na internet. Ele funciona com base em protocolos abertos como SMTP, IMAP e POP3, o que permite que diferentes provedores e servidores troquem mensagens entre si. Ao contrário de redes sociais e mensageiros modernos, o e-mail já nasceu descentralizado: qualquer pessoa pode hospedar seu próprio servidor e ter controle completo sobre suas mensagens. É compatível com praticamente todos os sistemas e dispositivos.',
+  longDescription: 'E-mail é uma das formas mais antigas e universais de comunicação na internet. Ele funciona com base em protocolos abertos como SMTP, IMAP e POP3, o que permite que diferentes provedores e servidores troquem mensagens entre si. Ao contrário de redes sociais e mensageiros modernos, o e-mail já nasceu descentralizado: qualquer pessoa pode hospedar seu próprio servidor e ter controle completo sobre suas mensagens. É compatível com praticamente todos os sistemas e dispositivos.',
   features: [
     'Baseado em protocolos abertos (SMTP, IMAP, POP3)',
     'Totalmente descentralizado: qualquer um pode rodar seu servidor',
@@ -470,7 +470,7 @@ export const apps: App[] = [
 {
   name: 'Ghost',
   description: 'Plataforma leve para blogs e sites, com editor moderno e foco em desempenho.',
-  longDescription: 'O Ghost é uma plataforma de publicação pensada para quem quer criar blogs, sites pessoais ou páginas de projeto com foco em simplicidade e velocidade. Ele tem um editor moderno, suporte a temas, SEO nativo e até integração com newsletters. É uma alternativa mais leve e direta ao WordPress, ideal para quem quer escrever e publicar sem complicação. Por ser auto-hospedado, você tem controle total sobre o conteúdo e o visual do site.',
+  longDescription: 'Ghost é uma plataforma de publicação pensada para quem quer criar blogs, sites pessoais ou páginas de projeto com foco em simplicidade e velocidade. Ele tem um editor moderno, suporte a temas, SEO nativo e até integração com newsletters. É uma alternativa mais leve e direta ao WordPress, ideal para quem quer escrever e publicar sem complicação. Por ser auto-hospedado, você tem controle total sobre o conteúdo e o visual do site.',
   features: [
     'Editor moderno com suporte a Markdown e blocos',
     'Visual limpo, com temas personalizáveis',
@@ -497,7 +497,7 @@ export const apps: App[] = [
 {
   name: 'Misskey',
   description: 'Rede social divertida e personalizável, com posts, reações e timeline federada.',
-  longDescription: 'O Misskey é uma rede social descentralizada parecida com o Mastodon, mas com mais foco em personalização e interações. Ele permite postar textos, imagens, vídeos e até “notas” com estilos variados. Tem suporte a reações (como emojis personalizados), widgets, temas e outras funções que deixam a experiência mais leve e divertida. Assim como outras plataformas do Fediverso, o Misskey funciona por meio de instâncias federadas usando o protocolo ActivityPub.',
+  longDescription: 'Misskey é uma rede social descentralizada parecida com o Mastodon, mas com mais foco em personalização e interações. Ele permite postar textos, imagens, vídeos e até “notas” com estilos variados. Tem suporte a reações (como emojis personalizados), widgets, temas e outras funções que deixam a experiência mais leve e divertida. Assim como outras plataformas do Fediverso, o Misskey funciona por meio de instâncias federadas usando o protocolo ActivityPub.',
   features: [
     'Postagens com reações, emojis e widgets interativos',
     'Altamente personalizável, com suporte a temas e extensões',
@@ -524,7 +524,7 @@ export const apps: App[] = [
 {
   name: 'Rocket.Chat',
   description: 'Plataforma de mensagens para equipes, parecida com o Slack, mas com controle total dos dados.',
-  longDescription: 'O Rocket.Chat é um app de mensagens voltado para comunicação em equipe, ideal para empresas, grupos de trabalho e comunidades. Ele permite trocar mensagens em tempo real, criar canais públicos ou privados, fazer chamadas de voz e vídeo, enviar arquivos e integrar com outras ferramentas. A grande vantagem é que você pode rodar tudo no seu próprio servidor, garantindo privacidade e segurança sem depender de serviços externos.',
+  longDescription: 'Rocket.Chat é um app de mensagens voltado para comunicação em equipe, ideal para empresas, grupos de trabalho e comunidades. Ele permite trocar mensagens em tempo real, criar canais públicos ou privados, fazer chamadas de voz e vídeo, enviar arquivos e integrar com outras ferramentas. A grande vantagem é que você pode rodar tudo no seu próprio servidor, garantindo privacidade e segurança sem depender de serviços externos.',
   features: [
     'Canais, mensagens diretas, chamadas de voz e vídeo',
     'Controle de usuários, permissões e integrações',
@@ -549,7 +549,7 @@ export const apps: App[] = [
 {
   name: 'Plane',
   description: 'Ferramenta de gestão de tarefas e projetos, com visual moderno e focada em equipes auto-organizadas.',
-  longDescription: 'O Plane é um app de código aberto para organizar tarefas, bugs, ideias e projetos em equipe. Ele tem um visual parecido com o Linear ou o Jira, com suporte a quadros Kanban, status personalizados, prioridades e etiquetas. É ideal para times de desenvolvimento, mas também funciona bem para qualquer grupo que queira acompanhar o andamento de tarefas com mais clareza. Pode ser auto-hospedado para garantir controle total dos dados da equipe.',
+  longDescription: 'Plane é um app de código aberto para organizar tarefas, bugs, ideias e projetos em equipe. Ele tem um visual parecido com o Linear ou o Jira, com suporte a quadros Kanban, status personalizados, prioridades e etiquetas. É ideal para times de desenvolvimento, mas também funciona bem para qualquer grupo que queira acompanhar o andamento de tarefas com mais clareza. Pode ser auto-hospedado para garantir controle total dos dados da equipe.',
   features: [
     'Quadros Kanban, status e prioridades personalizadas',
     'Organização por projetos, sprints, ciclos ou equipes',
@@ -574,7 +574,7 @@ export const apps: App[] = [
 {
   name: 'IPFS',
   description: 'Protocolo para armazenar e compartilhar arquivos de forma distribuída, sem depender de servidores centrais.',
-  longDescription: 'O IPFS (InterPlanetary File System) é um protocolo que permite armazenar e acessar arquivos de forma descentralizada, parecida com o funcionamento de torrents. Em vez de depender de um servidor fixo, os arquivos são distribuídos entre os computadores da rede. Isso torna o acesso mais resistente a falhas, censura e apagamentos. Ele é usado para sites, imagens, vídeos e outros conteúdos que precisam ficar disponíveis de forma mais segura e permanente. Vale lembrar que o IPFS não substitui sozinho um sistema de indexação ou nomeação. Para isso, utiliza-se o IPNS ou outras camadas adicionais.',
+  longDescription: 'IPFS (InterPlanetary File System) é um protocolo que permite armazenar e acessar arquivos de forma descentralizada, parecida com o funcionamento de torrents. Em vez de depender de um servidor fixo, os arquivos são distribuídos entre os computadores da rede. Isso torna o acesso mais resistente a falhas, censura e apagamentos. Ele é usado para sites, imagens, vídeos e outros conteúdos que precisam ficar disponíveis de forma mais segura e permanente. Vale lembrar que o IPFS não substitui sozinho um sistema de indexação ou nomeação. Para isso, utiliza-se o IPNS ou outras camadas adicionais.',
   features: [
     'Armazenamento e acesso a arquivos sem servidores centrais',
     'Conteúdo é identificado por seu código (hash), não por endereço fixo',
@@ -599,7 +599,7 @@ export const apps: App[] = [
 {
   name: 'Bitwarden',
   description: 'Gerenciador de senhas seguro e completo, com apps oficiais e opção de auto-hospedagem.',
-  longDescription: 'O Bitwarden é um gerenciador de senhas que permite salvar logins, notas seguras, cartões e outros dados de forma criptografada. Ele pode ser acessado pelo navegador, celular ou aplicativo de desktop, e também oferece preenchimento automático e geração de senhas fortes. É uma alternativa confiável aos gerenciadores de senhas pagos e, diferente da maioria, pode ser auto-hospedado para quem quer controle total sobre seus dados.',
+  longDescription: 'Bitwarden é um gerenciador de senhas que permite salvar logins, notas seguras, cartões e outros dados de forma criptografada. Ele pode ser acessado pelo navegador, celular ou aplicativo de desktop, e também oferece preenchimento automático e geração de senhas fortes. É uma alternativa confiável aos gerenciadores de senhas pagos e, diferente da maioria, pode ser auto-hospedado para quem quer controle total sobre seus dados.',
   features: [
     'Criptografia de ponta a ponta para senhas e dados sensíveis',
     'Apps para navegador, celular e desktop',
@@ -625,7 +625,7 @@ export const apps: App[] = [
 {
   name: 'Diaspora*',
   description: 'Rede social descentralizada com foco em privacidade, sem anúncios nem rastreamento.',
-  longDescription: 'O Diaspora* é uma rede social que funciona por meio de "pods", servidores independentes que se conectam entre si. Você pode escolher um pod para criar sua conta ou hospedar o seu próprio. O sistema permite seguir pessoas, publicar textos, imagens, curtir e comentar, tudo com foco em controle do usuário e privacidade. Ele foi um dos primeiros projetos a propor uma alternativa livre às redes sociais centralizadas como o Facebook. Diferente do Mastodon ou do Friendica, o protocolo usado pelo Diaspora* não é compatível com o ActivityPub, o que limita a comunicação direta com outras redes do Fediverso.',
+  longDescription: 'Diaspora* é uma rede social que funciona por meio de "pods", servidores independentes que se conectam entre si. Você pode escolher um pod para criar sua conta ou hospedar o seu próprio. O sistema permite seguir pessoas, publicar textos, imagens, curtir e comentar, tudo com foco em controle do usuário e privacidade. Ele foi um dos primeiros projetos a propor uma alternativa livre às redes sociais centralizadas como o Facebook. Diferente do Mastodon ou do Friendica, o protocolo usado pelo Diaspora* não é compatível com o ActivityPub, o que limita a comunicação direta com outras redes do Fediverso.',
   features: [
     'Rede descentralizada com foco em privacidade',
     'Publicações com texto, links e imagens',
@@ -651,7 +651,7 @@ export const apps: App[] = [
 {
   name: 'Jellyfin',
   description: 'Servidor de mídia para organizar e assistir seus filmes, séries e músicas em qualquer lugar.',
-  longDescription: 'O Jellyfin é uma plataforma de streaming pessoal que permite organizar e acessar sua coleção de filmes, séries, músicas e fotos a partir de qualquer dispositivo. Ele funciona como um “Netflix caseiro”, com interface bonita, apps para TV, celular e navegador. Tudo é hospedado por você, sem rastreamento, sem assinatura e com total controle sobre seus arquivos. É uma ótima opção para quem quer montar seu próprio servidor de mídia.',
+  longDescription: 'Jellyfin é uma plataforma de streaming pessoal que permite organizar e acessar sua coleção de filmes, séries, músicas e fotos a partir de qualquer dispositivo. Ele funciona como um “Netflix caseiro”, com interface bonita, apps para TV, celular e navegador. Tudo é hospedado por você, sem rastreamento, sem assinatura e com total controle sobre seus arquivos. É uma ótima opção para quem quer montar seu próprio servidor de mídia.',
   features: [
     'Streaming de filmes, séries, músicas e fotos',
     'Interface moderna com apps para web, celular e TV',
@@ -676,7 +676,7 @@ export const apps: App[] = [
 {
   name: 'Zulip',
   description: 'App de mensagens em equipe que combina o estilo de chat com a organização de um fórum.',
-  longDescription: 'O Zulip é um app de mensagens para equipes que organiza as conversas por tópicos dentro de canais, o que facilita acompanhar várias discussões ao mesmo tempo sem se perder. Ele é ideal para times que trabalham de forma assíncrona, onde nem todo mundo responde na hora. Oferece mensagens em tempo real, suporte a arquivos, emojis, integrações com outras ferramentas e pode ser auto-hospedado para quem busca controle total sobre a comunicação.',
+  longDescription: 'Zulip é um app de mensagens para equipes que organiza as conversas por tópicos dentro de canais, o que facilita acompanhar várias discussões ao mesmo tempo sem se perder. Ele é ideal para times que trabalham de forma assíncrona, onde nem todo mundo responde na hora. Oferece mensagens em tempo real, suporte a arquivos, emojis, integrações com outras ferramentas e pode ser auto-hospedado para quem busca controle total sobre a comunicação.',
   features: [
     'Conversas organizadas por tópicos dentro dos canais',
     'Ideal para equipes que trabalham de forma assíncrona',
@@ -701,7 +701,7 @@ export const apps: App[] = [
 {
   name: 'osTicket',
   description: 'Sistema de suporte por tickets, ideal para organizar atendimentos técnicos ou de clientes.',
-  longDescription: 'O osTicket é uma plataforma de helpdesk que permite receber, organizar e responder chamados (tickets) de forma eficiente. Ele é usado por equipes de suporte técnico, atendimento ao cliente ou setores internos de empresas. Com ele, é possível centralizar e acompanhar todos os pedidos de ajuda, com histórico, prioridades e atribuição por agente. É totalmente auto-hospedado e pode ser personalizado de acordo com as necessidades da equipe.',
+  longDescription: 'osTicket é uma plataforma de helpdesk que permite receber, organizar e responder chamados (tickets) de forma eficiente. Ele é usado por equipes de suporte técnico, atendimento ao cliente ou setores internos de empresas. Com ele, é possível centralizar e acompanhar todos os pedidos de ajuda, com histórico, prioridades e atribuição por agente. É totalmente auto-hospedado e pode ser personalizado de acordo com as necessidades da equipe.',
   features: [
     'Recebimento e organização de chamados por e-mail ou formulário',
     'Acompanhamento por status, prioridade e agente responsável',
@@ -726,7 +726,7 @@ export const apps: App[] = [
 {
   name: 'Friendica',
   description: 'Rede social federada com foco em compatibilidade e integração com outras redes.',
-  longDescription: 'O Friendica é uma rede social descentralizada que permite postar textos, imagens, curtir, comentar e interagir com pessoas de outras redes como Mastodon, Diaspora* e até contas de e-mail. Um dos seus maiores diferenciais é a compatibilidade com vários protocolos, facilitando a conexão entre plataformas diferentes. Ele tem um visual mais simples e lembra as redes sociais clássicas, com foco em acessibilidade e integração.',
+  longDescription: 'Friendica é uma rede social descentralizada que permite postar textos, imagens, curtir, comentar e interagir com pessoas de outras redes como Mastodon, Diaspora* e até contas de e-mail. Um dos seus maiores diferenciais é a compatibilidade com vários protocolos, facilitando a conexão entre plataformas diferentes. Ele tem um visual mais simples e lembra as redes sociais clássicas, com foco em acessibilidade e integração.',
   features: [
     'Compatível com diversas redes do Fediverso e até com e-mail',
     'Postagens com texto, links, imagens e vídeos',
@@ -753,7 +753,7 @@ export const apps: App[] = [
 {
   name: 'Pleroma',
   description: 'Rede social federada leve e personalizável, ideal para servidores pequenos.',
-  longDescription: 'O Pleroma é uma plataforma de microblog como o Mastodon, mas com foco em leveza e desempenho. Ele é ideal para quem quer rodar sua própria instância em servidores com poucos recursos. Tem suporte ao protocolo ActivityPub, permitindo interagir com usuários de outras redes como Mastodon, Misskey e Pixelfed. Sua interface pode ser personalizada, e também é possível usar outras interfaces feitas pela comunidade.',
+  longDescription: 'Pleroma é uma plataforma de microblog como o Mastodon, mas com foco em leveza e desempenho. Ele é ideal para quem quer rodar sua própria instância em servidores com poucos recursos. Tem suporte ao protocolo ActivityPub, permitindo interagir com usuários de outras redes como Mastodon, Misskey e Pixelfed. Sua interface pode ser personalizada, e também é possível usar outras interfaces feitas pela comunidade.',
   features: [
     'Leve e ideal para rodar em servidores com poucos recursos',
     'Compatível com outras redes do Fediverso via ActivityPub',
@@ -779,7 +779,7 @@ export const apps: App[] = [
 {
   name: 'Hubzilla',
   description: 'Rede social federada com foco em identidade portátil e múltiplos recursos em um só lugar.',
-  longDescription: 'O Hubzilla é uma plataforma federada que vai além de uma rede social comum. Além de posts e interações sociais, ele permite criar blogs, wikis, fóruns e até páginas pessoais. Seu maior diferencial é o recurso de identidade portátil: você pode se mover entre servidores (hubs) sem perder seu perfil ou seus dados. Isso oferece um nível de autonomia muito maior dentro do Fediverso.',
+  longDescription: 'Hubzilla é uma plataforma federada que vai além de uma rede social comum. Além de posts e interações sociais, ele permite criar blogs, wikis, fóruns e até páginas pessoais. Seu maior diferencial é o recurso de identidade portátil: você pode se mover entre servidores (hubs) sem perder seu perfil ou seus dados. Isso oferece um nível de autonomia muito maior dentro do Fediverso.',
   features: [
     'Identidade portátil entre servidores (Zot protocol)',
     'Postagens, fóruns, blogs e wikis no mesmo lugar',
@@ -805,7 +805,7 @@ export const apps: App[] = [
 {
   name: 'Mattermost',
   description: 'Plataforma de mensagens para equipes, parecida com o Slack, com foco em privacidade e integração.',
-  longDescription: 'O Mattermost é um app de mensagens para times que permite comunicação em tempo real por canais, mensagens diretas e integrações com outras ferramentas. Ele é ideal para empresas, equipes técnicas e organizações que querem ter controle total sobre sua comunicação. Pode ser auto-hospedado e tem recursos como compartilhamento de arquivos, chamadas por plugin, suporte a webhooks e integração com Git, CI/CD e mais.',
+  longDescription: 'Mattermost é um app de mensagens para times que permite comunicação em tempo real por canais, mensagens diretas e integrações com outras ferramentas. Ele é ideal para empresas, equipes técnicas e organizações que querem ter controle total sobre sua comunicação. Pode ser auto-hospedado e tem recursos como compartilhamento de arquivos, chamadas por plugin, suporte a webhooks e integração com Git, CI/CD e mais.',
   features: [
     'Mensagens por canais, grupos e conversas privadas',
     'Integrações com ferramentas como GitLab, Jira e CI/CD',
@@ -830,7 +830,7 @@ export const apps: App[] = [
 {
   name: 'BigBlueButton',
   description: 'Plataforma de videoconferência voltada para ensino online, com recursos como quadro branco e salas de aula.',
-  longDescription: 'O BigBlueButton é uma ferramenta de videoconferência pensada para educação a distância. Ele permite criar salas de aula virtuais com vídeo, áudio, chat, apresentações, quadro branco colaborativo e até enquetes. Professores podem gravar aulas, dividir os participantes em grupos menores e acompanhar a interação em tempo real. Tudo pode ser hospedado em seu próprio servidor, garantindo controle e privacidade.',
+  longDescription: 'BigBlueButton é uma ferramenta de videoconferência pensada para educação a distância. Ele permite criar salas de aula virtuais com vídeo, áudio, chat, apresentações, quadro branco colaborativo e até enquetes. Professores podem gravar aulas, dividir os participantes em grupos menores e acompanhar a interação em tempo real. Tudo pode ser hospedado em seu próprio servidor, garantindo controle e privacidade.',
   features: [
     'Videoconferência com quadro branco e compartilhamento de tela',
     'Salas de aula com chat, enquetes e grupos de trabalho',
@@ -856,7 +856,7 @@ export const apps: App[] = [
 {
   name: 'GitLab',
   description: 'Plataforma completa de desenvolvimento colaborativo, com controle de código, CI/CD e gestão de projetos.',
-  longDescription: 'O GitLab é uma ferramenta tudo-em-um para equipes de desenvolvimento. Além do controle de versão com Git, ele oferece recursos como repositórios privados, gestão de issues, merge requests, CI/CD, wiki e controle de acesso por permissões. Pode ser usado na nuvem oficial ou hospedado por você, garantindo total controle sobre seus projetos e dados. É uma alternativa robusta ao GitHub, com foco em privacidade e colaboração.',
+  longDescription: 'GitLab é uma ferramenta tudo-em-um para equipes de desenvolvimento. Além do controle de versão com Git, ele oferece recursos como repositórios privados, gestão de issues, merge requests, CI/CD, wiki e controle de acesso por permissões. Pode ser usado na nuvem oficial ou hospedado por você, garantindo total controle sobre seus projetos e dados. É uma alternativa robusta ao GitHub, com foco em privacidade e colaboração.',
   features: [
     'Repositórios Git com controle de acesso e histórico',
     'Integração nativa com CI/CD e pipelines automatizados',
@@ -882,7 +882,7 @@ export const apps: App[] = [
 {
   name: 'Gitea',
   description: 'Plataforma leve de hospedagem de código, com interface simples e ideal para servidores próprios.',
-  longDescription: 'O Gitea é uma alternativa leve e rápida ao GitHub e ao GitLab, perfeita para quem quer hospedar seus próprios repositórios Git. Ele oferece os recursos essenciais como issues, wiki, pull requests, CI via integração, controle de acesso e uma interface amigável. Por ser muito leve, funciona bem até em servidores modestos, sendo ideal para times pequenos, projetos pessoais ou organizações que querem mais controle com menos complexidade.',
+  longDescription: 'Gitea é uma alternativa leve e rápida ao GitHub e ao GitLab, perfeita para quem quer hospedar seus próprios repositórios Git. Ele oferece os recursos essenciais como issues, wiki, pull requests, CI via integração, controle de acesso e uma interface amigável. Por ser muito leve, funciona bem até em servidores modestos, sendo ideal para times pequenos, projetos pessoais ou organizações que querem mais controle com menos complexidade.',
   features: [
     'Hospedagem de repositórios Git com web interface',
     'Suporte a issues, wikis, pull requests e permissões',
@@ -908,7 +908,7 @@ export const apps: App[] = [
 {
   name: 'OpenProject',
   description: 'Ferramenta completa para gestão de projetos e tarefas, ideal para equipes organizadas.',
-  longDescription: 'O OpenProject é uma plataforma de gerenciamento de projetos que permite planejar, acompanhar e colaborar em tarefas de forma eficiente. Ele oferece suporte a cronogramas (Gantt), quadros ágeis, acompanhamento de tempo, wikis e muito mais. Pode ser usado em equipes de qualquer tamanho, com controle de permissões e personalização. É uma ótima alternativa ao Jira e Trello, especialmente para quem prefere uma solução auto-hospedada.',
+  longDescription: 'OpenProject é uma plataforma de gerenciamento de projetos que permite planejar, acompanhar e colaborar em tarefas de forma eficiente. Ele oferece suporte a cronogramas (Gantt), quadros ágeis, acompanhamento de tempo, wikis e muito mais. Pode ser usado em equipes de qualquer tamanho, com controle de permissões e personalização. É uma ótima alternativa ao Jira e Trello, especialmente para quem prefere uma solução auto-hospedada.',
   features: [
     'Gestão de tarefas com cronogramas, listas e quadros ágeis',
     'Controle de tempo, wikis e colaboração em equipe',
@@ -933,7 +933,7 @@ export const apps: App[] = [
 {
   name: 'Uptime Kuma',
   description: 'Monitor de sites e serviços que avisa quando algo sai do ar, com painel bonito e fácil de usar.',
-  longDescription: 'O Uptime Kuma é uma ferramenta para monitorar se seus sites, servidores ou serviços estão online. Ele verifica periodicamente os endereços que você configurar e envia alertas se algum deles ficar fora do ar. Você pode receber notificações por e-mail, Telegram, Discord e outros. O painel é simples, bonito e mostra o tempo de atividade (uptime) com gráficos e históricos. Tudo isso pode ser hospedado no seu próprio servidor, sem depender de serviços externos.',
+  longDescription: 'Uptime Kuma é uma ferramenta para monitorar se seus sites, servidores ou serviços estão online. Ele verifica periodicamente os endereços que você configurar e envia alertas se algum deles ficar fora do ar. Você pode receber notificações por e-mail, Telegram, Discord e outros. O painel é simples, bonito e mostra o tempo de atividade (uptime) com gráficos e históricos. Tudo isso pode ser hospedado no seu próprio servidor, sem depender de serviços externos.',
   features: [
     'Monitoramento de sites, servidores e serviços com alertas',
     'Notificações por e-mail, Telegram, Discord, Webhook e mais',
@@ -957,7 +957,7 @@ export const apps: App[] = [
 {
   name: 'Plex',
   description: 'Servidor de mídia para organizar e assistir seus filmes, séries e músicas com visual profissional.',
-  longDescription: 'O Plex é uma plataforma de streaming pessoal que permite organizar sua coleção de filmes, séries, músicas e fotos, e acessá-los de qualquer lugar. Ele tem uma interface polida, apps para celular, smart TVs e navegador. Embora tenha recursos pagos e funcione com uma conta na nuvem, também pode ser auto-hospedado para uso local. É ideal para quem busca uma experiência parecida com a Netflix, mas com sua própria biblioteca.',
+  longDescription: 'Plex é uma plataforma de streaming pessoal que permite organizar sua coleção de filmes, séries, músicas e fotos, e acessá-los de qualquer lugar. Ele tem uma interface polida, apps para celular, smart TVs e navegador. Embora tenha recursos pagos e funcione com uma conta na nuvem, também pode ser auto-hospedado para uso local. É ideal para quem busca uma experiência parecida com a Netflix, mas com sua própria biblioteca.',
   features: [
     'Streaming de mídia pessoal com interface moderna',
     'Apps para celular, navegador, smart TVs e consoles',
@@ -982,7 +982,7 @@ export const apps: App[] = [
 {
   name: 'LanguageTool',
   description: 'Ferramenta de correção gramatical e ortográfica com suporte a vários idiomas, inclusive português.',
-  longDescription: 'O LanguageTool é um corretor de texto inteligente que ajuda a revisar ortografia, gramática e estilo de escrita. Ele funciona em português e diversos outros idiomas, e pode ser usado como extensão no navegador, editor online ou integrado em apps como LibreOffice. Para quem prefere não depender da nuvem, é possível hospedar sua própria instância e manter a correção local e privada.',
+  longDescription: 'LanguageTool é um corretor de texto inteligente que ajuda a revisar ortografia, gramática e estilo de escrita. Ele funciona em português e diversos outros idiomas, e pode ser usado como extensão no navegador, editor online ou integrado em apps como LibreOffice. Para quem prefere não depender da nuvem, é possível hospedar sua própria instância e manter a correção local e privada.',
   features: [
     'Correção de ortografia, gramática e estilo de texto',
     'Suporte a vários idiomas, incluindo português do Brasil',
@@ -1007,7 +1007,7 @@ export const apps: App[] = [
 {
   name: 'Owncast',
   description: 'Plataforma de streaming ao vivo auto-hospedada, ideal para criadores que querem independência.',
-  longDescription: 'O Owncast permite fazer transmissões ao vivo diretamente do seu servidor, sem depender de plataformas centralizadas como Twitch ou YouTube. Você pode usar softwares comuns de streaming (como OBS) e transmitir para seu próprio site, com chat ao vivo e personalização visual. É uma ótima opção para quem quer mais controle, privacidade e liberdade no conteúdo transmitido.',
+  longDescription: 'Owncast permite fazer transmissões ao vivo diretamente do seu servidor, sem depender de plataformas centralizadas como Twitch ou YouTube. Você pode usar softwares comuns de streaming (como OBS) e transmitir para seu próprio site, com chat ao vivo e personalização visual. É uma ótima opção para quem quer mais controle, privacidade e liberdade no conteúdo transmitido.',
   features: [
     'Streaming ao vivo com chat integrado e personalização visual',
     'Compatível com OBS e outras ferramentas de transmissão',
@@ -1032,7 +1032,7 @@ export const apps: App[] = [
 {
   name: 'AzuraCast',
   description: 'Sistema completo para criar e gerenciar uma rádio online, com streaming, agendamento e estatísticas.',
-  longDescription: 'O AzuraCast é uma plataforma auto-hospedada que permite transmitir áudio ao vivo ou programado como uma rádio online. Ele inclui tudo o que você precisa: painel de controle, gerenciamento de músicas, playlists, agendamento de transmissões, estatísticas de ouvintes e suporte a streaming ao vivo. É ideal para rádios comunitárias, projetos independentes ou quem quer explorar o mundo da transmissão de áudio pela internet com total controle.',
+  longDescription: 'AzuraCast é uma plataforma auto-hospedada que permite transmitir áudio ao vivo ou programado como uma rádio online. Ele inclui tudo o que você precisa: painel de controle, gerenciamento de músicas, playlists, agendamento de transmissões, estatísticas de ouvintes e suporte a streaming ao vivo. É ideal para rádios comunitárias, projetos independentes ou quem quer explorar o mundo da transmissão de áudio pela internet com total controle.',
   features: [
     'Gerenciamento de estações, playlists e transmissões ao vivo',
     'Agendamento de programação automática com base em horários',
@@ -1057,7 +1057,7 @@ export const apps: App[] = [
 {
   name: 'Keycloak',
   description: 'Sistema de login centralizado, com autenticação única (SSO), permissões e integração com outros serviços.',
-  longDescription: 'O Keycloak é uma ferramenta de gerenciamento de identidade e acesso (IAM) que permite centralizar logins de vários sistemas em um só lugar. Com ele, é possível oferecer login único (SSO), autenticação com redes sociais, dois fatores (2FA) e controle de permissões por grupo ou função. Ele é ideal para equipes, empresas ou projetos que usam vários serviços e querem facilitar o acesso de forma segura. Tudo pode ser auto-hospedado, sem depender de soluções externas.',
+  longDescription: 'Keycloak é uma ferramenta de gerenciamento de identidade e acesso (IAM) que permite centralizar logins de vários sistemas em um só lugar. Com ele, é possível oferecer login único (SSO), autenticação com redes sociais, dois fatores (2FA) e controle de permissões por grupo ou função. Ele é ideal para equipes, empresas ou projetos que usam vários serviços e querem facilitar o acesso de forma segura. Tudo pode ser auto-hospedado, sem depender de soluções externas.',
   features: [
     'Login único (SSO) para múltiplos sistemas',
     'Autenticação com redes sociais, LDAP, 2FA e mais',
@@ -1083,7 +1083,7 @@ export const apps: App[] = [
 {
   name: 'WordPress',
   description: 'Plataforma popular para criação de sites e blogs, com milhares de plugins e temas disponíveis.',
-  longDescription: 'O WordPress é uma das ferramentas mais usadas no mundo para criar sites, blogs e lojas online. Com ele, você pode montar desde uma página simples até um portal completo, usando temas prontos e plugins para adicionar funções. Apesar de ser oferecido como serviço por empresas como WordPress.com, ele também pode ser auto-hospedado, dando a você total controle sobre o conteúdo e a personalização.',
+  longDescription: 'WordPress é uma das ferramentas mais usadas no mundo para criar sites, blogs e lojas online. Com ele, você pode montar desde uma página simples até um portal completo, usando temas prontos e plugins para adicionar funções. Apesar de ser oferecido como serviço por empresas como WordPress.com, ele também pode ser auto-hospedado, dando a você total controle sobre o conteúdo e a personalização.',
   features: [
     'Criação de sites e blogs com temas e plugins',
     'Painel de administração intuitivo e traduzido para o português',
@@ -1108,7 +1108,7 @@ export const apps: App[] = [
 {
   name: 'AT Protocol',
   description: 'Protocolo criado para redes sociais descentralizadas, mas por enquanto limitado ao uso no Bluesky.',
-  longDescription: 'O AT Protocol foi desenvolvido para ser a base técnica do Bluesky, uma rede social descentralizada que surgiu como alternativa ao Twitter. Ele promete oferecer controle de identidade, portabilidade de dados e interoperabilidade. No entanto, até agora só é usado pelo próprio Bluesky e ainda não está totalmente aberto para uso por terceiros. Por isso, embora seja apresentado como protocolo aberto, ainda não é possível utilizá-lo fora do ecossistema do Bluesky, nem auto-hospedar serviços compatíveis.',
+  longDescription: 'AT Protocol foi desenvolvido para ser a base técnica do Bluesky, uma rede social descentralizada que surgiu como alternativa ao Twitter. Ele promete oferecer controle de identidade, portabilidade de dados e interoperabilidade. No entanto, até agora só é usado pelo próprio Bluesky e ainda não está totalmente aberto para uso por terceiros. Por isso, embora seja apresentado como protocolo aberto, ainda não é possível utilizá-lo fora do ecossistema do Bluesky, nem auto-hospedar serviços compatíveis.',
   features: [
     'Foco em redes sociais descentralizadas com identidade portátil',
     'Desenvolvido junto com a plataforma Bluesky',
@@ -1134,7 +1134,7 @@ export const apps: App[] = [
 {
   name: 'Bluesky',
   description: 'Rede social baseada no AT Protocol, com proposta descentralizada, mas ainda bastante centralizada na prática.',
-  longDescription: 'O Bluesky é uma rede social que se apresenta como uma alternativa descentralizada ao Twitter. Ele funciona sobre o AT Protocol, que promete portabilidade de identidade e interoperabilidade entre servidores. No entanto, atualmente o Bluesky ainda depende de uma instância central (bsky.social), com acesso controlado e sem suporte real a federação nem auto-hospedagem. Apesar do discurso de descentralização, o ecossistema ainda está fechado e restrito à infraestrutura do próprio projeto.',
+  longDescription: 'Bluesky é uma rede social que se apresenta como uma alternativa descentralizada ao Twitter. Ele funciona sobre o AT Protocol, que promete portabilidade de identidade e interoperabilidade entre servidores. No entanto, atualmente o Bluesky ainda depende de uma instância central (bsky.social), com acesso controlado e sem suporte real a federação nem auto-hospedagem. Apesar do discurso de descentralização, o ecossistema ainda está fechado e restrito à infraestrutura do próprio projeto.',
   features: [
     'Interface parecida com o Twitter, com postagens, curtidas e reposts',
     'Protocolo próprio (AT Protocol), mas com uso limitado',
@@ -1160,14 +1160,14 @@ export const apps: App[] = [
 {
   name: 'RSS',
   description: 'Protocolo aberto para seguir atualizações de sites e blogs, sem depender de algoritmos ou redes sociais.',
-  longDescription: 'O RSS é um protocolo simples que permite acompanhar as novidades de sites, blogs, podcasts e canais de vídeo em um só lugar. Você usa um leitor de RSS para reunir os conteúdos em formato de feed, de forma limpa, sem anúncios, algoritmos ou rastreadores. É uma das formas mais antigas e confiáveis de seguir conteúdos na web, e continua sendo usado por quem busca mais autonomia e menos distrações.',
+  longDescription: 'RSS é um protocolo simples que permite acompanhar as novidades de sites, blogs, podcasts e canais de vídeo em um só lugar. Você usa um leitor de RSS para reunir os conteúdos em formato de feed, de forma limpa, sem anúncios, algoritmos ou rastreadores. É uma das formas mais antigas e confiáveis de seguir conteúdos na web, e continua sendo usado por quem busca mais autonomia e menos distrações.',
   features: [
     'Atualizações automáticas de sites, blogs, podcasts e mais',
     'Funciona com qualquer leitor de RSS, online ou auto-hospedado',
     'Sem algoritmos, sem rastreio, só o conteúdo que você escolhe'
   ],
   links: [
-    { label: 'O que é RSS?', url: 'https://www.mozilla.org/pt-BR/firefox/live-bookmarks/' },
+    { label: 'que é RSS?', url: 'https://www.mozilla.org/pt-BR/firefox/live-bookmarks/' },
     { label: 'Leitores de RSS recomendados', url: 'https://github.com/Kickball/awesome-selfhosted#feed-readers' },
     { label: 'Gere feeds com o RSSHub', url: 'https://rsshub.app/' },
   ],
@@ -1185,14 +1185,14 @@ export const apps: App[] = [
 {
   name: 'Atom',
   description: 'Formato aberto de feed, similar ao RSS, criado para ser mais flexível e moderno.',
-  longDescription: 'O Atom é um formato de feed criado como alternativa ao RSS, oferecendo mais padronização e extensibilidade. Assim como o RSS, ele permite acompanhar atualizações de sites, blogs e outros conteúdos diretamente em um leitor de feeds. Embora seja menos comum, muitos sites ainda oferecem suporte ao Atom, e a maioria dos leitores modernos é compatível com os dois formatos. É mais uma opção para quem quer acompanhar a web sem depender de redes sociais.',
+  longDescription: 'Atom é um formato de feed criado como alternativa ao RSS, oferecendo mais padronização e extensibilidade. Assim como o RSS, ele permite acompanhar atualizações de sites, blogs e outros conteúdos diretamente em um leitor de feeds. Embora seja menos comum, muitos sites ainda oferecem suporte ao Atom, e a maioria dos leitores modernos é compatível com os dois formatos. É mais uma opção para quem quer acompanhar a web sem depender de redes sociais.',
   features: [
     'Permite seguir atualizações de sites e blogs em tempo real',
     'Compatível com a maioria dos leitores de RSS',
     'Mais estruturado e extensível que o RSS, com padrão oficial (IETF)'
   ],
   links: [
-    { label: 'O que é Atom?', url: 'https://tools.ietf.org/html/rfc4287' },
+    { label: 'que é Atom?', url: 'https://tools.ietf.org/html/rfc4287' },
     { label: 'Leitores de feed compatíveis', url: 'https://github.com/Kickball/awesome-selfhosted#feed-readers' },
     { label: 'Gere feeds com o RSSHub', url: 'https://rsshub.app/' },
   ],
@@ -1210,14 +1210,14 @@ export const apps: App[] = [
 {
   name: 'BitTorrent',
   description: 'Protocolo descentralizado para compartilhar arquivos entre usuários, sem depender de servidores centrais.',
-  longDescription: 'O BitTorrent é um protocolo usado para distribuir arquivos grandes pela internet de forma eficiente e descentralizada. Em vez de baixar de um servidor único, os arquivos são divididos em partes e compartilhados entre todos que estão baixando ou já baixaram. Isso reduz o custo para quem distribui e torna o sistema mais resistente a censura e falhas. É usado em diversos contextos, de distribuição de software livre a arquivos pessoais.',
+  longDescription: 'BitTorrent é um protocolo usado para distribuir arquivos grandes pela internet de forma eficiente e descentralizada. Em vez de baixar de um servidor único, os arquivos são divididos em partes e compartilhados entre todos que estão baixando ou já baixaram. Isso reduz o custo para quem distribui e torna o sistema mais resistente a censura e falhas. É usado em diversos contextos, de distribuição de software livre a arquivos pessoais.',
   features: [
     'Compartilhamento direto entre usuários (peer-to-peer)',
     'Descentralizado e resistente a falhas e censura',
     'Usado para distribuir software, vídeos, músicas e outros arquivos'
   ],
   links: [
-    { label: 'O que é BitTorrent?', url: 'https://www.bittorrent.com/pt-br/' },
+    { label: 'que é BitTorrent?', url: 'https://www.bittorrent.com/pt-br/' },
     { label: 'Clientes recomendados', url: 'https://github.com/Kickball/awesome-selfhosted#file-sharing' },
     { label: 'Código do protocolo (BEPs)', url: 'https://www.bittorrent.org/beps/bep_0000.html' },
   ],
@@ -1235,7 +1235,7 @@ export const apps: App[] = [
 {
   name: 'Nostr',
   description: 'Protocolo experimental para redes sociais descentralizadas, baseado em chaves públicas e relays.',
-  longDescription: 'O Nostr (Notes and Other Stuff Transmitted by Relays) é um protocolo criado para redes sociais descentralizadas, simples e resistente à censura. Ele usa chaves criptográficas para identificar usuários e servidores chamados relays para transmitir mensagens. Qualquer pessoa pode rodar um relay ou cliente, mas o ecossistema ainda está em fase experimental, com poucas aplicações maduras e limitações de usabilidade. É popular entre entusiastas da descentralização e do Bitcoin, mas ainda longe de adoção ampla.',
+  longDescription: 'Nostr (Notes and Other Stuff Transmitted by Relays) é um protocolo criado para redes sociais descentralizadas, simples e resistente à censura. Ele usa chaves criptográficas para identificar usuários e servidores chamados relays para transmitir mensagens. Qualquer pessoa pode rodar um relay ou cliente, mas o ecossistema ainda está em fase experimental, com poucas aplicações maduras e limitações de usabilidade. É popular entre entusiastas da descentralização e do Bitcoin, mas ainda longe de adoção ampla.',
   features: [
     'Baseado em criptografia de chave pública (sem e-mail ou senha)',
     'Mensagens são transmitidas por relays públicos ou privados',
@@ -1260,7 +1260,7 @@ export const apps: App[] = [
 {
   name: 'Tor',
   description: 'Rede anônima que protege sua identidade e permite acessar sites .onion fora da internet tradicional.',
-  longDescription: 'O Tor (The Onion Router) é um protocolo que permite navegar na internet de forma anônima, escondendo seu endereço IP e localização. Ele funciona roteando o tráfego por uma rede distribuída de servidores voluntários, dificultando rastreamento e vigilância. Além disso, permite acessar serviços ocultos com endereços .onion, que não estão disponíveis pela web convencional. O Tor é usado por jornalistas, ativistas, pesquisadores e qualquer pessoa que queira mais privacidade online.',
+  longDescription: 'Tor (The Onion Router) é um protocolo que permite navegar na internet de forma anônima, escondendo seu endereço IP e localização. Ele funciona roteando o tráfego por uma rede distribuída de servidores voluntários, dificultando rastreamento e vigilância. Além disso, permite acessar serviços ocultos com endereços .onion, que não estão disponíveis pela web convencional. O Tor é usado por jornalistas, ativistas, pesquisadores e qualquer pessoa que queira mais privacidade online.',
   features: [
     'Navegação anônima e proteção contra rastreamento',
     'Acesso a serviços e sites .onion fora da web comum',
@@ -1285,7 +1285,7 @@ export const apps: App[] = [
 {
   name: 'Grafana',
   description: 'Ferramenta para criar dashboards e visualizar métricas de sistemas, servidores e aplicações.',
-  longDescription: 'O Grafana é uma plataforma de visualização de dados usada para monitorar servidores, aplicações, bancos de dados e qualquer outra fonte de métricas. Ele permite criar painéis interativos com gráficos, alertas e consultas personalizadas. Pode ser integrado com Prometheus, InfluxDB, Loki, PostgreSQL e muitos outros. É muito usado por equipes de infraestrutura e desenvolvimento, e pode ser auto-hospedado para manter o controle total das informações.',
+  longDescription: 'Grafana é uma plataforma de visualização de dados usada para monitorar servidores, aplicações, bancos de dados e qualquer outra fonte de métricas. Ele permite criar painéis interativos com gráficos, alertas e consultas personalizadas. Pode ser integrado com Prometheus, InfluxDB, Loki, PostgreSQL e muitos outros. É muito usado por equipes de infraestrutura e desenvolvimento, e pode ser auto-hospedado para manter o controle total das informações.',
   features: [
     'Dashboards interativos com gráficos e métricas em tempo real',
     'Alertas personalizáveis e suporte a várias fontes de dados',
@@ -1310,7 +1310,7 @@ export const apps: App[] = [
 {
   name: 'Prometheus',
   description: 'Sistema de monitoramento e coleta de métricas, usado para acompanhar a saúde de servidores e aplicações.',
-  longDescription: 'O Prometheus é uma ferramenta de monitoramento que coleta, armazena e consulta métricas de sistemas, aplicações, containers e serviços. Ele usa um modelo de dados baseado em séries temporais e uma linguagem própria (PromQL) para criar alertas e análises. É muito usado em ambientes com Docker e Kubernetes, e pode ser integrado ao Grafana para visualização. Por ser auto-hospedado, você tem total controle sobre as métricas e alertas do seu ambiente.',
+  longDescription: 'Prometheus é uma ferramenta de monitoramento que coleta, armazena e consulta métricas de sistemas, aplicações, containers e serviços. Ele usa um modelo de dados baseado em séries temporais e uma linguagem própria (PromQL) para criar alertas e análises. É muito usado em ambientes com Docker e Kubernetes, e pode ser integrado ao Grafana para visualização. Por ser auto-hospedado, você tem total controle sobre as métricas e alertas do seu ambiente.',
   features: [
     'Coleta automática de métricas em formato de séries temporais',
     'Sistema de alertas com regras personalizadas',
@@ -1335,7 +1335,7 @@ export const apps: App[] = [
 {
   name: 'Funkwhale',
   description: 'Plataforma descentralizada para ouvir e compartilhar músicas, parecida com um Spotify federado.',
-  longDescription: 'O Funkwhale é uma plataforma de streaming de áudio que permite hospedar, organizar e compartilhar músicas de forma descentralizada. Ele funciona com instâncias federadas usando ActivityPub, o que permite seguir e ouvir conteúdo de outras instâncias, como no Mastodon. Pode ser usado para coleções pessoais, rádios comunitárias ou catálogos colaborativos. É uma ótima alternativa ao Spotify, mas com foco em liberdade e controle dos dados.',
+  longDescription: 'Funkwhale é uma plataforma de streaming de áudio que permite hospedar, organizar e compartilhar músicas de forma descentralizada. Ele funciona com instâncias federadas usando ActivityPub, o que permite seguir e ouvir conteúdo de outras instâncias, como no Mastodon. Pode ser usado para coleções pessoais, rádios comunitárias ou catálogos colaborativos. É uma ótima alternativa ao Spotify, mas com foco em liberdade e controle dos dados.',
   features: [
     'Streaming de áudio com interface web e suporte a coleções pessoais',
     'Integração com o Fediverso via ActivityPub',
@@ -1362,14 +1362,14 @@ export const apps: App[] = [
 {
   name: 'IRC',
   description: 'Protocolo clássico de chat em tempo real, usado desde os primórdios da internet para conversas em grupo.',
-  longDescription: 'O IRC (Internet Relay Chat) é um dos protocolos de comunicação mais antigos da internet, criado para bate-papo em tempo real. Ele permite que pessoas entrem em canais (salas de conversa) ou troquem mensagens diretas em servidores públicos ou privados. Apesar da idade, o IRC ainda é usado por muitas comunidades técnicas e projetos de software livre. É leve, simples, funciona em qualquer lugar e pode ser hospedado por você para manter controle total.',
+  longDescription: 'IRC (Internet Relay Chat) é um dos protocolos de comunicação mais antigos da internet, criado para bate-papo em tempo real. Ele permite que pessoas entrem em canais (salas de conversa) ou troquem mensagens diretas em servidores públicos ou privados. Apesar da idade, o IRC ainda é usado por muitas comunidades técnicas e projetos de software livre. É leve, simples, funciona em qualquer lugar e pode ser hospedado por você para manter controle total.',
   features: [
     'Salas de bate-papo em tempo real (canais) e mensagens diretas',
     'Leve, rápido e funciona até em conexões lentas',
     'Pode ser auto-hospedado e integrado a bots e scripts'
   ],
   links: [
-    { label: 'O que é IRC?', url: 'https://pt.wikipedia.org/wiki/Internet_Relay_Chat' },
+    { label: 'que é IRC?', url: 'https://pt.wikipedia.org/wiki/Internet_Relay_Chat' },
     { label: 'Clientes e servidores recomendados', url: 'https://github.com/Kickball/awesome-selfhosted#irc' },
     { label: 'Documentação do protocolo', url: 'https://tools.ietf.org/html/rfc1459' },
   ],
@@ -1387,7 +1387,7 @@ export const apps: App[] = [
 {
   name: 'The Lounge',
   description: 'Cliente web moderno para IRC, com interface amigável e acesso contínuo às conversas.',
-  longDescription: 'O The Lounge é um cliente de IRC que roda no navegador e mantém você sempre conectado aos canais, mesmo quando fecha a aba. Ele é ideal para quem quer usar IRC com uma interface moderna e prática, parecida com Slack ou Discord, mas mantendo a leveza e descentralização do protocolo IRC. É auto-hospedável e pode ser acessado de qualquer dispositivo, com histórico persistente e suporte a múltiplas redes.',
+  longDescription: 'The Lounge é um cliente de IRC que roda no navegador e mantém você sempre conectado aos canais, mesmo quando fecha a aba. Ele é ideal para quem quer usar IRC com uma interface moderna e prática, parecida com Slack ou Discord, mas mantendo a leveza e descentralização do protocolo IRC. É auto-hospedável e pode ser acessado de qualquer dispositivo, com histórico persistente e suporte a múltiplas redes.',
   features: [
     'Interface web bonita e responsiva, inspirada em apps modernos',
     'Conexão contínua: você não perde mensagens quando está offline',
