@@ -15,10 +15,7 @@ export const desktopHeaders: HeaderEntry[] = [
     subtitle: 'Cada app tem uma proposta diferente: alguns focam em redes sociais, outros em vídeos, textos ou troca de mensagens. Descubra qual se encaixa melhor com seu jeito de usar a internet e experimente novas possibilidades.',
   },
   {
-    subtitle: 'São aplicativos que funcionam sem um único dono. Eles usam uma rede de servidores independentes, onde cada pessoa ou grupo pode participar, compartilhar conteúdo e interagir com liberdade e privacidade.',
-  },
-  {
-    subtitle: 'Navegue por uma seleção de ferramentas criadas com foco na liberdade digital. Veja quais delas permitem mais controle, quais são mais populares, e encontre aquela que mais combina com o que você procura.',
+    subtitle: 'Navegue por uma seleção de ferramentas criadas com foco na liberdade digital. Veja quais delas permitem mais controle, e encontre aquela que mais combina com o que você procura.',
   },
   {
     subtitle: 'As plataformas descentralizadas se conectam de formas diferentes, mas compartilham a ideia de uma internet mais aberta, colaborativa e justa. Aqui você entende como elas funcionam e por que isso importa.',
@@ -34,5 +31,14 @@ export const mobileHeaders: HeaderEntry[] = [
   },
   {
     subtitle: 'Descubra aplicativos alternativos aos que você já conhece.',
+  },
+  {
+    subtitle: 'Use ferramentas criadas para garantir sua autonomia na internet.'
+  },
+  {
+    subtitle: 'Navegue por uma seleção de ferramentas com foco na liberdade digital.'
+  },
+  {
+    subtitle: 'Conheça uma nova forma de usar a internet'
   },
 ];
