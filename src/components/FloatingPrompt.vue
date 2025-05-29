@@ -12,7 +12,7 @@
         <span class="flex items-center gap-1.5">
         <span class="flex items-center gap-1.5">
             <span class="text-base leading-none">👉</span>
-            <span>Ajude a melhorar o guia</span>
+            <span>Quer sugerir um app?</span>
         </span>
         <img src="/github.svg" alt="GitHub" class="w-4 h-4 ml" />
         </span>
