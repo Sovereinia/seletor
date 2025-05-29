@@ -15,12 +15,13 @@ const emit = defineEmits(['atualizarAbrir'])
 
 const myModal = ref<HTMLDialogElement | null>(null)
 
-watch(
-  () => abrir,
-  (newValue) => {
-    newValue ? openModal() : closeModal();
+watch(() => abrir, (newValue) => {
+  if (newValue) {
+    openModal();
+  } else {
+    closeModal();
   }
-);
+});
 
 function openModal() {
   myModal.value?.showModal()
@@ -28,9 +29,10 @@ function openModal() {
 }
 
 function closeModal() {
-  myModal.value?.close()
-  emit('atualizarAbrir', false)
-  //console.log('Modal fechado')
+  if (myModal.value?.open) {
+    myModal.value.close();
+  }
+  emit('atualizarAbrir', false);
 }
 
 function faviconSrc(url: string): { src: string; visible: Ref<boolean>; onError: () => void } {
@@ -114,10 +116,10 @@ watch(
           <li v-for="(feature, index) in app.features" :key="index">{{ feature }}</li>
         </ul>
 
-        <div v-if="app.protocol?.length" class="mt-6">
+        <div class="mt-6">
           <div class="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <h4 class="text-lg font-semibold mb-2">Protocolos e federação:</h4>
+              <h4 v-if="app.protocol?.length"  class="text-lg font-semibold mb-2">Protocolos e federação:</h4>
               <div class="flex flex-wrap gap-2">
                 <a
                   v-for="proto in app.protocol"

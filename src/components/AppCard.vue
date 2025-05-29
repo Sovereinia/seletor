@@ -3,6 +3,7 @@ import { sliceText } from '../utils/global';
 import { getAlternativeIcon } from '@/utils/global.ts';
 import type { App } from '@/types';
 import { getProtocolInfo } from '@/utils/global.ts';
+import { ref, onMounted } from 'vue';
 
 const props = defineProps<{
   app: App;
@@ -16,6 +17,21 @@ function abrirModal() {
   //console.log('📦 Dados enviados para o modal:', props.app);
   emit('abrir', props.app);
 }
+
+const visibleAlternatives = ref<Record<string, boolean>>({});
+
+const visibleProtocols = ref<Record<string, boolean>>({});
+
+onMounted(() => {
+  for (const alt of props.app.alternatives || []) {
+    visibleAlternatives.value[alt] = true;
+  }
+  for (const proto of props.app.protocol || []) {
+    visibleProtocols.value[proto] = true;
+  }
+});
+
+
 
 </script>
 
@@ -40,10 +56,12 @@ function abrirModal() {
           <img
             v-for="proto in app.protocol || []"
             :key="proto"
+            v-show="visibleProtocols[proto]"
             :src="getProtocolInfo(proto)?.src"
             :alt="getProtocolInfo(proto)?.alt"
             class="h-5 object-contain"
             :title="proto"
+            @error="() => (visibleProtocols[proto] = false)"
           />
         </div>
       </div>
@@ -57,11 +75,14 @@ function abrirModal() {
         <img
           v-for="(alt, index) in app.alternatives.slice(0, 3)"
           :key="alt"
+          v-show="visibleAlternatives[alt]"
           :src="getAlternativeIcon(alt)"
           :alt="alt"
           class="w-12 h-12 rounded-full object-contain border border-gray-500"
           :title="alt"
+          @error="() => (visibleAlternatives[alt] = false)"
         />
+
       </div>
     </div>
     </div>
