@@ -45,6 +45,13 @@ watch(() => abrir, async (newValue) => {
   }
 });
 
+function handleDialogClose() {
+  emit('atualizarAbrir', false); // fecha o modal de verdade
+  bannerErrored.value = false
+  expandido.value = false
+  visible.value = false
+  localApp.value = {}
+}
 
 function openModal() {
   myModal.value?.showModal()
@@ -139,6 +146,7 @@ const protocolInfos = computed(() =>
     ref="myModal" 
     class="modal fixed inset-0 flex items-center justify-center p-2 sm:p-4 overflow-auto" 
     @click.self="closeModal"
+    @close="handleDialogClose"
   >
   <div v-if="visible" class="modal-box w-full max-w-[880px] max-h-[calc(100vh-2rem)] overflow-y-auto rounded-xl relative bg-base-100 sm:px-6 sm:py-6 box-border">
 
