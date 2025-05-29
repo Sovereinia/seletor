@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, type Ref, defineProps, watch } from 'vue'
+import { ref, type Ref, defineProps, watch, onMounted, onBeforeUnmount } from 'vue'
 import { getAlternativeIcon } from '@/utils/global.ts';
 import { getProtocolInfo } from '@/utils/global.ts';
 import { getFaviconPath } from '@/utils/global.ts';
@@ -12,6 +12,8 @@ const { abrir, app } = defineProps<{
 }>();
 
 const emit = defineEmits(['atualizarAbrir'])
+
+const expandido = ref(false);
 
 const myModal = ref<HTMLDialogElement | null>(null)
 
@@ -63,6 +65,20 @@ watch(
   { immediate: true } // roda logo de cara
 );
 
+const isMobile = ref(false);
+
+onMounted(() => {
+  isMobile.value = window.innerWidth < 640;
+  window.addEventListener('resize', handleResize);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', handleResize);
+});
+
+function handleResize() {
+  isMobile.value = window.innerWidth < 640;
+}
 
 
 </script>
@@ -70,46 +86,53 @@ watch(
 
 <template>
   <div>
-    <!-- ✅ Atualizado aqui: @cancel → @click.self -->
-   <dialog ref="myModal" class="modal" @click.self="closeModal">
-  <div class="modal-box w-full max-w-lg md:max-w-4xl h-[70vh] md:h-auto overflow-hidden md:overflow-visible rounded-xl relative bg-base-100">
+  <!-- ✅ Atualizado aqui: @cancel → @click.self -->
+  <dialog ref="myModal" class="modal fixed inset-0 flex items-center justify-center p-2 sm:p-4 overflow-auto" @click.self="closeModal">
+  <div class="modal-box w-auto max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg max-h-[calc(100vh-2rem)] overflow-y-auto rounded-xl relative bg-base-100 sm:px-6 sm:py-6 box-border">
 
     <!-- Botão de fechar -->
-<button
-  type="button"
-  class="absolute top-4 right-4 z-20 bg-base-200 hover:bg-base-300 rounded-full p-2 shadow-md"
-  @click="closeModal"
-  aria-label="Fechar"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class="h-5 w-5 stroke-current"
-    fill="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M6 18L18 6M6 6l12 12"
-    />
-  </svg>
-</button>
+    <button
+      type="button"
+      class="absolute top-4 right-4 z-20 bg-base-200 hover:bg-base-300 rounded-full p-2 shadow-md"
+      @click="closeModal"
+      aria-label="Fechar"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5 stroke-current"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+    </button>
 
-    <!-- Conteúdo com rolagem apenas em telas pequenas -->
-    <div class="flex flex-col h-full md:h-auto overflow-y-auto md:overflow-visible px-4 py-6">
-
+      
       <!-- Banner -->
       <img
         :src="app.modalBanner?.src || app.banner?.src"
         :alt="app.modalBanner?.alt || app.banner?.alt"
-        class="mx-auto w-full max-w-sm p-2 object-contain"
+        class="mx-auto w-full max-w-sm p-2 object-contain mb-4"
       />
 
       <!-- Texto e conteúdos -->
-      <div class="w-full flex flex-col px-2 md:px-10">
-        <h3 class="text-xl font-bold mb-2">{{ app.name }}</h3>
-        <p class="mb-4 text-base text-justify">{{ app.longDescription }}</p>
+      <div class="w-full flex flex-col px-2 md:px-6">
+        <!-- <h3 class="text-xl font-bold mb-2">{{ app.name }}</h3> -->
+        <p
+          class="mb-4 text-base cursor-pointer transition-all duration-300 sm:cursor-default"
+          :class="{
+            'line-clamp-2 overflow-hidden': !expandido && isMobile,
+          }"
+          @click="isMobile && (expandido = !expandido)"
+        >
+          {{ app.longDescription }}
+        </p>
+
 
       <!-- Caracteristicas -->
         <ul v-if="app.features?.length" class="list-disc list-inside mb-4 text-sm">
@@ -188,7 +211,6 @@ watch(
             />
           </div>
         </div>
-      </div>
     </div>
   </div>
 </dialog>
