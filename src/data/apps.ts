@@ -374,7 +374,7 @@ export const apps: App[] = [
     'Desenvolvido como padrão aberto pelo W3C'
   ],
   links: [
-    { label: 'Entenda o Fediverso', url: 'https://sovereinia.org/o-que-e-fediverso/' },
+    { label: 'Conheça o Fediverso', url: 'https://viniciusghise.com.br/blog/fediverso-o-que-e/' },
     { label: 'Especificação oficial (W3C)', url: 'https://www.w3.org/TR/activitypub/' },
     { label: 'Lista de apps que usam ActivityPub', url: 'https://fediverse.party/en/fediverse/' },
   ],
@@ -451,7 +451,7 @@ export const apps: App[] = [
     'Funciona em qualquer lugar, com milhares de apps e clientes compatíveis'
   ],
   links: [
-    { label: 'Guia para auto-hospedar e-mail', url: 'https://sovereinia.org/como-auto-hospedar-seu-proprio-servidor-de-email/' },
+    // { label: 'Guia para auto-hospedar e-mail', url: 'https://sovereinia.org/como-auto-hospedar-seu-proprio-servidor-de-email/' },
     { label: 'Especificação SMTP (IETF)', url: 'https://datatracker.ietf.org/doc/html/rfc5321' },
     { label: 'Lista de softwares de e-mail', url: 'https://github.com/Kickball/awesome-selfhosted#email' },
   ],
