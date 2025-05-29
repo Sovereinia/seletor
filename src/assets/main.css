@@ -17,6 +17,7 @@
   --color-selected-radio: var(--color-brand); /* Botão relecionado no radiobutton  */
   --color-card-primary: #ffffff; /* Fundo da logo do aplicativo no card */
   --color-card-secondary: var(--color-brand); /*  Fundo do texto no card */
+  --color-modal-description: #b9d3fa; /*  Descrição no modal */
   --base-100: #f0f0f0; /* Fundo claro */
 }
 
@@ -31,6 +32,7 @@
   --color-selected-radio: #103d80; /* Botão relecionado no radiobutton  */
   --color-card-primary: var(--color-primary); /* Fundo da logo do aplicativo no card */
   --color-card-secondary: var(--color-secondary); /*  Fundo do texto no card */
+  --color-modal-description: #262f3d; /*  Descrição no modal */
   --base-100: #111827; /* Fundo escuro */
 }
 

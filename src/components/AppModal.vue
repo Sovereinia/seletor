@@ -15,6 +15,8 @@ const emit = defineEmits(['atualizarAbrir'])
 
 const expandido = ref(false);
 
+const bannerErrored = ref(false);
+
 const myModal = ref<HTMLDialogElement | null>(null)
 
 watch(() => abrir, (newValue) => {
@@ -88,7 +90,8 @@ function handleResize() {
   <div>
   <!-- ✅ Atualizado aqui: @cancel → @click.self -->
   <dialog ref="myModal" class="modal fixed inset-0 flex items-center justify-center p-2 sm:p-4 overflow-auto" @click.self="closeModal">
-  <div class="modal-box w-auto max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg max-h-[calc(100vh-2rem)] overflow-y-auto rounded-xl relative bg-base-100 sm:px-6 sm:py-6 box-border">
+  <div class="modal-box w-full max-w-[880px] max-h-[calc(100vh-2rem)] overflow-y-auto rounded-xl relative bg-base-100 sm:px-6 sm:py-6 box-border">
+
 
     <!-- Botão de fechar -->
     <button
@@ -114,32 +117,37 @@ function handleResize() {
 
       
       <!-- Banner -->
-      <img
-        :src="app.modalBanner?.src || app.banner?.src"
-        :alt="app.modalBanner?.alt || app.banner?.alt"
-        class="mx-auto w-full max-w-sm p-2 object-contain mb-4"
-      />
+      <div class="px-6 sm:px-10 py-0 sm:py-4 md:py-6">
+        <img
+          :src="bannerErrored ? app.banner?.src : app.modalBanner?.src || app.banner?.src"
+          :alt="bannerErrored ? app.banner?.alt : app.modalBanner?.alt || app.banner?.alt"
+          @error="bannerErrored = true"
+          class="mx-auto w-full max-w-lg max-h-[120px] object-contain "
+        />
+      </div>
 
       <!-- Texto e conteúdos -->
-      <div class="w-full flex flex-col px-2 md:px-6">
+      <div class="w-full flex flex-col md:px-4 lg:px-6">
         <!-- <h3 class="text-xl font-bold mb-2">{{ app.name }}</h3> -->
-        <p
-          class="mb-4 text-base cursor-pointer transition-all duration-300 sm:cursor-default"
-          :class="{
-            'line-clamp-2 overflow-hidden': !expandido && isMobile,
-          }"
-          @click="isMobile && (expandido = !expandido)"
+        <div
+          class="mb-4 rounded-lg px-3 sm:px-4 md:px-6 py-1 mb-1 sm:mt-3 text-sm sm:text-base leading-relaxed transition-all duration-300 cursor-pointer sm:cursor-default"
+          :class="[
+            'text-base',
+            expandido ? '' : 'line-clamp-2 overflow-hidden',
+            'bg-[var(--color-modal-description)]'
+          ]"
+          @click="(expandido = !expandido)"
         >
           {{ app.longDescription }}
-        </p>
+        </div>
 
 
       <!-- Caracteristicas -->
-        <ul v-if="app.features?.length" class="list-disc list-inside mb-4 text-sm">
+        <ul v-if="app.features?.length" class="list-disc text-sm sm:text-base space-y-2 list-inside mb-4 text-sm">
           <li v-for="(feature, index) in app.features" :key="index">{{ feature }}</li>
         </ul>
 
-        <div class="mt-6">
+        <div class="mt-2">
           <div class="flex flex-wrap items-start justify-between gap-4">
             <div>
               <h4 v-if="app.protocol?.length"  class="text-lg font-semibold mb-2">Protocolos e federação:</h4>
@@ -165,12 +173,12 @@ function handleResize() {
 
 
             <!-- Botoes -->
-            <div v-if="favicons.length" class="flex gap-2 py-4 flex-wrap justify-start">
+            <div v-if="favicons.length" class="flex gap-2 py-2 flex-wrap justify-start">
               <a
                 v-for="(link, index) in favicons"
                 :key="index"
                 :href="link.url"
-                class="btn btn-outline btn-sm flex items-center gap-2"
+                class="btn btn-outline btn-sm flex items-center gap-2 xs:text-sm sm:text-sm"
                 target="_blank" rel="noopener noreferrer"
               >
                 <!-- Favicon visível só se não deu erro -->
