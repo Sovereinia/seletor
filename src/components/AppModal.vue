@@ -21,6 +21,8 @@ const myModal = ref<HTMLDialogElement | null>(null)
 
 watch(() => abrir, (newValue) => {
   if (newValue) {
+    bannerErrored.value = false;
+    expandido.value = false;
     openModal();
   } else {
     closeModal();
@@ -36,6 +38,12 @@ function closeModal() {
   if (myModal.value?.open) {
     myModal.value.close();
   }
+
+  bannerErrored.value = false;
+  expandido.value = false;
+  visibleAlternatives.value = {};
+  favicons.value = [];
+
   emit('atualizarAbrir', false);
 }
 
@@ -140,7 +148,7 @@ function handleResize() {
           :src="bannerErrored ? app.banner?.src : app.modalBanner?.src || app.banner?.src"
           :alt="bannerErrored ? app.banner?.alt : app.modalBanner?.alt || app.banner?.alt"
           @error="bannerErrored = true"
-          class="mx-auto w-full max-w-lg max-h-[120px] object-contain"
+          class="mx-auto w-full max-w-lg max-h-[120px] object-contain mb-2"
         />
       </div>
 
