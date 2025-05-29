@@ -68,7 +68,7 @@ function handleAbrirModal(app: App) {
 <template>
   <header>
     <h1 class="text-3xl font-bold text-color text-center mb-4">{{ title }}</h1>
-    <p class="text-center text-base mb-5">
+    <p class="text-center text-base mb-5 px-2">
       {{ subtitleBase }} <span class="font-bold">{{ subtitleSuffix }}</span>
     </p>
   </header>
@@ -88,7 +88,7 @@ function handleAbrirModal(app: App) {
     />
   </section>
 
-  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-2">
+  <section class="grid grid-cols-1 w-full max-w-full md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-12 mt-2">
     <AppCard 
       v-for="app in filteredApps"
       :key="app.name"
