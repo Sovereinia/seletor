@@ -39,7 +39,7 @@ export function getAlternativeIcon(name: string): string {
     ? `${base}${alternativeIcons[foundKey]}`
     : `${base}alternatives/default.png`;
 
-  console.log(`Icon for ${name} →`, finalPath);
+  //console.log(`Icon for ${name} →`, finalPath);
   return finalPath;
 }
 

@@ -24,13 +24,13 @@ watch(
 
 function openModal() {
   myModal.value?.showModal()
-  console.log('Modal aberto aqui no appModal')
+  //console.log('Modal aberto aqui no appModal')
 }
 
 function closeModal() {
   myModal.value?.close()
   emit('atualizarAbrir', false)
-  console.log('Modal fechado')
+  //console.log('Modal fechado')
 }
 
 function faviconSrc(url: string): { src: string; visible: Ref<boolean>; onError: () => void } {

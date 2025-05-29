@@ -95,7 +95,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['Google Password Manager'],
-  protocol: [''],
   banner: {
     src: './apps/icons/vaultwarden.png',
     alt: 'Ícone do Vaultwarden'
@@ -121,7 +120,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['Google Password Manager'],
-  protocol: [''],
   banner: {
     src: './apps/icons/passbolt.svg',
     alt: 'Ícone do Passbolt'
@@ -228,7 +226,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['Confluence', 'Notion', 'MediaWiki'],
-  protocol: [''],
   banner: {
     src: './apps/icons/bookstack.svg',
     alt: 'Ícone do BookStack'
@@ -280,7 +277,6 @@ export const apps: App[] = [
   ],
   categories: ['social', 'tools'],
   alternatives: ['Reddit', 'Facebook Groups'],
-  protocol: [''],
   banner: {
     src: './apps/icons/discourse.svg',
     alt: 'Ícone do Discourse'
@@ -359,7 +355,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['iLovePDF', 'SmallPDF'],
-  protocol: [''],
   banner: {
     src: './apps/icons/stirling-pdf.png',
     alt: 'Ícone do Stirling-PDF'
@@ -385,7 +380,6 @@ export const apps: App[] = [
   ],
   categories: ['protocols'],
   alternatives: ['OStatus', 'Zot'],
-  protocol: ['ActivityPub', 'Fediverso'],
   banner: {
     src: './apps/icons/activitypub.svg',
     alt: 'Ícone do ActivityPub'
@@ -412,7 +406,6 @@ export const apps: App[] = [
   ],
   categories: ['protocols'],
   alternatives: ['XMPP', 'Signal Protocol'],
-  protocol: ['Matrix'],
   banner: {
     src: './apps/icons/matrix.svg',
     alt: 'Ícone do Matrix'
@@ -439,7 +432,6 @@ export const apps: App[] = [
   ],
   categories: ['protocols'],
   alternatives: ['Matrix', 'Signal Protocol'],
-  protocol: ['XMPP'],
   banner: {
     src: './apps/icons/xmpp.svg',
     alt: 'Ícone do XMPP'
@@ -492,7 +484,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['WordPress', 'Medium'],
-  protocol: [''],
   banner: {
     src: './apps/icons/ghost.png',
     alt: 'Ícone do Ghost'
@@ -546,7 +537,6 @@ export const apps: App[] = [
   ],
   categories: ['messaging', 'tools'],
   alternatives: ['Slack', 'Microsoft Teams', 'Zendesk'],
-  protocol: [''],
   banner: {
     src: './apps/icons/rocketchat.svg',
     alt: 'Ícone do Rocket.Chat'
@@ -572,7 +562,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['Trello', 'Jira'],
-  protocol: [''],
   banner: {
     src: './apps/icons/plane.svg',
     alt: 'Ícone do Plane'
@@ -598,7 +587,6 @@ export const apps: App[] = [
   ],
   categories: ['protocols'],
   alternatives: ['HTTP', 'BitTorrent'],
-  protocol: [''],
   banner: {
     src: './apps/icons/ipfs.svg',
     alt: 'Ícone do IPFS'
@@ -624,7 +612,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['Google Password Manager'],
-  protocol: [''],
   banner: {
     src: './apps/icons/bitwarden.svg',
     alt: 'Ícone do Bitwarden'
@@ -677,7 +664,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['Plex'],
-  protocol: [''],
   banner: {
     src: './apps/icons/jellyfin.svg',
     alt: 'Ícone do Jellyfin'
@@ -703,7 +689,6 @@ export const apps: App[] = [
   ],
   categories: ['messaging', 'tools'],
   alternatives: ['Slack', 'Microsoft Teams', 'Discord'],
-  protocol: [''],
   banner: {
     src: './apps/icons/zulip.svg',
     alt: 'Ícone do Zulip'
@@ -729,7 +714,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['Zendesk', 'Freshdesk', 'Help Scout'],
-  protocol: [''],
   banner: {
     src: './apps/icons/osticket.png',
     alt: 'Ícone do osTicket'
@@ -834,7 +818,6 @@ export const apps: App[] = [
   ],
   categories: ['messaging', 'tools'],
   alternatives: ['Slack', 'Microsoft Teams', 'Rocket.Chat', 'GitLab'],
-  protocol: [''],
   banner: {
     src: './apps/icons/mattermost.svg',
     alt: 'Ícone do Mattermost'
@@ -938,7 +921,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['Jira', 'Trello', 'Asana'],
-  protocol: [''],
   banner: {
     src: './apps/icons/openproject.svg',
     alt: 'Ícone do OpenProject'
@@ -963,7 +945,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: [''],
-  protocol: [''],
   banner: {
     src: './apps/icons/uptimekuma.svg',
     alt: 'Ícone do Uptime Kuma'
@@ -989,7 +970,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['Jellyfin', 'Emby', 'Kodi'],
-  protocol: [''],
   banner: {
     src: './apps/icons/plex.svg',
     alt: 'Ícone do Plex'
@@ -1015,7 +995,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['Grammarly', 'Microsoft Editor'],
-  protocol: [''],
   banner: {
     src: './apps/icons/languagetool.png',
     alt: 'Ícone do LanguageTool'
@@ -1041,7 +1020,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['Twitch', 'YouTube Live', 'Facebook Live'],
-  protocol: [''],
   banner: {
     src: './apps/icons/owncast.svg',
     alt: 'Ícone do Owncast'
@@ -1067,7 +1045,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['Radio.co', 'Shoutcast'],
-  protocol: [''],
   banner: {
     src: './apps/icons/azuracast.svg',
     alt: 'Ícone do AzuraCast'
@@ -1119,7 +1096,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['Ghost', 'Wix', 'Squarespace'],
-  protocol: [''],
   banner: {
     src: './apps/icons/wordpress.svg',
     alt: 'Ícone do WordPress'
@@ -1145,7 +1121,6 @@ export const apps: App[] = [
   ],
   categories: ['protocols'],
   alternatives: ['ActivityPub', 'Diaspora protocol'],
-  protocol: [''],
   banner: {
     src: './apps/icons/atprotocol.svg',
     alt: 'Ícone do AT Protocol'
@@ -1198,7 +1173,6 @@ export const apps: App[] = [
   ],
   categories: ['protocols'],
   alternatives: ['Newsletters', 'Atom'],
-  protocol: [''],
   banner: {
     src: './apps/icons/rss.svg',
     alt: 'Ícone do RSS'
@@ -1224,7 +1198,6 @@ export const apps: App[] = [
   ],
   categories: ['protocols'],
   alternatives: ['RSS', 'Newsletters'],
-  protocol: [''],
   banner: {
     src: './apps/icons/atom.svg',
     alt: 'Ícone do Atom'
@@ -1250,7 +1223,6 @@ export const apps: App[] = [
   ],
   categories: ['protocols'],
   alternatives: ['IPFS', 'HTTP', 'Resilio Sync'],
-  protocol: ['BitTorrent'],
   banner: {
     src: './apps/icons/bittorrent.svg',
     alt: 'Ícone do BitTorrent'
@@ -1276,7 +1248,6 @@ export const apps: App[] = [
   ],
   categories: ['protocols'],
   alternatives: ['ActivityPub', 'AT Protocol'],
-  protocol: ['Nostr'],
   banner: {
     src: './apps/icons/nostr.svg',
     alt: 'Ícone do Nostr'
@@ -1302,7 +1273,6 @@ export const apps: App[] = [
   ],
   categories: ['protocols'],
   alternatives: ['VPN', 'I2P', 'Proxy'],
-  protocol: ['Tor'],
   banner: {
     src: './apps/icons/tor.svg',
     alt: 'Ícone do Tor'
@@ -1328,7 +1298,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['Kibana', 'Datadog', 'Tableau'],
-  protocol: [''],
   banner: {
     src: './apps/icons/grafana.svg',
     alt: 'Ícone do Grafana'
@@ -1354,7 +1323,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['Zabbix', 'Datadog'],
-  protocol: [''],
   banner: {
     src: './apps/icons/prometheus.svg',
     alt: 'Ícone do Prometheus'
@@ -1388,6 +1356,58 @@ export const apps: App[] = [
   modalBanner: {
     src: './apps/logos/funkwhale.png',
     alt: 'Logo do Funkwhale'
+  }
+},
+
+{
+  name: 'IRC',
+  description: 'Protocolo clássico de chat em tempo real, usado desde os primórdios da internet para conversas em grupo.',
+  longDescription: 'O IRC (Internet Relay Chat) é um dos protocolos de comunicação mais antigos da internet, criado para bate-papo em tempo real. Ele permite que pessoas entrem em canais (salas de conversa) ou troquem mensagens diretas em servidores públicos ou privados. Apesar da idade, o IRC ainda é usado por muitas comunidades técnicas e projetos de software livre. É leve, simples, funciona em qualquer lugar e pode ser hospedado por você para manter controle total.',
+  features: [
+    'Salas de bate-papo em tempo real (canais) e mensagens diretas',
+    'Leve, rápido e funciona até em conexões lentas',
+    'Pode ser auto-hospedado e integrado a bots e scripts'
+  ],
+  links: [
+    { label: 'O que é IRC?', url: 'https://pt.wikipedia.org/wiki/Internet_Relay_Chat' },
+    { label: 'Clientes e servidores recomendados', url: 'https://github.com/Kickball/awesome-selfhosted#irc' },
+    { label: 'Documentação do protocolo', url: 'https://tools.ietf.org/html/rfc1459' },
+  ],
+  categories: ['protocols'],
+  alternatives: ['Matrix', 'XMPP'],
+  banner: {
+    src: './apps/icons/irc.svg',
+    alt: 'Ícone do IRC'
+  },
+  modalBanner: {
+    src: './apps/logos/irc.png',
+    alt: 'Logo do IRC'
+  }
+},
+{
+  name: 'The Lounge',
+  description: 'Cliente web moderno para IRC, com interface amigável e acesso contínuo às conversas.',
+  longDescription: 'O The Lounge é um cliente de IRC que roda no navegador e mantém você sempre conectado aos canais, mesmo quando fecha a aba. Ele é ideal para quem quer usar IRC com uma interface moderna e prática, parecida com Slack ou Discord, mas mantendo a leveza e descentralização do protocolo IRC. É auto-hospedável e pode ser acessado de qualquer dispositivo, com histórico persistente e suporte a múltiplas redes.',
+  features: [
+    'Interface web bonita e responsiva, inspirada em apps modernos',
+    'Conexão contínua: você não perde mensagens quando está offline',
+    'Suporte a múltiplos servidores e histórico completo de conversas'
+  ],
+  links: [
+    { label: 'Acesse o site oficial', url: 'https://thelounge.chat/' },
+    { label: 'Código Fonte', url: 'https://github.com/thelounge/thelounge' },
+    { label: 'Auto-hospede o The Lounge', url: 'https://thelounge.chat/docs/install-and-upgrade/' },
+  ],
+  categories: ['tools'],
+  alternatives: ['Slack', 'Discord', 'Telegram', 'WhatsApp'],
+  protocol: ['IRC'],
+  banner: {
+    src: './apps/icons/thelounge.svg',
+    alt: 'Ícone do The Lounge'
+  },
+  modalBanner: {
+    src: './apps/logos/thelounge.png',
+    alt: 'Logo do The Lounge'
   }
 },
 

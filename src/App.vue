@@ -4,6 +4,7 @@ import { useGlobalStore } from './stores/global';
 import { RouterView } from 'vue-router';
 
 import Layout from './components/Layout.vue';
+import FloatingPrompt from './components/FloatingPrompt.vue';
 
 const globalStore = useGlobalStore();
 
@@ -13,11 +14,15 @@ onMounted(() => {
 </script>
 
 <template>
+
   <Layout>
+    
     <template #content>
       <RouterView />
     </template>
+
   </Layout>
+  <FloatingPrompt />
 </template>
 
 <style scoped></style>
