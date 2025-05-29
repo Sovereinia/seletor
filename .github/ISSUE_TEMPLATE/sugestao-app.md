@@ -1,12 +1,10 @@
 ---
-name: Sugestão de app
-about: Sugira um app para adicionarmos ao Guia
-title: "[Sugestão] Nome do app"
+name: Sugestão
+about: Sugira algump para o Guia
+title: "[Sugestão] "
 labels: sugestão
 ---
 
-**Nome do app:**  
-Ex: PeerTube
+Olá! Obrigado por contribuir com a Sovereinia. 
 
-**Link:**  
-https://exemplo.com
+Por favor nos diga a sua sugestão 😊
