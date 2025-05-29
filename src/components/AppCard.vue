@@ -13,7 +13,7 @@ const base = import.meta.env.BASE_URL;
 const emit = defineEmits(['abrir']);
 
 function abrirModal() {
-  console.log('📦 Dados enviados para o modal:', props.app);
+  //console.log('📦 Dados enviados para o modal:', props.app);
   emit('abrir', props.app);
 }
 
