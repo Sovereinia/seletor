@@ -11,12 +11,14 @@ const props = defineProps<{
 
 const base = import.meta.env.BASE_URL;
 
+let openCount = 0;
 
 const emit = defineEmits(['abrir']);
 
 function abrirModal() {
   //console.log('📦 Dados enviados para o modal:', props.app);
-  emit('abrir', props.app);
+  openCount++;
+  emit('abrir', { ...props.app, _openCount: openCount });
 }
 
 const hiddenAlternatives = ref(new Set<string>());

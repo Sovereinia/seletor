@@ -8,7 +8,7 @@ import type { App } from '@/types';
 
 const { abrir, app } = defineProps<{
   abrir: boolean;
-  app: Partial<App>;
+  app: Partial<App> & { _openCount?: number };
 }>();
 
 const emit = defineEmits(['atualizarAbrir'])
@@ -24,12 +24,15 @@ const localApp = ref<Partial<App>>({});
 
 const myModal = ref<HTMLDialogElement | null>(null)
 
-watch(() => abrir, async (newValue) => {
-  if (newValue) {
+watch(() => app._openCount, async (newValue) => {
+  if (!app) return;
+  if (app) {
     bannerErrored.value = false;
     expandido.value = false;
     visible.value = false;
     localApp.value = {};
+    visibleAlternatives.value = {}; 
+    favicons.value = [];
 
     await nextTick(); // desmonta com segurança
 
@@ -75,7 +78,7 @@ function closeModal() {
 const visibleAlternatives = ref<Record<string, boolean>>({});
 
 watch(
-  () => app.alternatives,
+  () => localApp.value.alternatives,
   (alts) => {
     visibleAlternatives.value = {};
     (alts || []).forEach((alt) => {
@@ -103,7 +106,7 @@ const favicons = ref<{
 }[]>([]);
 
 watch(
-  () => app.links,
+  () => localApp.value.links,
   (newLinks) => {
     if (newLinks?.length) {
       favicons.value = newLinks.map(link => {
@@ -144,6 +147,7 @@ const protocolInfos = computed(() =>
   <!-- ✅ Atualizado aqui: @cancel → @click.self -->
   <dialog 
     ref="myModal" 
+    :key="app._openCount"
     class="modal fixed inset-0 flex items-center justify-center p-2 sm:p-4 overflow-auto" 
     @click.self="closeModal"
     @close="handleDialogClose"
