@@ -1425,7 +1425,6 @@ export const apps: App[] = [
   ],
   categories: ['tools'],
   alternatives: ['Google Workspace', 'Microsoft 365', 'Zoho Workplace'],
-  protocol: [''],
   banner: {
     src: './apps/icons/lasuite.svg',
     alt: 'Ícone da La Suite'
