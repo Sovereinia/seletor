@@ -1409,6 +1409,32 @@ export const apps: App[] = [
     alt: 'Logo do The Lounge'
   }
 },
+{
+  name: 'La Suite',
+  description: 'Conjunto de ferramentas online de escritório mantido pelo governo francês, com foco em soberania digital.',
+  longDescription: 'La Suite é uma suíte de aplicativos online voltada para comunicação e produtividade, criada e mantida por instituições públicas da França. Ela inclui e-mail, agenda, editor de documentos, videoconferência e outros serviços colaborativos. O objetivo do projeto é oferecer uma alternativa segura, soberana e de código aberto a plataformas como Google Workspace e Microsoft 365, promovendo independência tecnológica nas instituições públicas.',
+  features: [
+    'Editor de documentos, planilhas e apresentações online',
+    'E-mail, agenda, chat e videoconferência integrados',
+    'Baseada em software livre, com foco em privacidade e controle institucional'
+  ],
+  links: [
+    { label: 'Acesse o site oficial', url: 'https://suite.numerique.gouv.fr/' },
+    { label: 'Sobre o projeto', url: 'https://www.numerique.gouv.fr/' },
+    { label: 'Código Fonte (parcial)', url: 'https://github.com/ministere-numerique' },
+  ],
+  categories: ['tools'],
+  alternatives: ['Google Workspace', 'Microsoft 365', 'Zoho Workplace'],
+  protocol: [''],
+  banner: {
+    src: './apps/icons/lasuite.svg',
+    alt: 'Ícone da La Suite'
+  },
+  modalBanner: {
+    src: './apps/logos/lasuite.png',
+    alt: 'Logo da La Suite'
+  }
+},
 
 
 
