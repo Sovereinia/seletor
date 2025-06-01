@@ -78,7 +78,7 @@ const slicedDescription = computed(() => {
       <img
         :src="app.banner.src"
         :alt="app.banner.alt"
-        class="h-20 sm:w-60 sm:h-40 sm:w-60 sm:h-40
+        class="h-20 sm:w-60 sm:h-40
          object-contain"
       />
     </figure>
