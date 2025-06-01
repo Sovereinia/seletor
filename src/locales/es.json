@@ -1,0 +1,63 @@
+{
+  "common": {
+    "welcome": "Bienvenido",
+    "language": "Idioma",
+    "portuguese": "Portugués",
+    "english": "Inglés",
+    "spanish": "Español"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "blog": "Blog"
+  },
+  "search": {
+    "placeholder": {
+      "desktop": "Busca una aplicación que conozcas (ej: Instagram, Google Drive...)",
+      "mobile": "WhatsApp, Google Drive..."
+    }
+  },
+  "categories": {
+    "title": "Categorías"
+  },
+  "headers": {
+    "desktop": [
+      "Descubre una nueva forma de usar internet, donde tienes más control sobre lo que compartes, eliges con quién te conectas y participas en redes que funcionan sin la moderación de una entidad central.",
+      "Existen alternativas a las plataformas comunes, creadas por comunidades independientes. Priorizan tu libertad y te permiten usar internet con más seguridad y menos vigilancia de comportamiento.",
+      "Usa herramientas creadas para garantizar tu autonomía en internet. Con ellas, eliges cómo comunicarte, qué compartir y con quién interactuar, todo esto sin renunciar a tu privacidad o quedar atrapado en una sola entidad.",
+      "Cada aplicación tiene una propuesta diferente: algunas se centran en redes sociales, otras en videos, textos o intercambio de mensajes. Descubre cuál se adapta mejor a tu forma de usar internet y experimenta nuevas posibilidades.",
+      "Navega por una selección de herramientas creadas con enfoque en la libertad digital. Ve cuáles permiten más control y encuentra la que mejor se adapta a lo que buscas.",
+      "Las plataformas descentralizadas se conectan de diferentes formas, pero comparten la idea de una internet más abierta, colaborativa y justa. Aquí entiendes cómo funcionan y por qué es importante."
+    ],
+    "mobile": [
+      "Alternativas de código abierto para aplicaciones famosas.",
+      "Conoce aplicaciones descentralizadas mantenidas por la comunidad.",
+      "Descubre aplicaciones alternativas a las que ya conoces.",
+      "Usa herramientas creadas para garantizar tu autonomía en internet.",
+      "Navega por una selección de herramientas con enfoque en la libertad digital.",
+      "Descubre una nueva forma de usar internet"
+    ]
+  },
+  "app": {
+    "title": "Guía de Apps",
+    "subtitle": "Conoce aplicaciones alternativas."
+  },
+  "cta": {
+    "suggestApp": "¿Quieres sugerir una app?",
+    "suggestionTemplate": "sugerencia.md"
+  },
+  "category": {
+    "all": { "name": "Todos", "short": "Todos" },
+    "social": { "name": "Redes Sociales", "short": "Sociales" },
+    "messaging": { "name": "Mensajeros", "short": "Mensajeros" },
+    "tools": { "name": "Herramientas Profesionales", "short": "Profesionales" },
+    "protocols": { "name": "Protocolos Abiertos", "short": "Protocolos" }
+  },
+  "appModal": {
+    "close": "Cerrar",
+    "protocols": "Protocolos y federación:",
+    "alternatives": "Alternativa a:",
+    "br": "BR"
+  }
+} 

@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import ThemeToggler from './ThemeToggler.vue';
+import LanguageSwitcher from './LanguageSwitcher.vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 const navOptions = computed(() => [
   {
-    name: 'Blog',
+    name: t('navigation.blog'),
     link: 'https://sovereinia.org/',
   },
 ]);
@@ -26,7 +30,12 @@ const navOptions = computed(() => [
           {{ option.name }}
         </a>
       </li>
-      <ThemeToggler />
+      <li>
+        <LanguageSwitcher />
+      </li>
+      <li>
+        <ThemeToggler />
+      </li>
     </ul>
   </div>
 </template>
