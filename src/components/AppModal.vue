@@ -211,7 +211,7 @@ const { t } = useI18n();
 
 
       <!-- Caracteristicas -->
-        <ul v-if="localApp.features?.length" class="list-disc text-sm sm:text-base space-y-2 list-inside mb-4 text-sm">
+        <ul v-if="localApp.features?.length" class="list-disc text-sm sm:text-base space-y-2 list-inside mb-4">
           <li v-for="(feature, index) in localApp.features" :key="index">{{ feature }}</li>
         </ul>
 
