@@ -1,0 +1,63 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "language": "Language",
+    "portuguese": "PT",
+    "english": "EN",
+    "spanish": "ES"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "search": {
+    "placeholder": {
+      "desktop": "Search for an app you know (e.g., Instagram, Google Drive...)",
+      "mobile": "WhatsApp, Google Drive..."
+    }
+  },
+  "categories": {
+    "title": "Categories"
+  },
+  "headers": {
+    "desktop": [
+      "Discover a new way to use the internet, where you have more control over what you share, choose who you connect with, and participate in networks that work without central entity moderation.",
+      "There are alternatives to common platforms, made by independent communities. They prioritize your freedom and allow you to use the internet with more security and less behavioral surveillance.",
+      "Use tools created to ensure your autonomy on the internet. With them, you choose how to communicate, what to share, and who to interact with, all without giving up your privacy or being tied to a single entity.",
+      "Each app has a different purpose: some focus on social networks, others on videos, texts, or message exchange. Discover which one best fits your way of using the internet and experience new possibilities.",
+      "Browse through a selection of tools created with a focus on digital freedom. See which ones allow more control and find the one that best matches what you're looking for.",
+      "Decentralized platforms connect in different ways, but share the idea of a more open, collaborative, and fair internet. Here you understand how they work and why it matters."
+    ],
+    "mobile": [
+      "Open source alternatives to famous apps.",
+      "Discover decentralized apps maintained by the community.",
+      "Find alternative apps to the ones you already know.",
+      "Use tools created to ensure your autonomy on the internet.",
+      "Browse through a selection of tools focused on digital freedom.",
+      "Discover a new way to use the internet"
+    ]
+  },
+  "app": {
+    "title": "Apps Guide",
+    "subtitle": "Discover alternative applications."
+  },
+  "cta": {
+    "suggestApp": "Want to suggest an app?",
+    "suggestionTemplate": "suggestion.md"
+  },
+  "category": {
+    "all": { "name": "All", "short": "All" },
+    "social": { "name": "Social Networks", "short": "Social" },
+    "messaging": { "name": "Messengers", "short": "Messages" },
+    "tools": { "name": "Professional Tools", "short": "Tools" },
+    "protocols": { "name": "Open Protocols", "short": "Protocols" }
+  },
+  "appModal": {
+    "close": "Close",
+    "protocols": "Protocols and federation:",
+    "alternatives": "Alternative to:",
+    "br": "BR"
+  }
+} 

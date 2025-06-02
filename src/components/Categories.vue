@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import Wrapper from './Wrapper.vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 defineProps<{
   items: {
@@ -10,7 +13,7 @@ defineProps<{
 </script>
 
 <template>
-  <Wrapper title="Categorias">
+  <Wrapper :title="t('categories.title')">
     <div class="flex flex-col gap-2">
       <label v-for="item in items" :for="item.id" class="text-base-content opacity-80">
         <input

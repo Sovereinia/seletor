@@ -72,13 +72,13 @@ const slicedDescription = computed(() => {
 
     class="card bg-[var(--color-card-primary)] w-full shadow-lg 
     rounded-xl sm:rounded-3xl overflow-hidden transform transition-transform duration-200 
-    hover:scale-[1.03] hover:shadow-xl flex flex-row sm:flex-col"
+    hover:scale-[1.03] hover:shadow-xl flex flex-row sm:flex-col cursor-pointer"
     >
     <figure class="p-2 w-20 sm:w-auto sm:p-10 sm:h-64 flex items-center justify-center">
       <img
         :src="app.banner.src"
         :alt="app.banner.alt"
-        class="h-20 sm:w-60 sm:h-40 sm:w-60 sm:h-40
+        class="h-20 sm:w-60 sm:h-40
          object-contain"
       />
     </figure>
