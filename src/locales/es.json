@@ -2,9 +2,9 @@
   "common": {
     "welcome": "Bienvenido",
     "language": "Idioma",
-    "portuguese": "Portugués",
-    "english": "Inglés",
-    "spanish": "Español"
+    "portuguese": "PT",
+    "english": "EN",
+    "spanish": "ES" 
   },
   "navigation": {
     "home": "Inicio",

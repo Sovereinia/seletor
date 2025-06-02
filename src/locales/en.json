@@ -2,9 +2,9 @@
   "common": {
     "welcome": "Welcome",
     "language": "Language",
-    "portuguese": "Portuguese",
-    "english": "English",
-    "spanish": "Spanish"
+    "portuguese": "PT",
+    "english": "EN",
+    "spanish": "ES"
   },
   "navigation": {
     "home": "Home",

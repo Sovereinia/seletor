@@ -20,7 +20,7 @@
     "pinia-plugin-persistedstate": "^4.2.0",
     "tailwindcss": "^4.1.4",
     "vue": "^3.5.13",
-    "vue-i18n": "^12.0.0-alpha.2",
+    "vue-i18n": "^11.1.5",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
