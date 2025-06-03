@@ -12,6 +12,56 @@ import { useI18n } from 'vue-i18n';
 import { useHeadersStore } from '@/stores/headers';
 import { useRoute, useRouter } from 'vue-router';
 
+
+const selectedApp = ref<Partial<App>>({});
+
+const searchQuery = ref('');
+
+const selectedCategory = ref<CategoryId>('all');
+const showFilters = ref(false);
+
+// Sugestões para o autocomplete
+const suggestions = apps.flatMap(app => app.alternatives || []);
+
+const orderedApps = computed(() => sortAppsByLinksThenRandom(apps));
+
+const filteredApps = computed(() => {
+  return filterApps(orderedApps.value, selectedCategory.value, searchQuery.value);
+});
+
+
+const title = ref('Guia de Apps');
+const subtitleBase = ref('');
+const subtitleSuffix = ref('');
+const mostrarModal = ref(false)
+
+const windowWidth = ref(window.innerWidth);
+const updateWindowWidth = () => (windowWidth.value = window.innerWidth);
+
+const searchPlaceholder = computed(() =>
+  windowWidth.value > 600
+    ? 'Procure por um app que você conhece (ex: Instagram, Google Drive...)'
+    : 'WhatsApp, Google Drive...'
+);
+//open modal checking  if ?app= is in the URL
+onMounted(() => {
+  window.addEventListener('resize', updateWindowWidth);
+  const appId = route.query.app;
+  if (typeof appId === 'string') {
+    const matchedApp = apps.find(app => app.id === appId);
+    if (matchedApp) {
+      selectedApp.value = matchedApp;
+      abrirModal.value = true;
+      router.replace({ query: { ...route.query, app: undefined } });
+    }
+  }
+  
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateWindowWidth);
+});
+
 const { t } = useI18n();
 const headersStore = useHeadersStore();
 const route = useRoute();
@@ -19,61 +69,13 @@ const router = useRouter();
 
 // Modal logic
 const abrirModal = ref(false);
-const selectedApp = ref<Partial<App>>({});
 
-// Open modal if ?app= is in the URL
-onMounted(() => {
-  const appId = route.query.app;
-  if (typeof appId === 'string') {
-    const matchedApp = apps.find(app => app.id === appId);
-    if (matchedApp) {
-      selectedApp.value = matchedApp;
-      abrirModal.value = true;
-
-      //cleaning  the URL which is optional
-      router.replace({ query: { ...route.query, app: undefined } });
-    }
-  }
-
-  window.addEventListener('resize', updateWindowWidth);
-});
-
-onUnmounted(() => {
-  window.removeEventListener('resize', updateWindowWidth);
-});
-
-const searchQuery = ref('');
-const selectedCategory = ref<CategoryId>('all');
-const showFilters = ref(false);
-const windowWidth = ref(window.innerWidth);
-
-const suggestions = apps.flatMap(app => app.alternatives || []);
-const orderedApps = computed(() => sortAppsByLinksThenRandom(apps));
-const filteredApps = computed(() => filterApps(orderedApps.value, selectedCategory.value, searchQuery.value));
-
-const updateWindowWidth = () => (windowWidth.value = window.innerWidth);
-const searchPlaceholder = computed(() =>
-  windowWidth.value > 600
-    ? t('search.placeholder.desktop')
-    : t('search.placeholder.mobile')
-);
-
-const title = computed(() => t('app.title'));
-const subtitleBase = computed(() => {
-  const isMobile = windowWidth.value <= 600;
-  const headers = isMobile ? headersStore.mobileHeaders : headersStore.desktopHeaders;
-  const randomKey = headers[Math.floor(Math.random() * headers.length)];
-  return t(randomKey);
-});
-const subtitleSuffix = computed(() => t('app.subtitle'));
-
-//Open modal manually
+//opening the modal manually
 function handleAbrirModal(app: App) {
   selectedApp.value = app;
   abrirModal.value = true;
 }
 </script>
-
 
 <template>
   <header>
