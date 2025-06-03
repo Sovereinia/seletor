@@ -2,53 +2,39 @@
 import AppSearch from '@/components/form/AppSearch.vue';
 import AppCard from '@/components/AppCard.vue';
 import CategorySelector from '@/components/form/CategorySelector.vue';
-import { apps } from '@/data/apps';
 import AppModal from '@/components/AppModal.vue';
+import { apps } from '@/data/apps';
 import { categories } from '@/data/categories';
 import { ref, computed, onMounted, onUnmounted } from 'vue';
-import type { CategoryId } from '@/types';
-import type { App } from '@/types';
+import type { CategoryId, App } from '@/types';
 import { sortAppsByLinksThenRandom, filterApps } from '@/utils/filter';
 import { useI18n } from 'vue-i18n';
 import { useHeadersStore } from '@/stores/headers';
+import { useRoute, useRouter } from 'vue-router';
 
 const { t } = useI18n();
 const headersStore = useHeadersStore();
+const route = useRoute();
+const router = useRouter();
 
-const modalData = ref<Partial<App>>({});
-const searchQuery = ref('');
-const selectedCategory = ref<CategoryId>('all');
-const showFilters = ref(false);
+// Modal logic
+const abrirModal = ref(false);
+const selectedApp = ref<Partial<App>>({});
 
-// Sugestões para o autocomplete
-const suggestions = apps.flatMap(app => app.alternatives || []);
-
-const orderedApps = computed(() => sortAppsByLinksThenRandom(apps));
-
-const filteredApps = computed(() => {
-  return filterApps(orderedApps.value, selectedCategory.value, searchQuery.value);
-});
-
-const title = computed(() => t('app.title'));
-const subtitleBase = computed(() => {
-  const isMobile = window.innerWidth <= 600;
-  const headers = isMobile ? headersStore.mobileHeaders : headersStore.desktopHeaders;
-  const randomKey = headers[Math.floor(Math.random() * headers.length)];
-  return t(randomKey);
-});
-const subtitleSuffix = computed(() => t('app.subtitle'));
-const mostrarModal = ref(false);
-
-const windowWidth = ref(window.innerWidth);
-const updateWindowWidth = () => (windowWidth.value = window.innerWidth);
-
-const searchPlaceholder = computed(() =>
-  windowWidth.value > 600
-    ? t('search.placeholder.desktop')
-    : t('search.placeholder.mobile')
-);
-
+// Open modal if ?app= is in the URL
 onMounted(() => {
+  const appId = route.query.app;
+  if (typeof appId === 'string') {
+    const matchedApp = apps.find(app => app.id === appId);
+    if (matchedApp) {
+      selectedApp.value = matchedApp;
+      abrirModal.value = true;
+
+      //cleaning  the URL which is optional
+      router.replace({ query: { ...route.query, app: undefined } });
+    }
+  }
+
   window.addEventListener('resize', updateWindowWidth);
 });
 
@@ -56,11 +42,38 @@ onUnmounted(() => {
   window.removeEventListener('resize', updateWindowWidth);
 });
 
+const searchQuery = ref('');
+const selectedCategory = ref<CategoryId>('all');
+const showFilters = ref(false);
+const windowWidth = ref(window.innerWidth);
+
+const suggestions = apps.flatMap(app => app.alternatives || []);
+const orderedApps = computed(() => sortAppsByLinksThenRandom(apps));
+const filteredApps = computed(() => filterApps(orderedApps.value, selectedCategory.value, searchQuery.value));
+
+const updateWindowWidth = () => (windowWidth.value = window.innerWidth);
+const searchPlaceholder = computed(() =>
+  windowWidth.value > 600
+    ? t('search.placeholder.desktop')
+    : t('search.placeholder.mobile')
+);
+
+const title = computed(() => t('app.title'));
+const subtitleBase = computed(() => {
+  const isMobile = windowWidth.value <= 600;
+  const headers = isMobile ? headersStore.mobileHeaders : headersStore.desktopHeaders;
+  const randomKey = headers[Math.floor(Math.random() * headers.length)];
+  return t(randomKey);
+});
+const subtitleSuffix = computed(() => t('app.subtitle'));
+
+//Open modal manually
 function handleAbrirModal(app: App) {
-  mostrarModal.value = true;
-  modalData.value = app;
+  selectedApp.value = app;
+  abrirModal.value = true;
 }
 </script>
+
 
 <template>
   <header>
@@ -92,11 +105,11 @@ function handleAbrirModal(app: App) {
       :app="app"
       @abrir="handleAbrirModal"
     />
-
-    <AppModal
-      :abrir="mostrarModal"
-      :app="modalData"
-      @atualizarAbrir="mostrarModal = $event"
-    />
   </section>
+
+  <AppModal 
+    :abrir="abrirModal" 
+    :app="selectedApp" 
+    @atualizarAbrir="abrirModal = $event" 
+  />
 </template>
