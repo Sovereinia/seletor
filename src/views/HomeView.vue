@@ -2,14 +2,14 @@
 import AppSearch from '@/components/form/AppSearch.vue';
 import AppCard from '@/components/AppCard.vue';
 import CategorySelector from '@/components/form/CategorySelector.vue';
-import AppModal from '@/components/AppModal.vue';
 import { apps } from '@/data/apps';
+import  AppModal  from '@/components/AppModal.vue';
 import { categories } from '@/data/categories';
 import { ref, computed, onMounted, onUnmounted } from 'vue';
-import type { CategoryId, App } from '@/types';
+import type { CategoryId } from '@/types';
+import { desktopHeaders, mobileHeaders } from '@/data/headers';
+import type { App } from '@/types';
 import { sortAppsByLinksThenRandom, filterApps } from '@/utils/filter';
-import { useI18n } from 'vue-i18n';
-import { useHeadersStore } from '@/stores/headers';
 import { useRoute, useRouter } from 'vue-router';
 
 
