@@ -39,9 +39,6 @@ export type FiltersByCategory = {
 
 export interface Category {
   id: CategoryId;
-  name?: string;
-  short?: string;
-  icon: string;
 }
 
 export type HeaderEntry = {
