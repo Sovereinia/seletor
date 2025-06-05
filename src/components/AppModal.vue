@@ -4,6 +4,7 @@ import { getAlternativeIcon } from '@/utils/global.ts';
 import { getProtocolInfo } from '@/utils/global.ts';
 import { getFaviconPath } from '@/utils/global.ts';
 import type { App } from '@/types';
+import { useI18n } from 'vue-i18n';
 
 
 const { abrir, app } = defineProps<{
@@ -139,6 +140,8 @@ const protocolInfos = computed(() =>
     .filter((info): info is { src: string; alt: string; url: string } => !!info)
 );
 
+const { t } = useI18n();
+
 </script>
 
 
@@ -160,7 +163,7 @@ const protocolInfos = computed(() =>
       type="button"
       class="absolute top-4 right-4 z-20 bg-base-200 hover:bg-base-300 rounded-full p-2 shadow-md"
       @click="closeModal"
-      aria-label="Fechar"
+      :aria-label="t('appModal.close')"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -208,14 +211,14 @@ const protocolInfos = computed(() =>
 
 
       <!-- Caracteristicas -->
-        <ul v-if="localApp.features?.length" class="list-disc text-sm sm:text-base space-y-2 list-inside mb-4 text-sm">
+        <ul v-if="localApp.features?.length" class="list-disc text-sm sm:text-base space-y-2 list-inside mb-4">
           <li v-for="(feature, index) in localApp.features" :key="index">{{ feature }}</li>
         </ul>
 
         <div class="mt-2">
           <div class="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <h4 v-if="localApp.protocol?.length"  class="sm:text-lg font-semibold mb-2">Protocolos e federação:</h4>
+              <h4 v-if="localApp.protocol?.length" class="sm:text-lg font-semibold mb-2">{{ t('appModal.protocols') }}</h4>
               <div class="flex flex-wrap gap-2">
                 <a
                   v-for="proto in protocolInfos"
@@ -258,7 +261,7 @@ const protocolInfos = computed(() =>
                 <img
                   v-if="link.url.includes('sovereinia.org')"
                   src="/br-flag.svg"
-                  alt="BR"
+                  :alt="t('appModal.br')"
                   class="w-4 h-4"
                 />
 
@@ -271,7 +274,7 @@ const protocolInfos = computed(() =>
         </div>
 
         <div v-if="localApp.alternatives?.length" class="mt-4">
-          <h4 class="sm:text-lg font-semibold mb-2">Alternativo para:</h4>
+          <h4 class="sm:text-lg font-semibold mb-2">{{ t('appModal.alternatives') }}</h4>
           <div class="flex flex-wrap gap-2">
             <span v-for="(alt, index) in localApp.alternatives" :key="alt">
               <img

@@ -2,6 +2,7 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import type { Category } from '@/types';
 import { categories } from '@/data/categories';
+import { useI18n } from 'vue-i18n';
 
 const props = defineProps<{
   modelValue: string;
@@ -22,36 +23,23 @@ const updateWindowWidth = () => (windowWidth.value = window.innerWidth);
 onMounted(() => window.addEventListener('resize', updateWindowWidth));
 onUnmounted(() => window.removeEventListener('resize', updateWindowWidth));
 
-// Estilos dinâmicos
-const sizeClasses = computed(() => {
-  if (windowWidth.value > 556) return 'px-4 text-sm';
-  if (windowWidth.value > 475) return 'px-2 text-sm';
-  if (windowWidth.value > 430) return 'px-2 text-xs';
-  return 'px-2 text-xs'; // ícone
-});
+const { t } = useI18n();
 
-// Label adaptável
+// Label adaptável internacionalizado (name/short/icon)
 const getCategoryLabel = (category: Category) => {
-  if (windowWidth.value > 850) return category.name;
-  if (windowWidth.value > 430) return category.short;
-  return category.icon;
+  if (windowWidth.value > 850) return t('category.' + category.id + '.name');
+  return t('category.' + category.id + '.short');
 };
 </script>
 
 <template>
   <div class="flex justify-center">
-    <div v-if="windowWidth > 430" class=
-      "inline-flex rounded-full overflow-hidden 
-      border border-base-content/30">
-     <label
+    <div v-if="windowWidth > 430" class="inline-flex rounded-full overflow-hidden border border-base-content/30">
+      <label
         v-for="category in categories"
         :key="category.id"
-        class="cursor-pointer transition-colors 
-        duration-200 border-r border-base-content/20 
-        py-2 font-medium
-        last:border-r-0 flex items-center justify-center"
+        class="cursor-pointer px-4 text-sm transition-colors duration-200 border-r border-base-content/20 py-2 font-medium last:border-r-0 flex items-center justify-center"
         :class="[
-          sizeClasses,
           modelValue === category.id
             ? 'bg-[var(--color-selected-radio)] text-gray-100'
             : 'bg-base-100 text-base-content hover:bg-base-content/10'
@@ -77,7 +65,7 @@ const getCategoryLabel = (category: Category) => {
           : 'bg-base-100 text-base-content border-base-content/30 hover:bg-base-content/10'"
         @click="updateCategory(category.id)"
       >
-        {{ category.short }}
+        {{ getCategoryLabel(category) }}
       </button>
     </div>
   </div>
