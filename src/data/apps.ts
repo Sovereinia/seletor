@@ -83,7 +83,7 @@ export const apps: App[] = [
 {
   name: 'Vaultwarden',
   description: 'Gerenciador de senhas compatível com o Bitwarden, leve e fácil de auto-hospedar.',
-  longDescription: 'Vaultwarden é uma alternativa leve ao Bitwarden, um dos gerenciadores de senhas mais populares. Com ele, você pode guardar senhas, logins, notas seguras e outras informações de forma criptografada, acessando tudo pelo navegador ou pelo app oficial do Bitwarden. A grande vantagem do Vaultwarden é que ele consome poucos recursos e é muito simples de instalar, ideal para quem quer controlar suas senhas em um servidor próprio, sem depender da nuvem de terceiros.',
+  longDescription: 'Vaultwarden é uma alternativa leve ao Bitwarden, um dos gerenciadores de senhas mais populares. Com ele, você pode guardar senhas, logins, notas seguras e outras informações de forma criptografada, acessando tudo pelo navegador ou pelo app oficial do Bitwarden. A grande vantagem do Vaultwarden é que ele consome poucos recursos e é muito simples de instalar, ideal para quem quer controlar suas senhas em um servidor próprio.',
   features: [
     'Compatível com os apps oficiais do Bitwarden',
     'Criptografia de ponta a ponta para senhas e dados sensíveis',
@@ -289,8 +289,8 @@ export const apps: App[] = [
 
 {
   name: 'Pixelfed',
-  description: 'Rede social para compartilhar fotos, parecida com o Instagram, mas sem anúncios nem rastreamento.',
-  longDescription: 'Pixelfed é uma rede social para fotos e vídeos curtos, pensada para quem quer compartilhar imagens com privacidade e controle. Ele tem um visual parecido com o Instagram, com feed, curtidas e comentários, mas sem algoritmos nem publicidade. Assim como o Mastodon, o Pixelfed funciona em várias instâncias que se comunicam entre si. Você pode seguir e ser seguido por pessoas de outras instâncias do Fediverso, tudo com código aberto e sem depender de empresas centralizadas.',
+  description: 'Rede social para compartilhar fotos, parecida com o Instagram.',
+  longDescription: 'Pixelfed é uma rede social para fotos e vídeos curtos, pensada para quem quer compartilhar imagens com privacidade e controle. Ele tem um visual parecido com o Instagram, com feed, curtidas e comentários com foco em privacidade: não utiliza algoritmos de recomendação nem exibe anúncios. Assim como o Mastodon, o Pixelfed funciona em várias instâncias que se comunicam entre si. Você pode seguir e ser seguido por pessoas de outras instâncias do Fediverso, tudo com código aberto e sem depender de empresas centralizadas.',
   features: [
     'Feed de fotos com curtidas, comentários e stories',
     'Sem anúncios, rastreadores ou algoritmo de recomendação',
@@ -469,7 +469,7 @@ export const apps: App[] = [
 {
   name: 'Ghost',
   description: 'Plataforma leve para blogs e sites, com editor moderno e foco em desempenho.',
-  longDescription: 'Ghost é uma plataforma de publicação pensada para quem quer criar blogs, sites pessoais ou páginas de projeto com foco em simplicidade e velocidade. Ele tem um editor moderno, suporte a temas, SEO nativo e até integração com newsletters. É uma alternativa mais leve e direta ao WordPress, ideal para quem quer escrever e publicar sem complicação. Por ser auto-hospedado, você tem controle total sobre o conteúdo e o visual do site.',
+  longDescription: 'Ghost é uma plataforma de publicação pensada para quem quer criar blogs, sites pessoais ou páginas de projeto com foco em simplicidade e velocidade. Ele tem um editor moderno, suporte a temas, SEO nativo e até integração com newsletters. Por ser auto-hospedado, você tem controle total sobre o conteúdo e o visual do site.',
   features: [
     'Editor moderno com suporte a Markdown e blocos',
     'Visual limpo, com temas personalizáveis',
@@ -624,7 +624,7 @@ export const apps: App[] = [
 {
   name: 'Diaspora*',
   description: 'Rede social descentralizada com foco em privacidade, sem anúncios nem rastreamento.',
-  longDescription: 'Diaspora* é uma rede social que funciona por meio de "pods", servidores independentes que se conectam entre si. Você pode escolher um pod para criar sua conta ou hospedar o seu próprio. O sistema permite seguir pessoas, publicar textos, imagens, curtir e comentar, tudo com foco em controle do usuário e privacidade. Ele foi um dos primeiros projetos a propor uma alternativa livre às redes sociais centralizadas como o Facebook. Diferente do Mastodon ou do Friendica, o protocolo usado pelo Diaspora* não é compatível com o ActivityPub, o que limita a comunicação direta com outras redes do Fediverso.',
+  longDescription: 'Diaspora* é uma rede social que funciona por meio de "pods", servidores independentes que se conectam entre si. Você pode escolher um pod para criar sua conta ou hospedar o seu próprio. O sistema permite seguir pessoas, publicar textos, imagens, curtir e comentar, tudo com foco em controle do usuário e privacidade. Ele foi um dos primeiros projetos a propor uma alternativa livre às redes sociais centralizadas como o Facebook. Diferente do Mastodon ou do Friendica, o protocolo usado pelo Diaspora* não é compatível com o ActivityPub.',
   features: [
     'Rede descentralizada com foco em privacidade',
     'Publicações com texto, links e imagens',
@@ -1107,7 +1107,7 @@ export const apps: App[] = [
 {
   name: 'AT Protocol',
   description: 'Protocolo criado para redes sociais descentralizadas, mas por enquanto limitado ao uso no Bluesky.',
-  longDescription: 'AT Protocol foi desenvolvido para ser a base técnica do Bluesky, uma rede social descentralizada que surgiu como alternativa ao Twitter. Ele promete oferecer controle de identidade, portabilidade de dados e interoperabilidade. No entanto, até agora só é usado pelo próprio Bluesky e ainda não está totalmente aberto para uso por terceiros. Por isso, embora seja apresentado como protocolo aberto, ainda não é possível utilizá-lo fora do ecossistema do Bluesky, nem auto-hospedar serviços compatíveis.',
+  longDescription: 'AT Protocol foi desenvolvido para ser a base técnica do Bluesky, uma rede social descentralizada que surgiu como alternativa ao Twitter. Ele promete oferecer controle de identidade, portabilidade de dados e interoperabilidade. É um protocolo aberto, mas atualmente seu uso está restrito à infraestrutura do Bluesky, sem suporte a federação nem uso por terceiros.',
   features: [
     'Foco em redes sociais descentralizadas com identidade portátil',
     'Desenvolvido junto com a plataforma Bluesky',
@@ -1132,8 +1132,8 @@ export const apps: App[] = [
 
 {
   name: 'Bluesky',
-  description: 'Rede social baseada no AT Protocol, com proposta descentralizada, mas ainda bastante centralizada na prática.',
-  longDescription: 'Bluesky é uma rede social que se apresenta como uma alternativa descentralizada ao Twitter. Ele funciona sobre o AT Protocol, que promete portabilidade de identidade e interoperabilidade entre servidores. No entanto, atualmente o Bluesky ainda depende de uma instância central (bsky.social), com acesso controlado e sem suporte real a federação nem auto-hospedagem. Apesar do discurso de descentralização, o ecossistema ainda está fechado e restrito à infraestrutura do próprio projeto.',
+  description: 'Rede social baseada no AT Protocol, com proposta descentralizada em desenvolvimento.',
+  longDescription: 'Bluesky é uma rede social que se apresenta como uma alternativa descentralizada ao Twitter. Ele funciona sobre o AT Protocol, que oferece portabilidade de identidade e interoperabilidade entre servidores. No momento, porém, ainda depende de uma instância central (bsky.social) e não oferece suporte a federação ou auto-hospedagem.',
   features: [
     'Interface parecida com o Twitter, com postagens, curtidas e reposts',
     'Protocolo próprio (AT Protocol), mas com uso limitado',
