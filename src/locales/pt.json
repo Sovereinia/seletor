@@ -14,7 +14,7 @@
   },
   "search": {
     "placeholder": {
-      "desktop": "Procure por um app que você conhece (ex: Instagram, Google Drive...)",
+      "desktop": "Procure por um app que você conhece, como: Instagram, Google Drive...",
       "mobile": "WhatsApp, Google Drive..."
     }
   },
@@ -23,8 +23,8 @@
   },
   "headers": {
     "desktop": [
-      "Conheça uma nova forma de usar a internet, onde você tem mais controle sobre o que compartilha, escolhe com quem se conecta e participa de redes que funcionam sem a moderação de uma entidade central.",
-      "Existem alternativas às plataformas comuns, feitas por comunidades independentes. Elas priorizam a sua liberdade e permitem que você use a internet com mais segurança e menos vigilância de comportamento.",
+      "Conheça uma nova forma de usar a internet, onde você tem mais controle sobre o que compartilha, escolhe com quem se conecta e participa de redes que funcionam sem depender de uma autoridade central.",
+      "Existem alternativas às plataformas comuns, feitas por comunidades independentes. Elas priorizam a sua liberdade e permitem que você use a internet com mais segurança e menos coleta de dados e análise de comportamento online.",
       "Use ferramentas criadas para garantir sua autonomia na internet. Com elas, você escolhe como se comunicar, o que compartilhar e com quem interagir, tudo isso sem abrir mão da sua privacidade ou ficar preso a uma só entidade.",
       "Cada app tem uma proposta diferente: alguns focam em redes sociais, outros em vídeos, textos ou troca de mensagens. Descubra qual se encaixa melhor com seu jeito de usar a internet e experimente novas possibilidades.",
       "Navegue por uma seleção de ferramentas criadas com foco na liberdade digital. Veja quais delas permitem mais controle, e encontre aquela que mais combina com o que você procura.",
