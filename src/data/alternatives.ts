@@ -13,7 +13,7 @@ export const alternativeIcons: Record<string, string> = {
   'Telegram': 'alternatives/telegram.svg',
   'Slack': 'alternatives/slack.svg',
   'Reddit': 'alternatives/reddit.svg',
-  'Hacker News': 'alternatives/hacker-news.png',
+  'Hacker News': 'alternatives/hacker-news.svg',
   'Zoom': 'alternatives/zoom.svg',
   'Google Meet': 'alternatives/google-meet.svg',
   'Confluence': 'alternatives/confluence.svg',
