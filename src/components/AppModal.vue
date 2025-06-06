@@ -142,6 +142,23 @@ const protocolInfos = computed(() =>
 
 const { t } = useI18n();
 
+//share_button
+const copySuccess = ref(false);
+
+function copyLinkToClipboard() {
+  const linkToCopy = localApp.value.links?.[0]?.url || window.location.href;
+
+  if (linkToCopy) {
+    navigator.clipboard.writeText(linkToCopy).then(() => {
+      copySuccess.value = true;
+      setTimeout(() => (copySuccess.value = false), 2000);
+    }).catch(() => {
+      copySuccess.value = false;
+    });
+  }
+}
+
+
 </script>
 
 
@@ -267,6 +284,16 @@ const { t } = useI18n();
 
                 {{ link.label }}
               </a>
+
+              <button class="btn btn-sm btn-outline flex items-center gap-2"
+                  @click="copyLinkToClipboard"
+                  :aria-label="t('appModal.copyLink')"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16h8M8 12h8m-6 8h6a2 2 0 002-2V6a2 2 0 00-2-2h-6l-4 4v12a2 2 0 002 2z" />
+                </svg>
+                {{ copySuccess ? t('Copied') : t('Share') }}
+              </button>
             </div>
 
 

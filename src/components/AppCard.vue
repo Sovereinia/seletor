@@ -68,12 +68,16 @@ const slicedDescription = computed(() => {
 
 <template>
   <article
-    @click="abrirModal"
-
-    class="card bg-[var(--color-card-primary)] w-full shadow-lg 
+  role="button"
+  tabindex="0"
+  @click="abrirModal"
+  @keydown.enter="abrirModal"
+  @keydown.space.prevent="abrirModal"
+  class="card bg-[var(--color-card-primary)] w-full shadow-lg 
     rounded-xl sm:rounded-3xl overflow-hidden transform transition-transform duration-200 
-    hover:scale-[1.03] hover:shadow-xl flex flex-row sm:flex-col cursor-pointer"
-    >
+    hover:scale-[1.03] hover:shadow-xl flex flex-row sm:flex-col cursor-pointer focus:outline focus:outline-2 focus:outline-blue-500"
+  :aria-label="`Open details for ${app.name}`"
+>
     <figure class="p-2 w-20 sm:w-auto sm:p-10 sm:h-64 flex items-center justify-center">
       <img
         :src="app.banner.src"
