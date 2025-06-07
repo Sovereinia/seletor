@@ -26,11 +26,6 @@ export const protocolIcons: Record<string, ProtocolInfo> = {
     url: 'https://pt.wikipedia.org/wiki/Signal_Protocol',
     alt: 'Signal Protocol',
   },
-  "Lemmyverso": {
-    src: '/protocols/lemmyverse.png',
-    url: 'https://join-lemmy.org/',
-    alt: 'Lemmyverso',
-  },
   "WebRTC": {
     src: '/protocols/webrtc.png',
     url: 'https://pt.wikipedia.org/wiki/WebRTC',
@@ -43,7 +38,7 @@ export const protocolIcons: Record<string, ProtocolInfo> = {
   },
   "Zot": {
     src: '/protocols/zot.png',
-    url: 'https://project.hubzilla.org/help/Zot',
+    url: 'https://hubzilla.org/help/developer/zot_protocol',
     alt: 'Zot',
   },
   "Git": {
@@ -112,9 +107,8 @@ export const protocolIcons: Record<string, ProtocolInfo> = {
     alt: 'POP3',
   },
 };
-//
- // protocol: ['SMTP', 'IMAP', 'POP3'],
+
   // If SVG is available, that's best
   // otherwise, PNG with the following dimensions:
-  // - protocol logos: height best: 80px mminimum: 60px
+  // - protocol logos: height best: 80px minimum: 60px
 
