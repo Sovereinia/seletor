@@ -14,7 +14,7 @@
   },
   "search": {
     "placeholder": {
-      "desktop": "Search for an app you know (e.g., Instagram, Google Drive...)",
+      "desktop": "Search for an app you know, like: Instagram, Google Drive...",
       "mobile": "WhatsApp, Google Drive..."
     }
   },
@@ -25,10 +25,10 @@
     "desktop": [
       "Discover a new way to use the internet, where you have more control over what you share, choose who you connect with, and participate in networks that work without central entity moderation.",
       "There are alternatives to common platforms, made by independent communities. They prioritize your freedom and allow you to use the internet with more security and less behavioral surveillance.",
-      "Use tools created to ensure your autonomy on the internet. With them, you choose how to communicate, what to share, and who to interact with, all without giving up your privacy or being tied to a single entity.",
+      "Use tools created to ensure your autonomy on the internet. With them, you choose how to communicate, what to share, and who to interact with, all without giving up your privacy or relying on a single provider.",
       "Each app has a different purpose: some focus on social networks, others on videos, texts, or message exchange. Discover which one best fits your way of using the internet and experience new possibilities.",
       "Browse through a selection of tools created with a focus on digital freedom. See which ones allow more control and find the one that best matches what you're looking for.",
-      "Decentralized platforms connect in different ways, but share the idea of a more open, collaborative, and fair internet. Here you understand how they work and why it matters."
+      "Decentralized platforms connect in different ways, but share the idea of a more open and collaborative internet. Here you understand how they work and why it matters."
     ],
     "mobile": [
       "Open source alternatives to famous apps.",
