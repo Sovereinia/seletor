@@ -13,8 +13,10 @@ defineProps<{
 </script>
 
 <template>
-  <Wrapper :title="t('categories.title')">
-    <div class="flex flex-col gap-2">
+  <fieldset class="flex flex-col gap-2">
+  <legend class="text-base font-semibold text-base-content mb-2">
+    {{ t('categories.title') }}
+  </legend>
       <label v-for="item in items" :for="item.id" class="text-base-content opacity-80">
         <input
           :id="item.id"
@@ -26,8 +28,7 @@ defineProps<{
         />
         {{ item.label }}
       </label>
-    </div>
-  </Wrapper>
+  </fieldset>
 </template>
 
 <style scoped></style>
