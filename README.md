@@ -56,7 +56,7 @@ Check out our open issues - some are labeled [`good first issue`](https://github
 
 Once you've picked one:
 
-- Hop into our [Hackathon Discord channel](https://discordapp.com/channels/1365364448461721611/1376586127443623976)
+- Hop into our [Hackathon Discord channel](https://discord.gg/sGZSE4gM7K)  if it doesnt work right away, please add viny first: viny.bk
 - Ask questions, discuss ideas, or request feedback
 - For additional tips and contributor guidelines, see our [CONTRIBUTING.md](./CONTRIBUTING.md)
 
