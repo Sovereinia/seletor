@@ -5,15 +5,17 @@ import CategorySelector from '@/components/form/CategorySelector.vue';
 import { apps } from '@/data/apps';
 import AppModal from '@/components/AppModal.vue';
 import { categories } from '@/data/categories';
-import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue';
 import type { CategoryId } from '@/types';
 import type { App } from '@/types';
 import { sortAppsByLinksThenRandom, filterApps } from '@/utils/filter';
 import { useI18n } from 'vue-i18n';
 import { useHeadersStore } from '@/stores/headers';
+import { useSEO } from '@/composables/useSEO';
 
 const { t } = useI18n();
 const headersStore = useHeadersStore();
+const { updateSEO } = useSEO();
 
 const modalData = ref<Partial<App>>({});
 const searchQuery = ref('');
@@ -50,6 +52,13 @@ const searchPlaceholder = computed(() =>
 
 onMounted(() => {
   window.addEventListener('resize', updateWindowWidth);
+
+  // This section sets initial SEO for home page
+  updateSEO({
+    title: 'Sovereinia | Guia de Apps Descentralizados',
+    description: 'Descubra apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa.',
+    keywords: 'Sovereinia, Apps Descentralizados, Auto-hospedagem, Apps Alternativos, Redes Sociais, Ferramentas de Trabalho, Protocolos Abertos, Privacidade, Liberdade Digital',
+  });
 });
 
 onUnmounted(() => {
@@ -60,6 +69,48 @@ function handleAbrirModal(app: App) {
   mostrarModal.value = true;
   modalData.value = app;
 }
+
+//This section watch for modal changes to update SEO dynamically
+watch([mostrarModal, modalData], ([isOpen, app]) => {
+  if (isOpen && app?.name) {
+    // this unit updates SEO when modal opens
+    updateSEO({
+      title: `${app.name} - Sovereinia | Guia de Apps`,
+      description: `${app.name}: ${app.description || 'App descentralizado para mais liberdade e privacidade'}. Descubra alternativas descentralizadas.`,
+      ogTitle: `${app.name} - App Descentralizado`,
+      ogDescription: `${app.name}: ${app.description || 'App descentralizado para mais liberdade e privacidade'}`,
+      twitterTitle: `${app.name} - App Descentralizado`,
+      twitterDescription: `${app.name}: ${app.description || 'App descentralizado para mais liberdade e privacidade'}`,
+    });
+  } else if (!isOpen) {
+    // this section resets the SEO when modal closes
+    updateSEO({
+      title: 'Sovereinia | Guia de Apps Descentralizados',
+      description: 'Descubra apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa.',
+      ogTitle: 'Sovereinia | Guia de Apps',
+      ogDescription: 'Apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa.',
+      twitterTitle: 'Sovereinia | Guia de Apps',
+      twitterDescription: 'Apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa.',
+    });
+  }
+});
+
+// This is section watch for search/filter changes to update SEO
+watch([searchQuery, selectedCategory], ([query, category]) => {
+  let title = 'Sovereinia | Guia de Apps Descentralizados';
+  let description = 'Descubra apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa.';
+
+  if (query) {
+    title = `Busca: ${query} - Sovereinia | Guia de Apps`;
+    description = `Resultados da busca por "${query}" em apps descentralizados. Encontre alternativas com mais liberdade e privacidade.`;
+  } else if (category !== 'all') {
+    const categoryName = categories.find(cat => cat.id === category) || category;
+    title = `${categoryName} - Sovereinia | Guia de Apps`;
+    description = `Apps descentralizados na categoria ${categoryName}. Descubra alternativas com mais liberdade e privacidade.`;
+  }
+
+  updateSEO({ title, description });
+});
 </script>
 
 <template>
@@ -86,7 +137,7 @@ function handleAbrirModal(app: App) {
   </section>
 
   <section class="grid grid-cols-1 w-full max-w-full md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-12 mt-2">
-    <AppCard 
+    <AppCard
       v-for="app in filteredApps"
       :key="app.name"
       :app="app"

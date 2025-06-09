@@ -1,43 +1,98 @@
 <!doctype html>
 <html lang="pt-BR" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.png" type="image/png" />
-    <link rel="alternate icon" type="svg+xml" href="logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa."
-    />
-    <meta
-      name="keywords"
-      content="Sovereinia, Seletor, Guia, Guia de Apps, Apps Descentralizados, Auto-hospedagem, Apps Alternativos, Redes Sociais, Ferramentas de Trabalho, Protocolos Abertos"
-    />
-    <meta name="author" content="Sovereinia" />
-    <title>Sovereinia | Guia de Apps</title>
 
-    <!-- Meta tags that will show up when you share the website -->
-    <meta property="og:title" content="Guia de Apps" />
-    <meta
-      property="og:description"
-      content="Apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa."
-    />
-    <meta property="og:url" content="https://sovereinia.org/guia/" />
-    <meta property="og:type" content="website" />
-    <!-- <meta property="og:image" content="URL da imagem" /> -->
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/guia/favicon.png" type="image/png" />
+  <link rel="alternate icon" type="svg+xml" href="/guia/logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Meta tags that will show up when you share the website on X (Twitter) -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Guia de Apps" />
-    <meta
-      name="twitter:description"
-      content="Apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa."
-    />
-    <!-- <meta name="twitter:image" content="URL da imagem" /> -->
-  </head>
+  <meta name="description"
+    content="Apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa." />
+  <meta name="keywords"
+    content="Sovereinia, Seletor, Guia, Guia de Apps, Apps Descentralizados, Auto-hospedagem, Apps Alternativos, Redes Sociais, Ferramentas de Trabalho, Protocolos Abertos" />
+  <meta name="author" content="Sovereinia" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://sovereinia.org/guia/" />
 
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+  <!-- Theme and PWA -->
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="color-scheme" content="light dark" />
+
+  <title>Sovereinia | Guia de Apps</title>
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Sovereinia | Guia de Apps" />
+  <meta property="og:description"
+    content="Apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa." />
+  <meta property="og:url" content="https://sovereinia.org/guia/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sovereinia" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="https://sovereinia.org/guia/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Sovereinia - Guia de Apps Descentralizados" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sovereinia | Guia de Apps" />
+  <meta name="twitter:description"
+    content="Apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa." />
+  <meta name="twitter:image" content="https://sovereinia.org/guia/og-image.png" />
+  <meta name="twitter:image:alt" content="Sovereinia - Guia de Apps Descentralizados" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Sovereinia",
+  "alternateName": "Guia de Apps Descentralizados",
+  "description": "Apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa.",
+  "url": "https://sovereinia.org/guia/",
+  "inLanguage": "pt-BR",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sovereinia",
+    "url": "https://sovereinia.org"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://sovereinia.org/guia/?search={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Apps Descentralizados",
+    "description": "Coleção curada de aplicativos descentralizados e ferramentas de auto-hospedagem",
+    "numberOfItems": "100+",
+    "itemListElement": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Guia de Apps Descentralizados",
+        "applicationCategory": "WebApplication",
+        "operatingSystem": "Web",
+        "description": "Plataforma para descobrir aplicativos descentralizados e alternativas de auto-hospedagem"
+      }
+    ]
+  },
+  "keywords": [
+    "apps descentralizados",
+    "auto-hospedagem",
+    "privacidade",
+    "liberdade digital",
+    "redes independentes",
+    "protocolos abertos",
+    "alternativas descentralizadas"
+  ]
+}
+</script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
