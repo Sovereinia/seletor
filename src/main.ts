@@ -7,6 +7,7 @@ import i18n from './i18n';
 
 import App from './App.vue';
 import router from './router';
+import seoPlugin from './plugins/seo'
 
 const app = createApp(App);
 
@@ -15,5 +16,6 @@ app.use(pinia);
 pinia.use(piniaPluginPersistedstate);
 app.use(router);
 app.use(i18n);
+app.use(seoPlugin)
 
 app.mount('#app');
