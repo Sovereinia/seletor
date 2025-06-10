@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg2"
+   width="432.375"
+   height="369.2164"
+   viewBox="0 0 432.375 369.2164"
+   sodipodi:docname="hubzilla.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <title
+     id="title907">Hubzilla Logo</title>
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Hubzilla Logo</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1680"
+     inkscape:window-height="949"
+     id="namedview4"
+     showgrid="false"
+     inkscape:zoom="0.58202081"
+     inkscape:cx="-52.623812"
+     inkscape:cy="300.45057"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     fit-margin-top="-0.1"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <path
+     style="fill:#43488a;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 216.6875,-0.1 0,128.38633 53.875,128.48789 V 369.2164 H 378.56836 V 129.09336 l 53.80664,0.10156 z m 54.03516,101.19922 c 37.23927,8e-5 67.42765,30.18846 67.42773,67.42773 -8e-5,37.23928 -30.18845,67.42766 -67.42773,67.42774 -1.69335,-0.0209 -3.3853,-0.10561 -5.07227,-0.25391 l -9.5957,35.51758 c 13.70618,5.39179 22.86159,18.65927 22.86133,33.56836 -6.1e-4,19.92699 -16.15505,36.08054 -36.08204,36.08008 -19.92622,-6.2e-4 -36.07946,-16.15386 -36.08007,-36.08008 0.007,-4.65696 0.91583,-9.26848 2.67578,-13.58008 l -0.31446,0.47851 -34.43164,-22.33789 c -8.95676,9.38969 -21.581,15.24987 -35.58203,15.25 -27.16217,-2.5e-4 -49.18139,-22.01947 -49.18164,-49.18164 2.5e-4,-27.16217 22.01947,-49.18139 49.18164,-49.18164 15.18568,0.0208 29.25008,7.02989 38.42969,18.57617 l 29.375,-14.76953 c -2.36353,-6.92767 -3.58323,-14.19397 -3.61133,-21.51367 8e-5,-37.23928 30.18846,-67.42765 67.42774,-67.42773 z m -55.53125,105.54687 -29.43946,13.38672 c 1.65622,4.96042 2.51075,10.15324 2.53125,15.38281 -6e-5,6.5079 -1.2763,12.71507 -3.57226,18.40039 l 34.87304,23.42383 c 5.61414,-4.74119 12.55587,-7.66017 19.89454,-8.35156 l 8.58007,-36.94336 c -13.34167,-4.77025 -24.84163,-13.6221 -32.86718,-25.29883 z"
+     id="path841"
+     inkscape:connector-curvature="0" />
+</svg>

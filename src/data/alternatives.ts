@@ -59,8 +59,34 @@ export const alternativeIcons: Record<string, string> = {
   'Atom': 'alternatives/atom.svg',
   'WordPress': 'alternatives/wordpress.svg',
   'Ghost': 'alternatives/ghost.png',
+  // Ausentes anteriormente – adicione os arquivos correspondentes
+  'ActivityPub': 'alternatives/activitypub.svg',
+  'BitTorrent': 'alternatives/bittorrent.svg',
+  'Diaspora protocol': 'alternatives/diaspora-protocol.svg',
+  'Diaspora*': 'alternatives/diaspora.svg',
+  'Discord': 'alternatives/discord.svg',
+  'Emby': 'alternatives/emby.svg',
+  'Facebook Live': 'alternatives/facebook-live.svg',
+  'Google Workspace': 'alternatives/google-workspace.svg',
+  'Grammarly': 'alternatives/grammarly.svg',
+  'IPFS': 'alternatives/ipfs.svg',
+  'Jellyfin': 'alternatives/jellyfin.svg',
+  'Kodi': 'alternatives/kodi.svg',
+  'Mastodon': 'alternatives/mastodon.svg',
+  'Matrix': 'alternatives/matrix.svg',
+  'Microsoft 365': 'alternatives/microsoft-365.svg',
+  'Microsoft Editor': 'alternatives/microsoft-editor.svg',
+  'OStatus': 'alternatives/ostatus.svg',
+  'Rocket.Chat': 'alternatives/rocketchat.svg',
+  'Signal Protocol': 'alternatives/signal-protocol.svg',
+  'Spotify': 'alternatives/spotify.svg',
+  'Twitch': 'alternatives/twitch.svg',
+  'XMPP': 'alternatives/xmpp.svg',
+  'YouTube Live': 'alternatives/youtube-live.svg',
+  'Zoho Workplace': 'alternatives/zoho-workplace.svg',
+  'Zot': 'alternatives/zot.svg'
 };
 
-  // If SVG is available, that's best
-  // otherwise, PNG with the following dimensions:
-  // - alternatives icons: best: 180x180px minimum: 140x140px
+// If SVG is available, that's best
+// otherwise, PNG with the following dimensions:
+// - alternatives icons: best: 180x180px minimum: 140x140px
