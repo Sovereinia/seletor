@@ -5,7 +5,7 @@ import CategorySelector from '@/components/form/CategorySelector.vue';
 import { apps } from '@/data/apps';
 import AppModal from '@/components/AppModal.vue';
 import { categories } from '@/data/categories';
-import { ref, computed, onMounted, onUnmounted, watch } from 'vue';
+import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue';
 import type { CategoryId } from '@/types';
 import type { App } from '@/types';
 import { sortAppsByLinksThenRandom, filterApps } from '@/utils/filter';
@@ -23,7 +23,7 @@ const selectedCategory = ref<CategoryId>('all');
 const showFilters = ref(false);
 
 // Sugestões para o autocomplete
-const suggestions = apps.flatMap(app => app.alternatives || []);
+const suggestions = apps.flatMap((app) => app.alternatives || []);
 
 const orderedApps = computed(() => sortAppsByLinksThenRandom(apps));
 
@@ -45,9 +45,7 @@ const windowWidth = ref(window.innerWidth);
 const updateWindowWidth = () => (windowWidth.value = window.innerWidth);
 
 const searchPlaceholder = computed(() =>
-  windowWidth.value > 600
-    ? t('search.placeholder.desktop')
-    : t('search.placeholder.mobile')
+  windowWidth.value > 600 ? t('search.placeholder.desktop') : t('search.placeholder.mobile'),
 );
 
 onMounted(() => {
@@ -56,8 +54,10 @@ onMounted(() => {
   // This section sets initial SEO for home page
   updateSEO({
     title: 'Sovereinia | Guia de Apps Descentralizados',
-    description: 'Descubra apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa.',
-    keywords: 'Sovereinia, Apps Descentralizados, Auto-hospedagem, Apps Alternativos, Redes Sociais, Ferramentas de Trabalho, Protocolos Abertos, Privacidade, Liberdade Digital',
+    description:
+      'Descubra apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa.',
+    keywords:
+      'Sovereinia, Apps Descentralizados, Auto-hospedagem, Apps Alternativos, Redes Sociais, Ferramentas de Trabalho, Protocolos Abertos, Privacidade, Liberdade Digital',
   });
 });
 
@@ -66,8 +66,11 @@ onUnmounted(() => {
 });
 
 function handleAbrirModal(app: App) {
-  mostrarModal.value = true;
-  modalData.value = app;
+  modalData.value = {};
+  nextTick(() => {
+    modalData.value = { ...app };
+    mostrarModal.value = true;
+  });
 }
 
 //This section watch for modal changes to update SEO dynamically
@@ -86,11 +89,14 @@ watch([mostrarModal, modalData], ([isOpen, app]) => {
     // this section resets the SEO when modal closes
     updateSEO({
       title: 'Sovereinia | Guia de Apps Descentralizados',
-      description: 'Descubra apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa.',
+      description:
+        'Descubra apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa.',
       ogTitle: 'Sovereinia | Guia de Apps',
-      ogDescription: 'Apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa.',
+      ogDescription:
+        'Apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa.',
       twitterTitle: 'Sovereinia | Guia de Apps',
-      twitterDescription: 'Apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa.',
+      twitterDescription:
+        'Apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa.',
     });
   }
 });
@@ -98,13 +104,14 @@ watch([mostrarModal, modalData], ([isOpen, app]) => {
 // This is section watch for search/filter changes to update SEO
 watch([searchQuery, selectedCategory], ([query, category]) => {
   let title = 'Sovereinia | Guia de Apps Descentralizados';
-  let description = 'Descubra apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa.';
+  let description =
+    'Descubra apps descentralizados que funcionam sem um único dono, com redes independentes, mais liberdade, privacidade e controle para quem participa.';
 
   if (query) {
     title = `Busca: ${query} - Sovereinia | Guia de Apps`;
     description = `Resultados da busca por "${query}" em apps descentralizados. Encontre alternativas com mais liberdade e privacidade.`;
   } else if (category !== 'all') {
-    const categoryName = categories.find(cat => cat.id === category) || category;
+    const categoryName = categories.find((cat) => cat.id === category) || category;
     title = `${categoryName} - Sovereinia | Guia de Apps`;
     description = `Apps descentralizados na categoria ${categoryName}. Descubra alternativas com mais liberdade e privacidade.`;
   }
@@ -122,11 +129,7 @@ watch([searchQuery, selectedCategory], ([query, category]) => {
   </header>
 
   <section class="w-full space-y-5">
-    <CategorySelector
-      v-if="showFilters"
-      v-model="selectedCategory"
-      :categories="categories"
-    />
+    <CategorySelector v-if="showFilters" v-model="selectedCategory" :categories="categories" />
     <AppSearch
       v-model="searchQuery"
       :suggestions="suggestions"
@@ -136,18 +139,11 @@ watch([searchQuery, selectedCategory], ([query, category]) => {
     />
   </section>
 
-  <section class="grid grid-cols-1 w-full max-w-full md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-12 mt-2">
-    <AppCard
-      v-for="app in filteredApps"
-      :key="app.name"
-      :app="app"
-      @abrir="handleAbrirModal"
-    />
+  <section
+    class="grid grid-cols-1 w-full max-w-full md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-12 mt-2"
+  >
+    <AppCard v-for="app in filteredApps" :key="app.name" :app="app" @abrir="handleAbrirModal" />
 
-    <AppModal
-      :abrir="mostrarModal"
-      :app="modalData"
-      @atualizarAbrir="mostrarModal = $event"
-    />
+    <AppModal :abrir="mostrarModal" :app="modalData" @atualizarAbrir="mostrarModal = $event" />
   </section>
 </template>
